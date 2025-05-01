@@ -32,6 +32,7 @@ body {
   height: 100%;
   z-index: -1;
   overflow: hidden;
+  background-color: var(--light-gray); /* Fallback if image fails to load */
 }
 
 .background-image-container img {
@@ -39,6 +40,7 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  display: block; /* Ensure image is visible */
 }
 
 .arabic {
