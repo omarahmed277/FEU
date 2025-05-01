@@ -54,12 +54,6 @@
         object-position: center;
       }
 
-      .background-wrapper {
-        min-height: 100vh;
-        position: relative;
-        z-index: 0;
-      }
-
       .arabic {
         font-family: var(--font-family), sans-serif;
       }
@@ -749,158 +743,156 @@
     <div class="background-image-container">
       <img src="./images/justOrange.jpg" alt="Background image" />
     </div>
-    <div class="background-wrapper">
-      <nav class="navbar">
-        <div class="logo arabic">
+    <nav class="navbar">
+      <div class="logo arabic">
+        <img
+          width="50"
+          height="50"
+          src="./images/Logo تحدي مليون فكرة ازرق.png"
+          alt=""
+        />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#" class="arabic">عن التحدي</a></li>
+        <li><a href="#" class="arabic">الجدول الزمني</a></li>
+        <li><a href="#" class="arabic">الشروط</a></li>
+        <li><a href="#" class="arabic">الشركاء</a></li>
+      </ul>
+      <button class="mobile-menu-btn">☰</button>
+    </nav>
+
+    <div class="language-toggle">
+      <button class="active english" id="en-btn">EN</button>
+      <button class="arabic" id="ar-btn">العربية</button>
+    </div>
+
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-image-container">
           <img
-            width="50"
-            height="50"
-            src="./images/Logo تحدي مليون فكرة ازرق.png"
-            alt=""
+            src="./images/image-woman-without-background1.png"
+            alt="Female entrepreneur"
+            class="hero-image-woman"
+          />
+          <img
+            src="./images/image1.png"
+            alt="Young entrepreneurs working together"
+            class="hero-image"
           />
         </div>
-        <ul class="nav-links">
-          <li><a href="#" class="arabic">عن التحدي</a></li>
-          <li><a href="#" class="arabic">الجدول الزمني</a></li>
-          <li><a href="#" class="arabic">الشروط</a></li>
-          <li><a href="#" class="arabic">الشركاء</a></li>
-        </ul>
-        <button class="mobile-menu-btn">☰</button>
-      </nav>
+        <div class="hero-content">
+          <h1 class="hero-title arabic">
+            <span class="quote">"</span>
+            انا عندي فكرة تحل
+            <span class="highlight">
+              <span class="changing-text">
+                <span>تدهور التربة</span>
+                <span>نقص المياه</span>
+                <span>ملوحة الأرض</span>
+                <span>تآكل التربة</span>
+                <span>تلوث المياه</span>
+                <span>ضرر المبيدات</span>
+                <span>ضعف الإنتاج</span>
+                <span>ارتفاع الحرارة</span>
+                <span>ندرة العمالة</span>
+                <span>الزحف العمراني</span>
+                <span>سوء التخزين</span>
+                <span>استخدام المبيدات</span>
+                <span>ضعف الدعم</span>
+                <span>تلف المحاصيل</span>
+                <span>تقلب الحرارة</span>
+                <span>انتشار الآفات</span>
+                <span>تلوث المياه</span>
+                <span>الري المفرط</span>
+                <span>زيادة التصحر</span>
+                <span>انبعاثات الزراعة</span>
+                <span class="quote">"</span>
+              </span>
+            </span>
+          </h1>
+          <p class="hero-description arabic">
+            يعاني قطاع الزراعة من تحديات كبيرة، كن أنت بداية التغيير الذي ينتظره
+            الجميع. كل فكرة تملك القدرة على صناعة فرق حقيقي، شارك في تحدي مليون
+            فكرة ,واحصل علي التوجيه، التشبيك والتمويل!
+          </p>
 
-      <div class="language-toggle">
-        <button class="active english" id="en-btn">EN</button>
-        <button class="arabic" id="ar-btn">العربية</button>
+          <h1 class="hero-title english" style="display: none">
+            I have an idea to solve
+            <span class="highlight">
+              <span class="changing-text">
+                <span>soil degradation</span>
+                <span>water scarcity</span>
+                <span>soil salinity</span>
+                <span>soil erosion</span>
+                <span>water pollution</span>
+                <span>pesticide damage</span>
+                <span>low productivity</span>
+                <span>rising temperatures</span>
+                <span>labor shortage</span>
+                <span>urban sprawl</span>
+                <span>poor storage</span>
+                <span>pesticide overuse</span>
+                <span>lack of support</span>
+                <span>crop damage</span>
+                <span>temperature fluctuations</span>
+                <span>pest outbreaks</span>
+                <span>water contamination</span>
+                <span>over-irrigation</span>
+                <span>desertification</span>
+                <span>agricultural emissions</span>
+              </span>
+            </span>
+          </h1>
+          <p class="hero-description english" style="display: none">
+            In your daily life, you see various challenges. Solve one of them to
+            become part of the Million Ideas Challenge. We'll help you implement
+            the solution!
+          </p>
+
+          <a href="#" class="cta-button arabic">سجل الان</a>
+          <a href="#" class="cta-button english" style="display: none"
+            >GET STARTED</a
+          >
+        </div>
       </div>
+    </section>
 
-      <section class="hero">
-        <div class="hero-container">
-          <div class="hero-image-container">
-            <img
-              src="./images/image-woman-without-background1.png"
-              alt="Female entrepreneur"
-              class="hero-image-woman"
-            />
-            <img
-              src="./images/image1.png"
-              alt="Young entrepreneurs working together"
-              class="hero-image"
-            />
+    <section class="about-challenge">
+      <div class="about-container">
+        <div class="about-content">
+          <h2 class="about-title arabic">عن تحدي مليون فكرة</h2>
+          <h2 class="about-title english" style="display: none">
+            About Million Ideas Challenge
+          </h2>
+          <div class="about-subtitle arabic">
+            مبادرة لتمكين الشباب وتحقيق الاستدامة
           </div>
-          <div class="hero-content">
-            <h1 class="hero-title arabic">
-              <span class="quote">"</span>
-              انا عندي فكرة تحل
-              <span class="highlight">
-                <span class="changing-text">
-                  <span>تدهور التربة</span>
-                  <span>نقص المياه</span>
-                  <span>ملوحة الأرض</span>
-                  <span>تآكل التربة</span>
-                  <span>تلوث المياه</span>
-                  <span>ضرر المبيدات</span>
-                  <span>ضعف الإنتاج</span>
-                  <span>ارتفاع الحرارة</span>
-                  <span>ندرة العمالة</span>
-                  <span>الزحف العمراني</span>
-                  <span>سوء التخزين</span>
-                  <span>استخدام المبيدات</span>
-                  <span>ضعف الدعم</span>
-                  <span>تلف المحاصيل</span>
-                  <span>تقلب الحرارة</span>
-                  <span>انتشار الآفات</span>
-                  <span>تلوث المياه</span>
-                  <span>الري المفرط</span>
-                  <span>زيادة التصحر</span>
-                  <span>انبعاثات الزراعة</span>
-                  <span class="quote">"</span>
-                </span>
-              </span>
-            </h1>
-            <p class="hero-description arabic">
-              يعاني قطاع الزراعة من تحديات كبيرة، كن أنت بداية التغيير الذي ينتظره
-              الجميع. كل فكرة تملك القدرة على صناعة فرق حقيقي، شارك في تحدي مليون
-              فكرة ,واحصل علي التوجيه، التشبيك والتمويل!
-            </p>
-
-            <h1 class="hero-title english" style="display: none">
-              I have an idea to solve
-              <span class="highlight">
-                <span class="changing-text">
-                  <span>soil degradation</span>
-                  <span>water scarcity</span>
-                  <span>soil salinity</span>
-                  <span>soil erosion</span>
-                  <span>water pollution</span>
-                  <span>pesticide damage</span>
-                  <span>low productivity</span>
-                  <span>rising temperatures</span>
-                  <span>labor shortage</span>
-                  <span>urban sprawl</span>
-                  <span>poor storage</span>
-                  <span>pesticide overuse</span>
-                  <span>lack of support</span>
-                  <span>crop damage</span>
-                  <span>temperature fluctuations</span>
-                  <span>pest outbreaks</span>
-                  <span>water contamination</span>
-                  <span>over-irrigation</span>
-                  <span>desertification</span>
-                  <span>agricultural emissions</span>
-                </span>
-              </span>
-            </h1>
-            <p class="hero-description english" style="display: none">
-              In your daily life, you see various challenges. Solve one of them to
-              become part of the Million Ideas Challenge. We'll help you implement
-              the solution!
-            </p>
-
-            <a href="#" class="cta-button arabic">سجل الان</a>
-            <a href="#" class="cta-button english" style="display: none"
-              >GET STARTED</a
-            >
+          <div class="about-subtitle english" style="display: none">
+            An Initiative for Youth Empowerment and Sustainability
           </div>
+          <p class="about-description arabic">
+            تحدي مليون فكرة يهدف إلى دعمك أنت وجميع الطلاب الذين يمتلكون أفكارًا
+            قادرة على حل مشكلات المجتمع، ويسعون لتحويلها إلى شركات ناشئة.
+          </p>
+          <p class="about-description english" style="display: none">
+            The Million Ideas Challenge is a pioneering initiative designed to
+            inspire and empower Arab youth to propose innovative solutions to
+            agricultural challenges. Through mentorship programs, supportive
+            funding, and networking opportunities with industry experts, we aim
+            to transform your ambitious ideas into tangible projects that
+            contribute to a sustainable agricultural future. Join us today to be
+            part of this positive change!
+          </p>
         </div>
-      </section>
-
-      <section class="about-challenge">
-        <div class="about-container">
-          <div class="about-content">
-            <h2 class="about-title arabic">عن تحدي مليون فكرة</h2>
-            <h2 class="about-title english" style="display: none">
-              About Million Ideas Challenge
-            </h2>
-            <div class="about-subtitle arabic">
-              مبادرة لتمكين الشباب وتحقيق الاستدامة
-            </div>
-            <div class="about-subtitle english" style="display: none">
-              An Initiative for Youth Empowerment and Sustainability
-            </div>
-            <p class="about-description arabic">
-              تحدي مليون فكرة يهدف إلى دعمك أنت وجميع الطلاب الذين يمتلكون أفكارًا
-              قادرة على حل مشكلات المجتمع، ويسعون لتحويلها إلى شركات ناشئة.
-            </p>
-            <p class="about-description english" style="display: none">
-              The Million Ideas Challenge is a pioneering initiative designed to
-              inspire and empower Arab youth to propose innovative solutions to
-              agricultural challenges. Through mentorship programs, supportive
-              funding, and networking opportunities with industry experts, we aim
-              to transform your ambitious ideas into tangible projects that
-              contribute to a sustainable agricultural future. Join us today to be
-              part of this positive change!
-            </p>
-          </div>
-          <div class="about-image-container">
-            <img
-              src="./images/peaople.webp"
-              alt="Million Ideas Challenge"
-              class="about-image"
-            />
-          </div>
+        <div class="about-image-container">
+          <img
+            src="./images/peaople.webp"
+            alt="Million Ideas Challenge"
+            class="about-image"
+          />
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
     <script>
       // Mobile menu toggle
