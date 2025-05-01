@@ -37,14 +37,27 @@
         background-color: var(--light-gray); /* Fallback background */
       }
 
+      .background-image-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+      }
+
+      .background-image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
       .background-wrapper {
-        background-image: url("images/justOrange.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: repeat;
-        background-attachment: fixed;
         min-height: 100vh;
         position: relative;
+        z-index: 0;
       }
 
       .arabic {
@@ -733,6 +746,9 @@
     </style>
   </head>
   <body>
+    <div class="background-image-container">
+      <img src="./images/justOrange.jpg" alt="Background image" />
+    </div>
     <div class="background-wrapper">
       <nav class="navbar">
         <div class="logo arabic">
@@ -751,6 +767,11 @@
         </ul>
         <button class="mobile-menu-btn">☰</button>
       </nav>
+
+      <div class="language-toggle">
+        <button class="active english" id="en-btn">EN</button>
+        <button class="arabic" id="ar-btn">العربية</button>
+      </div>
 
       <section class="hero">
         <div class="hero-container">
@@ -797,9 +818,9 @@
               </span>
             </h1>
             <p class="hero-description arabic">
-              يعاني قطاع الزراعة من تحديات كبيرة، كن أنت بداية التغيير الذي
-              ينتظره الجميع. كل فكرة تملك القدرة على صناعة فرق حقيقي، شارك في
-              تحدي مليون فكرة ,واحصل علي التوجيه، التشبيك والتمويل!
+              يعاني قطاع الزراعة من تحديات كبيرة، كن أنت بداية التغيير الذي ينتظره
+              الجميع. كل فكرة تملك القدرة على صناعة فرق حقيقي، شارك في تحدي مليون
+              فكرة ,واحصل علي التوجيه، التشبيك والتمويل!
             </p>
 
             <h1 class="hero-title english" style="display: none">
@@ -830,9 +851,9 @@
               </span>
             </h1>
             <p class="hero-description english" style="display: none">
-              In your daily life, you see various challenges. Solve one of them
-              to become part of the Million Ideas Challenge. We'll help you
-              implement the solution!
+              In your daily life, you see various challenges. Solve one of them to
+              become part of the Million Ideas Challenge. We'll help you implement
+              the solution!
             </p>
 
             <a href="#" class="cta-button arabic">سجل الان</a>
@@ -857,18 +878,17 @@
               An Initiative for Youth Empowerment and Sustainability
             </div>
             <p class="about-description arabic">
-              تحدي مليون فكرة يهدف إلى دعمك أنت وجميع الطلاب الذين يمتلكون
-              أفكارًا قادرة على حل مشكلات المجتمع، ويسعون لتحويلها إلى شركات
-              ناشئة.
+              تحدي مليون فكرة يهدف إلى دعمك أنت وجميع الطلاب الذين يمتلكون أفكارًا
+              قادرة على حل مشكلات المجتمع، ويسعون لتحويلها إلى شركات ناشئة.
             </p>
             <p class="about-description english" style="display: none">
               The Million Ideas Challenge is a pioneering initiative designed to
               inspire and empower Arab youth to propose innovative solutions to
               agricultural challenges. Through mentorship programs, supportive
-              funding, and networking opportunities with industry experts, we
-              aim to transform your ambitious ideas into tangible projects that
-              contribute to a sustainable agricultural future. Join us today to
-              be part of this positive change!
+              funding, and networking opportunities with industry experts, we aim
+              to transform your ambitious ideas into tangible projects that
+              contribute to a sustainable agricultural future. Join us today to be
+              part of this positive change!
             </p>
           </div>
           <div class="about-image-container">
