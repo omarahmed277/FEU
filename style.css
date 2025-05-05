@@ -1,10 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Cairo:wght@200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Cairo:wght@200..1000&family=Jomhuria&family=Manrope:wght@200..800&display=swap");
 :root {
-  --font-family: "Alexandria", sans-serif;
-  --primary-blue: #3250ba;
-  --primary-orange: #ff7800;
+  --font-family: "Tajawal", sans-serif;
+  --heading-font: "Alexandria";
+  --english-font: "Manrope", sans-serif;
+  --primary-yellow: #feea29;
   --white: #ffffff;
-  --dark-text: #2d3748;
+  --primary-blue: #1a26ca;
+  --dark-black: #010100;
   --light-gray: #f7fafc;
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
@@ -19,9 +22,9 @@
 }
 
 body {
-  color: var(--dark-text);
+  color: var(--dark-black);
   line-height: 1.6;
-  background-color: var(--light-gray); /* Fallback background */
+  background-color: black;
 }
 
 .background-image-container {
@@ -32,15 +35,8 @@ body {
   height: 100%;
   z-index: -1;
   overflow: hidden;
-  background-color: var(--light-gray); /* Fallback if image fails to load */
-}
-
-.background-image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block; /* Ensure image is visible */
+  background: url("./images/BG 00.png") repeat;
+  background-size: cover;
 }
 
 .arabic {
@@ -48,7 +44,7 @@ body {
 }
 
 .english {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--english-font), sans-serif;
 }
 
 .navbar {
@@ -82,7 +78,7 @@ body {
 }
 
 .logo .orange {
-  color: var(--primary-orange);
+  color: var(--primary-yellow);
 }
 
 .nav-links {
@@ -97,7 +93,7 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--dark-text);
+  color: var(--dark-black);
   font-weight: 500;
   transition: var(--transition);
   position: relative;
@@ -115,7 +111,7 @@ body {
   right: 0;
   width: 0;
   height: 2px;
-  background-color: var(--primary-orange);
+  background-color: var(--primary-yellow);
   transition: var(--transition);
 }
 
@@ -125,18 +121,18 @@ body {
 }
 
 .nav-cta {
-  background-color: var(--primary-orange);
+  background-color: var(--primary-yellow);
   color: var(--white) !important;
   padding: 0.6rem 1.5rem !important;
   border-radius: 50px;
   margin-right: 1.5rem;
-  box-shadow: 0 4px 6px rgba(255, 120, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(254, 234, 41, 0.2);
 }
 
 .nav-cta:hover {
-  background-color: #e06d00;
+  background-color: #d4c21f;
   transform: translateY(-2px);
-  box-shadow: 0 6px 10px rgba(255, 120, 0, 0.3);
+  box-shadow: 0 6px 10px rgba(254, 234, 41, 0.3);
   color: var(--white) !important;
 }
 
@@ -150,7 +146,7 @@ body {
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: var(--dark-text);
+  color: var(--dark-black);
   z-index: 1001;
 }
 
@@ -162,11 +158,6 @@ body {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(
-    200deg,
-    rgba(255, 120, 0, 0.1),
-    rgba(255, 255, 255, 0.9)
-  );
 }
 
 .hero::before {
@@ -176,7 +167,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.7);
   z-index: 0;
 }
 
@@ -199,6 +189,7 @@ body {
   display: flex;
   align-items: flex-end;
   gap: 20px;
+  margin-top: 8%;
 }
 
 .hero-image {
@@ -216,8 +207,8 @@ body {
 }
 
 .hero-image-woman {
-  width: 79%;
-  margin-top: 120px;
+  width: 80%;
+  margin-top: 18px;
   border-radius: 12px;
   transition: var(--transition);
   margin-bottom: -10px;
@@ -232,63 +223,68 @@ body {
   width: 70%;
   z-index: 2;
   margin-top: 55px;
+  margin-right: 32px;
   border-radius: 12px;
 }
 
 .hero-title {
+  font-family: var(--font-family);
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  color: var(--primary-blue);
-  white-space: nowrap;
+  color: var(--dark-black);
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 .hero-title .highlight {
-  color: var(--primary-orange);
+  color: var(--primary-blue);
   position: relative;
   display: inline-block;
 }
 
 .hero-title .quote {
   font-size: 2.5rem;
-  color: var(--primary-orange);
+  /* color: var(--primary-yellow); */
   margin-right: 0.5rem;
 }
 
 .hero-description {
-  font-family: "tajawal", sans-serif;
-  width: 85%;
+  font-family: var(--font-family);
+  width: 82%;
   font-size: 21px;
-  font-weight: 500;
+  /* font-weight: 600; */
   margin-bottom: 2.5rem;
-  color: var(--dark-text);
+  margin-right: 16px;
+  color: var(--primary-blue);
+  /* text-align: center; */
 }
 
 .cta-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--primary-orange);
-  color: var(--white);
-  font-size: 1.1rem;
+  background-color: var(--primary-yellow);
+  /* color: var(--white); */
+  font-family: var(--font-family);
+  font-size: 1.4rem;
   font-weight: 600;
-  padding: 1rem 2.5rem;
+  padding: 0.5rem 2rem;
   border-radius: 50px;
   text-decoration: none;
   transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(255, 120, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(254, 234, 41, 0.3);
   position: relative;
   overflow: hidden;
+  margin-right: 16px;
 }
 
 .cta-button:hover {
-  background-color: #e06d00;
+  background-color: #d4c21f;
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(255, 120, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(254, 234, 41, 0.4);
 }
 
 .cta-button::after {
@@ -360,7 +356,7 @@ body {
 
 /* About Challenge Section */
 .about-challenge {
-  background-color: var(--primary-orange);
+  background-color: var(--primary-yellow);
   padding: 6rem 5%;
   position: relative;
   overflow: hidden;
@@ -376,17 +372,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.05) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(255, 255, 255, 0.05) 50%,
-      rgba(255, 255, 255, 0.05) 75%,
-      transparent 75%,
-      transparent
-    )
-    repeat;
+  background: url("./images/Pattern-01.png") no-repeat;
   background-size: 60px 60px;
   opacity: 0.3;
   z-index: 0;
@@ -422,25 +408,15 @@ body {
 
 .about-content {
   width: 55%;
-  color: var(--white);
+  color: var(--dark-black);
   animation: fadeIn 1s ease-out;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .about-title {
+  font-family: var(--heading-font);
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-left: 1rem;
   color: var(--primary-blue);
   position: relative;
 }
@@ -457,10 +433,11 @@ body {
 }
 
 .about-subtitle {
+  font-family: var(--font-family);
   font-size: 1.4rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--dark-black);
   background: rgba(255, 255, 255, 0.1);
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -468,11 +445,12 @@ body {
 }
 
 .about-description {
+  font-family: var(--font-family);
   font-size: 1.2rem;
   font-weight: 400;
   margin-bottom: 2.5rem;
   line-height: 1.9;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--dark-black);
 }
 
 .about-cta {
@@ -481,21 +459,22 @@ body {
   justify-content: center;
   background-color: var(--primary-blue);
   color: var(--white);
+  font-family: var(--font-family);
   font-size: 1.1rem;
   font-weight: 600;
   padding: 1rem 2.5rem;
   border-radius: 50px;
   text-decoration: none;
   transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(50, 80, 186, 0.3);
+  box-shadow: 0 4px 15px rgba(26, 38, 202, 0.3);
   position: relative;
   overflow: hidden;
 }
 
 .about-cta:hover {
-  background-color: #2a44a0;
+  background-color: #151fb3;
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(50, 80, 186, 0.4);
+  box-shadow: 0 6px 20px rgba(26, 38, 202, 0.4);
 }
 
 .about-cta::after {
@@ -518,6 +497,447 @@ body {
   right: 100%;
 }
 
+/* Timeline Challenge Section */
+.timeline-challenge {
+  padding: 0rem 5%;
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-challenge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  z-index: 0;
+}
+
+.timeline-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 16px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.about-title2 {
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary-blue);
+  position: relative;
+}
+
+.about-title2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 0;
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-yellow);
+  border-radius: 2px;
+}
+
+.timeline {
+  position: relative;
+  height: 400px;
+}
+
+.timeline-line {
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background: var(--primary-yellow);
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  animation: expandLine 1.5s ease-out;
+}
+
+.milestones {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.milestone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% / 3);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: calc(0.2s * var(--order));
+}
+
+.milestone-marker {
+  width: 24px;
+  height: 24px;
+  background: var(--primary-yellow);
+  border: 4px solid var(--primary-blue);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotateY(0deg);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.milestone-marker::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--primary-blue);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.milestone:hover .milestone-marker {
+  transform: translateY(-50%) scale(1.3) rotateY(360deg);
+}
+
+.milestone-content {
+  position: absolute;
+  width: 280px;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--white);
+  border: 2px solid var(--primary-blue);
+  transition: all 0.3s ease;
+  z-index: 3;
+  backdrop-filter: blur(5px);
+}
+
+.milestone-content:hover {
+  transform: scale(1.5) translate(-50%, -50%);
+  width: 400px;
+  padding: 30px;
+  z-index: 1001; /* Above navbar */
+}
+
+.milestone-top .milestone-content {
+  bottom: calc(50% + 40px);
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.milestone-bottom .milestone-content {
+  top: calc(50% + 40px);
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.milestone-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: var(--primary-blue);
+}
+
+.milestone-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--dark-black);
+  text-align: center;
+}
+
+.milestone-date {
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 6px 12px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+.milestone-content::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--primary-blue);
+  transform: rotate(45deg);
+}
+
+.milestone-top .milestone-content::before {
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.milestone-bottom .milestone-content::before {
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.milestone-content:hover::before {
+  display: none;
+}
+
+.mini-milestone {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+  animation-delay: calc(0.3s * var(--order));
+}
+
+.mini-milestone-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--primary-yellow);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.mini-milestone:hover .mini-milestone-dot {
+  transform: scale(1.5);
+}
+
+/* FAQ Section */
+.faq-section {
+  background-color: var(--light-gray);
+  padding: 6rem 5%;
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.faq-header h1 {
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  position: relative;
+  display: inline-block;
+  color: var(--primary-blue);
+}
+
+.faq-header h1::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 4px;
+  background-color: var(--primary-yellow);
+  border-radius: 4px;
+}
+
+.faq-header p {
+  font-family: var(--font-family);
+  font-size: 1.1rem;
+  color: #4a5568;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq-group {
+  background-color: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.faq-group h2 {
+  font-family: var(--heading-font);
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: 20px 30px;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  margin: 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  padding: 24px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: rgba(254, 234, 41, 0.05);
+}
+
+.faq-question h3 {
+  font-family: var(--font-family);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-right: 40px;
+}
+
+.faq-question .icon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.faq-question .icon::before,
+.faq-question .icon::after {
+  content: "";
+  position: absolute;
+  background-color: var(--primary-blue);
+  transition: all 0.3s ease;
+}
+
+.faq-question .icon::before {
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.faq-question .icon::after {
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  background-color: var(--white);
+}
+
+.faq-answer-content {
+  padding: 0 30px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.faq-answer-content p,
+.faq-answer-content ul,
+.faq-answer-content ol {
+  font-family: var(--font-family);
+  font-size: 1rem;
+  color: var(--dark-black);
+}
+
+.faq-answer-content ul,
+.faq-answer-content ol {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.faq-item.active .faq-question {
+  background-color: rgba(254, 234, 41, 0.1);
+}
+
+.faq-item.active .icon::after {
+  transform: translateX(-50%) rotate(90deg);
+  opacity: 0;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 1000px;
+  padding-bottom: 24px;
+}
+
+.faq-item.active .faq-answer-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-highlight {
+  background-color: var(--primary-yellow);
+  padding: 0 4px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes expandLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 @media (max-width: 1200px) {
   .hero-title {
     font-size: 2.2rem;
@@ -537,6 +957,32 @@ body {
 
   .about-description {
     font-size: 1.1rem;
+  }
+
+  .milestone-content {
+    width: 220px;
+    padding: 15px;
+  }
+
+  .milestone-content:hover {
+    width: 320px;
+    padding: 20px;
+  }
+
+  .milestone-title {
+    font-size: 1rem;
+  }
+
+  .milestone-description {
+    font-size: 0.85rem;
+  }
+
+  .milestone-date {
+    font-size: 0.9rem;
+  }
+
+  .faq-header h1 {
+    font-size: 2.2rem;
   }
 }
 
@@ -586,6 +1032,14 @@ body {
     left: 50%;
     right: auto;
     transform: translateX(-50%);
+  }
+
+  .timeline-challenge {
+    padding: 4rem 5%;
+  }
+
+  .faq-section {
+    padding: 4rem 5%;
   }
 }
 
@@ -650,6 +1104,7 @@ body {
     margin-left: auto;
     flex-direction: column;
     align-items: center;
+    margin-top: 6%;
   }
 
   .hero-image,
@@ -684,6 +1139,57 @@ body {
   .about-cta {
     font-size: 1rem;
     padding: 0.9rem 2rem;
+  }
+
+  .timeline {
+    height: 600px;
+  }
+
+  .milestone-content {
+    width: 180px;
+    padding: 12px;
+  }
+
+  .milestone-content:hover {
+    width: 260px;
+    padding: 15px;
+  }
+
+  .milestone-title {
+    font-size: 0.9rem;
+  }
+
+  .milestone-description {
+    font-size: 0.8rem;
+  }
+
+  .milestone-date {
+    font-size: 0.85rem;
+  }
+
+  .faq-container {
+    padding: 0 15px;
+  }
+
+  .faq-header h1 {
+    font-size: 2rem;
+  }
+
+  .faq-group h2 {
+    font-size: 1.5rem;
+    padding: 15px 20px;
+  }
+
+  .faq-question {
+    padding: 20px;
+  }
+
+  .faq-question h3 {
+    font-size: 1rem;
+  }
+
+  .faq-answer-content {
+    padding: 0 20px;
   }
 }
 
@@ -724,5 +1230,39 @@ body {
 
   .about-description {
     font-size: 0.95rem;
+  }
+
+  .timeline {
+    height: 800px;
+  }
+
+  .milestone-content {
+    width: 160px;
+    padding: 10px;
+  }
+
+  .milestone-content:hover {
+    width: 220px;
+    padding: 12px;
+  }
+
+  .milestone-title {
+    font-size: 0.8rem;
+  }
+
+  .milestone-description {
+    font-size: 0.75rem;
+  }
+
+  .milestone-date {
+    font-size: 0.8rem;
+  }
+
+  .faq-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .faq-group h2 {
+    font-size: 1.3rem;
   }
 }
