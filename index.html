@@ -31,7 +31,7 @@
         <li><a href="#about" class="arabic">عن التحدي</a></li>
         <li><a href="#timeline" class="arabic">الجدول الزمني</a></li>
         <li><a href="#" class="arabic">الشروط</a></li>
-        <li><a href="#" class="arabic">الشركاء</a></li>
+        <li><a href="#partners" class="arabic">الشركاء</a></li>
       </ul>
       <button class="mobile-menu-btn">☰</button>
     </nav>
@@ -265,6 +265,92 @@
       </div>
     </section>
 
+    <section class="partners-section" id="partners">
+      <div class="partners-container">
+        <div class="partners-header">
+          <h1 class="arabic">شركاؤنا</h1>
+          <h1 class="english" style="display: none">Our Partners</h1>
+          <p class="arabic">
+            نعمل مع شركاء متميزين لدعم ريادة الأعمال وتمكين الشباب في مصر
+          </p>
+          <p class="english" style="display: none">
+            We collaborate with distinguished partners to support
+            entrepreneurship and empower youth in Egypt
+          </p>
+        </div>
+        <div class="partners-grid">
+          <div class="partner-item">
+            <img
+              src="./images/orange-corners-logo.png"
+              alt="Orange Corners"
+              class="partner-logo"
+            />
+            <h3 class="arabic">أورانج كورنرز</h3>
+            <h3 class="english" style="display: none">Orange Corners</h3>
+            <p class="arabic">
+              مبادرة تدعمها الحكومة الهولندية من خلال وكالة المشاريع الهولندية،
+              وبالتعاون مع سفارة مملكة هولندا والشركاء المحليين في كل دولة. تهدف
+              المبادرة إلى تمكين الشباب من خلال دعم ريادة الأعمال وتوفير فرص
+              عمل، وذلك عبر برامج تدريبية وشراكات فعّالة مع الجهات المحلية.
+            </p>
+            <p class="english" style="display: none">
+              An initiative supported by the Dutch government through the
+              Netherlands Enterprise Agency, in collaboration with the Embassy
+              of the Kingdom of the Netherlands and local partners in each
+              country. The initiative aims to empower youth by supporting
+              entrepreneurship and providing job opportunities through training
+              programs and effective partnerships with local entities.
+            </p>
+          </div>
+          <div class="partner-item">
+            <img
+              src="./images/auc-logo.png"
+              alt="The American University in Cairo"
+              class="partner-logo"
+            />
+            <h3 class="arabic">الجامعة الأمريكية بالقاهرة</h3>
+            <h3 class="english" style="display: none">
+              The American University in Cairo
+            </h3>
+            <p class="arabic">
+              جامعة بحثية خاصة تقدم برامج تعليمية بأسلوب التعليم الأمريكي في
+              مراحل البكالوريوس والدراسات العليا والتعليم المهني، بالإضافة إلى
+              برنامج للتعليم المستم Ascotap - 3.6.4
+            </p>
+
+            <p class="english" style="display: none">
+              A private research university offering American-style education at
+              the undergraduate, graduate, and professional levels, along with a
+              continuing education program. AUC’s student community includes
+              students from over 50 countries.
+            </p>
+          </div>
+          <div class="partner-item">
+            <img
+              src="./images/athar-logo.png"
+              alt="Athar"
+              class="partner-logo"
+            />
+            <h3 class="arabic">أثر</h3>
+            <h3 class="english" style="display: none">Athar</h3>
+            <p class="arabic">
+              مسرعة أعمال تركّز على دعم مؤسسي الشركات الناشئة خارج العاصمة، بهدف
+              تعزيز النمو المتوازن للمشهد الريادي في مصر. تقدم المسرعة حزمة
+              متكاملة من الدعم تشمل التمويل، التوجيه، وفرص التشبيك مع مستثمرين
+              وشركاء استراتيجيين.
+            </p>
+            <p class="english" style="display: none">
+              A business accelerator focused on supporting startup founders
+              outside the capital to promote balanced growth in Egypt’s
+              entrepreneurial landscape. The accelerator provides a
+              comprehensive support package, including funding, mentorship, and
+              networking opportunities with investors and strategic partners.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="faq-section">
       <div class="faq-container">
         <div class="faq-header">
@@ -309,6 +395,7 @@
           </div>
           <div class="faq-item">
             <div class="faq-question">
+              < Ascotap - 3.6.4
               <h3 class="arabic">ما هو مكان إقامة تحدي مليون فكرة؟</h3>
               <h3 class="english" style="display: none">
                 Where will the Million Ideas Challenge take place?
@@ -807,6 +894,7 @@
         document.querySelector(".about-container").style.direction = "ltr";
         document.querySelector(".about-image-container").style.order = "-1";
         document.querySelector(".timeline-container").style.direction = "ltr";
+        document.querySelector(".partners-container").style.direction = "ltr";
       });
 
       arBtn.addEventListener("click", () => {
@@ -827,6 +915,7 @@
         document.querySelector(".about-container").style.direction = "rtl";
         document.querySelector(".about-image-container").style.order = "0";
         document.querySelector(".timeline-container").style.direction = "rtl";
+        document.querySelector(".partners-container").style.direction = "rtl";
       });
 
       // Highlight text rotation
