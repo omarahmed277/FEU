@@ -1956,9 +1956,20 @@ body {
 }
 
 @media (max-width: 400px) {
+  .hero-container {
+    gap: 0.8rem;
+    display: flex;
+    /* flex-direction: column-reverse; */
+    justify-content: space-between;
+    /* width: 100%; */
+    height: 72vh;
+  }
+
   .hero-image-container {
-    max-width: 500px;
-    margin-left: 60%;
+    /* max-width: 500px; */
+    width: 80%;
+    margin-left: 47%;
+    padding: 39px 0px;
   }
 
   .hero-image,
@@ -1986,7 +1997,7 @@ body {
     display: flex;
     position: relative;
     height: 1.6em;
-    right: -51px;
+    /* right: -51px; */
   }
 
   .about-image-container {
@@ -2131,8 +2142,11 @@ body {
   }
 
   .changing-text {
-    font-size: 1.1rem;
-    line-height: 1.3;
+    min-width: 180px;
+    display: flex;
+    position: relative;
+    height: 1.6em;
+    right: 0px;
   }
 
   .hero-subtitle {
@@ -2141,9 +2155,9 @@ body {
   }
 
   .hero-image-container {
-    width: 70%;
+    width: 80%;
     margin-top: 0px;
-    padding: 0 10px;
+    padding: 0px 10px;
     margin-right: 22%;
   }
 
@@ -2352,7 +2366,8 @@ body {
 
   .hero-image-container {
     width: 100%;
-    max-width: 302px;
+    /* margin-bottom: 41px; */
+    /* max-width: 302px; */
     margin: 0 auto -35%;
     padding: 0 5px;
     display: flex;
@@ -2362,8 +2377,9 @@ body {
 
   .hero-image,
   .hero-image-woman {
-    width: 66%;
-    margin: 0 -12%;
+    width: 70%;
+    /* height: 122%; */
+    margin: 27px -12%;
     border-radius: 6px;
     object-fit: cover;
     aspect-ratio: 1/1;
