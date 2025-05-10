@@ -2159,7 +2159,7 @@ body {
     width: 85%;
     margin-bottom: -205px;
     padding: 0px 8px;
-    /* margin-right: 0%; */
+    margin-right: -2%;
   }
 
   .hero-image {
@@ -2646,5 +2646,203 @@ body {
     font-size: 0.75rem;
     min-width: 44px;
     min-height: 44px;
+  }
+}
+/* Requirements Section */
+.requirements-section {
+  padding: 6rem 5%;
+  background-color: var(--light-gray);
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
+.requirements-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.requirements-header {
+  margin-bottom: 3rem;
+}
+
+.requirements-title {
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.requirements-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-yellow);
+  border-radius: 2px;
+}
+
+.requirements-subtitle {
+  font-family: var(--font-family);
+  font-size: 1.2rem;
+  color: var(--dark-black);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.requirements-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.requirements-list {
+  list-style: none;
+  font-family: var(--font-family);
+  font-size: 1.1rem;
+  color: var(--dark-black);
+  line-height: 2;
+  text-align: right; /* For Arabic */
+}
+
+[dir="ltr"] .requirements-list {
+  text-align: left; /* For English */
+}
+
+.requirements-list li {
+  position: relative;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+[dir="ltr"] .requirements-list li {
+  padding-right: 0;
+  padding-left: 2rem;
+}
+
+.requirements-list li::before {
+  content: "✔";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-blue);
+  font-size: 1.2rem;
+}
+
+[dir="ltr"] .requirements-list li::before {
+  right: auto;
+  left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .requirements-section {
+    padding: 4rem 3%;
+    min-height: auto;
+  }
+
+  .requirements-title {
+    font-size: 2rem;
+  }
+
+  .requirements-subtitle {
+    font-size: 1rem;
+  }
+
+  .requirements-list {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .requirements-section {
+    padding: 3rem 3%;
+  }
+
+  .requirements-title {
+    font-size: 1.8rem;
+  }
+
+  .requirements-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .requirements-list {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .requirements-list li {
+    padding-right: 1.5rem;
+  }
+
+  [dir="ltr"] .requirements-list li {
+    padding-left: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .requirements-section {
+    padding: 2rem 2%;
+  }
+
+  .requirements-title {
+    font-size: 1.5rem;
+  }
+
+  .requirements-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .requirements-list {
+    font-size: 0.9rem;
+  }
+
+  .requirements-list li {
+    padding-right: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  [dir="ltr"] .requirements-list li {
+    padding-left: 1.2rem;
+  }
+}
+
+@media (max-width: 359px) {
+  .requirements-section {
+    padding: 1.5rem 1.5%;
+  }
+
+  .requirements-title {
+    font-size: 1.3rem;
+  }
+
+  .requirements-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .requirements-list {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .requirements-list li {
+    padding-right: 1rem;
+  }
+
+  [dir="ltr"] .requirements-list li {
+    padding-left: 1rem;
+  }
+
+  .requirements-list li::before {
+    font-size: 1rem;
   }
 }
