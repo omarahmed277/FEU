@@ -980,6 +980,256 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 1280px) {
+  /* General Container Adjustments */
+  body {
+    font-size: 16px; /* Maintain readable font size */
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 0.8rem 2.5%;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .logo img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-links li {
+    margin-right: 1.2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+  }
+
+  .nav-cta {
+    padding: 0.5rem 1.1rem !important;
+    font-size: 0.9rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 7rem 2.5% 3rem;
+    min-height: 90vh;
+  }
+
+  .hero-container {
+    max-width: 1200px;
+    gap: 8%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .hero-image-container {
+    width: 48%;
+    gap: 12px;
+    margin-bottom: -126px;
+    margin-right: -45px;
+  }
+
+  .hero-image {
+    width: 100%;
+    right: 200px;
+    margin-top: 110px;
+  }
+
+  .hero-image-woman {
+    width: 82%;
+    margin-top: 20px;
+  }
+
+  .hero-content {
+    width: 50%;
+    margin-top: 45px;
+    margin-right: 76px;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+    width: 100%;
+  }
+
+  .hero-description {
+    font-size: 1.15rem;
+    width: 95%;
+  }
+
+  .cta-button {
+    font-size: 1.3rem;
+    padding: 0.5rem 1.9rem;
+  }
+
+  .changing-text {
+    min-width: 290px;
+  }
+
+  /* About Challenge Section */
+  .about-challenge {
+    padding: 5rem 3%;
+    min-height: 85vh;
+  }
+
+  .about-container {
+    max-width: 1200px;
+    gap: 2.8rem;
+  }
+
+  .about-image-container {
+    width: 48%;
+  }
+
+  .about-content {
+    width: 52%;
+  }
+
+  .about-title {
+    font-size: 2.3rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.35rem;
+  }
+
+  .about-description {
+    font-size: 1.15rem;
+  }
+
+  .about-cta {
+    font-size: 1.05rem;
+    padding: 0.95rem 2.2rem;
+  }
+
+  /* Timeline Challenge Section */
+  .timeline-challenge {
+    padding: 5rem 3%;
+    min-height: 85vh;
+  }
+
+  .timeline-container {
+    max-width: 1200px;
+  }
+
+  .about-title2 {
+    font-size: 2.3rem;
+  }
+
+  .timeline {
+    height: 420px;
+  }
+
+  .milestone-content {
+    width: 260px;
+    padding: 18px;
+  }
+
+  .milestone-content:hover {
+    width: 380px;
+    padding: 28px;
+  }
+
+  /* Partners Section */
+  .partners-section {
+    padding: 5rem 3%;
+    min-height: 85vh;
+  }
+
+  .partners-container {
+    max-width: 1200px;
+  }
+
+  .partners-header h1 {
+    font-size: 2.3rem;
+  }
+
+  .partners-header p {
+    font-size: 1.15rem;
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+  }
+
+  .partner-item {
+    padding: 1.8rem;
+  }
+
+  .partner-logo {
+    max-width: 140px;
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    padding: 5rem 3%;
+    min-height: 85vh;
+  }
+
+  .faq-container {
+    max-width: 1200px;
+  }
+
+  .faq-header h1 {
+    font-size: 2.3rem;
+  }
+
+  .faq-header p {
+    font-size: 1.15rem;
+  }
+
+  .faq-group h2 {
+    font-size: 1.7rem;
+  }
+
+  .faq-question h3 {
+    font-size: 1.05rem;
+  }
+
+  /* Requirements Section */
+  .requirements-section {
+    padding: 5rem 3%;
+    min-height: 45vh;
+  }
+
+  .requirements-container {
+    max-width: 1200px;
+    padding: 35px;
+  }
+
+  .requirements-title {
+    font-size: 2.3rem;
+  }
+
+  .requirements-list {
+    font-size: 1.05rem;
+    gap: 1.2rem;
+  }
+
+  .requirement-item {
+    padding: 1.3rem;
+  }
+
+  .requirement-item img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .language-toggle {
+    bottom: 15px;
+    left: 15px;
+    padding: 0.4rem;
+  }
+
+  .language-toggle button {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}
 @media (max-width: 1180px) {
   .navbar {
     padding: 0.6rem 2%;
@@ -2133,7 +2383,7 @@ body {
   }
 
   .hero-title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.3;
     flex-wrap: wrap;
     display: flex;
@@ -2651,7 +2901,7 @@ body {
 /* Requirements Section */
 .requirements-section {
   padding: 6rem 5%;
-  background-color: var(--light-gray);
+  background-color: #f5f5f5;
   position: relative;
   min-height: 50vh;
   display: flex;
@@ -2663,83 +2913,70 @@ body {
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
+  background-color: white;
+  padding: 42px;
+  border-radius: 24px;
 }
 
 .requirements-header {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .requirements-title {
-  font-family: var(--heading-font);
+  font-family: "Tajawal", sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--primary-blue);
-  position: relative;
+  text-align: start;
+  color: #333;
   margin-bottom: 1rem;
 }
 
-.requirements-title::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background-color: var(--primary-yellow);
-  border-radius: 2px;
-}
-
-.requirements-subtitle {
-  font-family: var(--font-family);
-  font-size: 1.2rem;
-  color: var(--dark-black);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 .requirements-content {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .requirements-list {
-  list-style: none;
-  font-family: var(--font-family);
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  font-family: "Tajawal", sans-serif;
   font-size: 1.1rem;
-  color: var(--dark-black);
-  line-height: 2;
-  text-align: right; /* For Arabic */
+  color: #333;
 }
 
-[dir="ltr"] .requirements-list {
-  text-align: left; /* For English */
+.requirement-item {
+  width: -2%;
+  flex: 1;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  background-image: url("https://www.transparenttextures.com/patterns/light-paper-fibers.png");
 }
 
-.requirements-list li {
-  position: relative;
-  padding-right: 2rem;
+.requirement-item img {
+  width: 50px;
+  height: 50px;
   margin-bottom: 1rem;
 }
 
-[dir="ltr"] .requirements-list li {
-  padding-right: 0;
-  padding-left: 2rem;
-}
-
-.requirements-list li::before {
-  content: "✔";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.requirement-item p {
   color: var(--primary-blue);
-  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.5;
+  font-family: var(--heading-font);
 }
 
-[dir="ltr"] .requirements-list li::before {
-  right: auto;
-  left: 0;
+/* Right-to-left for Arabic */
+.requirements-list.arabic {
+  direction: rtl;
+}
+
+/* Left-to-right for English */
+[dir="ltr"] .requirements-list {
+  direction: ltr;
 }
 
 /* Responsive Design */
@@ -2753,69 +2990,15 @@ body {
     font-size: 2rem;
   }
 
-  .requirements-subtitle {
-    font-size: 1rem;
+  .requirements-list {
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .requirements-list {
-    font-size: 1rem;
+  .requirement-item {
+    padding: 1.2rem;
   }
 }
-
-@media (max-width: 768px) {
-  .requirements-section {
-    padding: 3rem 3%;
-  }
-
-  .requirements-title {
-    font-size: 1.8rem;
-  }
-
-  .requirements-subtitle {
-    font-size: 0.9rem;
-  }
-
-  .requirements-list {
-    font-size: 0.95rem;
-    line-height: 1.8;
-  }
-
-  .requirements-list li {
-    padding-right: 1.5rem;
-  }
-
-  [dir="ltr"] .requirements-list li {
-    padding-left: 1.5rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .requirements-section {
-    padding: 2rem 2%;
-  }
-
-  .requirements-title {
-    font-size: 1.5rem;
-  }
-
-  .requirements-subtitle {
-    font-size: 0.85rem;
-  }
-
-  .requirements-list {
-    font-size: 0.9rem;
-  }
-
-  .requirements-list li {
-    padding-right: 1.2rem;
-    margin-bottom: 0.8rem;
-  }
-
-  [dir="ltr"] .requirements-list li {
-    padding-left: 1.2rem;
-  }
-}
-
 @media (max-width: 359px) {
   .requirements-section {
     padding: 1.5rem 1.5%;

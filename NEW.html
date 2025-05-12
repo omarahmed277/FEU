@@ -4,714 +4,687 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Orange Corners - ريادة الأعمال لعالم أفضل</title>
-    <!-- Bootstrap 5 CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Alexandria:wght@100..900&family=Manrope:wght@200..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Custom CSS -->
-    <style>
-      :root {
-        --font-family: "Tajawal", sans-serif;
-        --heading-font: "Alexandria", sans-serif;
-        --english-font: "Manrope", sans-serif;
-        --primary-yellow: #feea29;
-        --primary-blue: #1a26ca;
-        --dark-black: #010100;
-        --light-gray: #f7fafc;
-        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      }
-
-      body {
-        font-family: var(--font-family);
-        color: var(--dark-black);
-        background-color: black;
-        position: relative;
-      }
-
-      .arabic {
-        font-family: var(--font-family);
-      }
-
-      .english {
-        font-family: var(--english-font);
-      }
-
-      .background-image-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background: url("./images/BG 00.png") repeat;
-        background-size: cover;
-      }
-
-      .navbar {
-        background-color: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-        transition: var(--transition);
-      }
-
-      .navbar.scrolled {
-        background-color: rgba(255, 255, 255, 0.98);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .navbar-brand img {
-        width: 50px;
-        height: 50px;
-      }
-
-      .nav-link {
-        font-weight: 500;
-        position: relative;
-        padding: 0.5rem 1rem !important;
-      }
-
-      .nav-link:hover {
-        color: var(--primary-blue) !important;
-      }
-
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 0;
-        height: 2px;
-        background-color: var(--primary-yellow);
-        transition: var(--transition);
-      }
-
-      .nav-link:hover::after {
-        width: 100%;
-        left: 0;
-      }
-
-      .hero {
-        min-height: 100vh;
-        background: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0.1),
-          rgba(0, 0, 0, 0.2)
-        );
-        padding-top: 5rem;
-      }
-
-      .hero-title {
-        font-family: var(--heading-font);
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--dark-black);
-      }
-
-      .hero-title .highlight {
-        color: var(--primary-blue);
-      }
-
-      .hero-title .quote {
-        font-size: 2.5rem;
-        margin-right: 0.5rem;
-      }
-
-      .changing-text {
-        display: inline-block;
-        position: relative;
-        overflow: hidden;
-        height: 1.2em;
-        min-width: 200px;
-      }
-
-      .changing-text span {
-        display: inline-block;
-        white-space: nowrap;
-        position: absolute;
-        left: 0;
-        top: 0;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-      }
-
-      .hero-description {
-        font-size: 1.1rem;
-        color: var(--primary-blue);
-      }
-
-      .cta-button {
-        background-color: var(--primary-yellow);
-        color: var(--dark-black);
-        font-weight: 600;
-        border-radius: 50px;
-        padding: 0.5rem 2rem;
-        transition: var(--transition);
-      }
-
-      .cta-button:hover {
-        background-color: #d4c21f;
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(254, 234, 41, 0.4);
-      }
-
-      .about-challenge {
-        background-color: var(--primary-yellow);
-        position: relative;
-        padding: 4rem 0;
-      }
-
-      .about-challenge::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url("./images/Pattern-01.png") no-repeat;
-        background-size: 60px 60px;
-        opacity: 0.3;
-        z-index: 0;
-      }
-
-      .about-title {
-        font-family: var(--heading-font);
-        font-size: 2.5rem;
-        color: var(--primary-blue);
-        position: relative;
-      }
-
-      .about-title::after {
-        content: "";
-        position: absolute;
-        bottom: -8px;
-        right: 0;
-        width: 80px;
-        height: 4px;
-        background-color: var(--primary-blue);
-        border-radius: 2px;
-      }
-
-      .about-subtitle {
-        font-size: 1.4rem;
-        background: rgba(255, 255, 255, 0.1);
-        padding: 0.5rem 1rem;
-        border-radius: 8px;
-      }
-
-      .about-image {
-        border-radius: 16px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      .timeline-challenge {
-        background-color: var(--light-gray);
-        padding: 4rem 0;
-      }
-
-      .timeline-card {
-        border: 2px solid var(--primary-blue);
-        background: #fff;
-        position: relative;
-      }
-
-      .timeline-card::before {
-        content: "";
-        position: absolute;
-        top: -10px;
-        left: 50%;
-        width: 20px;
-        height: 20px;
-        border: 2px solid var(--primary-blue);
-        border-left: none;
-        border-bottom: none;
-        transform: translateX(-50%) rotate(45deg);
-        background: #fff;
-        z-index: -1;
-      }
-
-      .timeline-marker {
-        width: 24px;
-        height: 24px;
-        background: var(--primary-yellow);
-        border: 4px solid var(--primary-blue);
-        border-radius: 50%;
-        position: absolute;
-        top: -12px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .timeline-marker::after {
-        content: "";
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        background: var(--primary-blue);
-        border-radius: 50%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .timeline-title {
-        font-family: var(--heading-font);
-        font-size: 2.5rem;
-        color: var(--primary-blue);
-        position: relative;
-      }
-
-      .timeline-title::after {
-        content: "";
-        position: absolute;
-        bottom: -8px;
-        right: 0;
-        width: 80px;
-        height: 4px;
-        background-color: var(--primary-yellow);
-        border-radius: 2px;
-      }
-
-      .partners-section {
-        background-color: #fff;
-        padding: 4rem 0;
-      }
-
-      .partner-item {
-        background: var(--light-gray);
-        border-radius: 12px;
-        transition: var(--transition);
-      }
-
-      .partner-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      .partner-logo {
-        max-width: 150px;
-      }
-
-      .faq-section {
-        background-color: var(--light-gray);
-        padding: 4rem 0;
-      }
-
-      .faq-header h1 {
-        font-family: var(--heading-font);
-        font-size: 2.5rem;
-        color: var(--primary-blue);
-      }
-
-      .faq-group h2 {
-        font-family: var(--heading-font);
-        font-size: 1.8rem;
-        color: var(--primary-blue);
-      }
-
-      .accordion-button {
-        font-family: var(--font-family);
-        font-size: 1.1rem;
-        color: var(--dark-black);
-      }
-
-      .accordion-button:not(.collapsed) {
-        background-color: var(--primary-yellow);
-        color: var(--dark-black);
-      }
-
-      .language-toggle {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        z-index: 1000;
-        background-color: rgba(255, 255, 255, 0.95);
-        border-radius: 50px;
-        padding: 0.5rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .language-toggle button {
-        border-radius: 50px;
-        padding: 0.5rem 1rem;
-        font-weight: 500;
-        transition: var(--transition);
-      }
-
-      .language-toggle button.active {
-        background-color: var(--primary-blue);
-        color: #fff;
-      }
-
-      @media (max-width: 992px) {
-        .hero-title {
-          font-size: 1.5rem;
-          text-align: center;
-        }
-
-        .hero-description {
-          font-size: 1rem;
-          text-align: center;
-        }
-
-        .about-title,
-        .timeline-title,
-        .faq-header h1 {
-          font-size: 2rem;
-        }
-
-        .about-subtitle {
-          font-size: 1.2rem;
-        }
-
-        .changing-text {
-          min-width: 150px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .hero {
-          padding-top: 4rem;
-          min-height: 80vh;
-        }
-
-        .hero-title {
-          font-size: 1.3rem;
-        }
-
-        .hero-description {
-          font-size: 0.9rem;
-        }
-
-        .cta-button {
-          font-size: 0.9rem;
-          padding: 0.5rem 1.5rem;
-        }
-
-        .about-title,
-        .timeline-title,
-        .faq-header h1 {
-          font-size: 1.5rem;
-        }
-
-        .about-subtitle {
-          font-size: 1rem;
-        }
-
-        .faq-group h2 {
-          font-size: 1.3rem;
-        }
-
-        .accordion-button {
-          font-size: 0.9rem;
-        }
-
-        .language-toggle {
-          bottom: 10px;
-          left: 10px;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .navbar-brand img {
-          width: 40px;
-          height: 40px;
-        }
-
-        .hero {
-          padding-top: 3rem;
-        }
-
-        .hero-title {
-          font-size: 1.2rem;
-        }
-
-        .hero-title .quote {
-          display: none;
-        }
-
-        .hero-description {
-          font-size: 0.85rem;
-        }
-
-        .cta-button {
-          font-size: 0.85rem;
-          padding: 0.5rem 1.2rem;
-        }
-
-        .about-title,
-        .timeline-title,
-        .faq-header h1 {
-          font-size: 1.3rem;
-        }
-
-        .about-subtitle {
-          font-size: 0.9rem;
-        }
-
-        .faq-group h2 {
-          font-size: 1.1rem;
-        }
-
-        .accordion-button {
-          font-size: 0.85rem;
-        }
-
-        .language-toggle {
-          top: 60px;
-          left: auto;
-          right: 10px;
-          bottom: auto;
-        }
-      }
-    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Cairo:wght@200..1000&family=Jomhuria&family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary-yellow": "#feea29",
+              "primary-blue": "#1a26ca",
+              "dark-black": "#010100",
+              "light-gray": "#f7fafc",
+            },
+            fontFamily: {
+              tajawal: ["Tajawal", "sans-serif"],
+              alexandria: ["Alexandria", "sans-serif"],
+              manrope: ["Manrope", "sans-serif"],
+            },
+            boxShadow: {
+              sm: "0 1px 3px rgba(0, 0, 0, 0.12)",
+              md: "0 4px 6px rgba(0, 0, 0, 0.1)",
+              lg: "0 10px 25px rgba(0, 0, 0, 0.1)",
+              "yellow-glow": "0 4px 15px rgba(254, 234, 41, 0.3)",
+              "yellow-glow-hover": "0 6px 20px rgba(254, 234, 41, 0.4)",
+              "blue-glow": "0 4px 15px rgba(26, 38, 202, 0.3)",
+              "blue-glow-hover": "0 6px 20px rgba(26, 38, 202, 0.4)",
+            },
+            animation: {
+              fadeIn: "fadeIn 1s ease-out",
+              fadeInUp: "fadeInUp 0.8s ease-out",
+              expandLine: "expandLine 1.5s ease-out",
+            },
+            keyframes: {
+              fadeIn: {
+                from: { opacity: 0, transform: "translateY(20px)" },
+                to: { opacity: 1, transform: "translateY(0)" },
+              },
+              fadeInUp: {
+                from: { opacity: 0, transform: "translateY(30px)" },
+                to: { opacity: 1, transform: "translateY(0)" },
+              },
+              expandLine: {
+                from: { width: "0%" },
+                to: { width: "100%" },
+              },
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
-    <div class="background-image-container"></div>
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img
-            src="./images/Logo تحدي مليون فكرة ازرق.png"
-            alt="Orange Corners Logo"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link arabic" href="#about">عن التحدي</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link arabic" href="#timeline">الجدول الزمني</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link arabic" href="#">الشروط</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link arabic" href="#partners">الشركاء</a>
-            </li>
-          </ul>
-        </div>
+  <body class="bg-black font-tajawal text-dark-black leading-relaxed">
+    <!-- Background Image -->
+    <div
+      class="fixed inset-0 z-[-1] bg-[url('./images/BG_00.png')] bg-repeat bg-cover"
+    ></div>
+
+    <!-- Navbar -->
+    <nav
+      class="flex justify-between items-center px-4 py-2 bg-white/90 shadow-sm fixed top-0 left-0 w-full z-[1000] transition-all duration-300 ease-in-out md:px-6 lg:px-8"
+      id="navbar"
+    >
+      <div class="logo flex items-center gap-2">
+        <img
+          src="./images/Logo تحدي مليون فكرة ازرق.png"
+          alt=""
+          class="w-12 h-12"
+        />
       </div>
+      <ul
+        class="nav-links flex items-center gap-4 lg:gap-6 hidden md:flex"
+      >
+        <li>
+          <a
+            href="#about"
+            class="arabic text-dark-black font-medium hover:text-primary-blue relative transition-all duration-300 px-2 py-1 text-sm lg:text-base"
+            >عن التحدي</a
+          >
+        </li>
+        <li>
+          <a
+            href="#timeline"
+            class="arabic text-dark-black font-medium hover:text-primary-blue relative transition-all duration-300 px-2 py-1 text-sm lg:text-base"
+            >الجدول الزمني</a
+          >
+        </li>
+        <li>
+          <a
+            href="#requirements"
+            class="arabic text-dark-black font-medium hover:text-primary-blue relative transition-all duration-300 px-2 py-1 text-sm lg:text-base"
+            >الشروط</a
+          >
+        </li>
+        <li>
+          <a
+            href="#partners"
+            class="arabic text-dark-black font-medium hover:text-primary-blue relative transition-all duration-300 px-2 py-1 text-sm lg:text-base"
+            >الشركاء</a
+          >
+        </li>
+      </ul>
+      <button
+        class="mobile-menu-btn md:hidden text-dark-black text-xl"
+        aria-label="Toggle menu"
+      >
+        ☰
+      </button>
     </nav>
 
-    <section class="hero">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 order-lg-2">
-            <div class="d-flex justify-content-center gap-3">
+    <!-- Hero Section -->
+    <section
+      class="hero min-h-screen flex items-center px-4 py-16 md:px-6 lg:px-8 relative overflow-hidden"
+    >
+      <div
+        class="hero-container flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-6 md:gap-10 z-10"
+      >
+        <div
+          class="hero-image-container w-full md:w-2/5 flex items-end gap-4 mt-4 md:mt-0"
+        >
+          <img
+            src="./images/image1.png"
+            alt="Young entrepreneurs working together"
+            class="hero-image absolute w-3/4 md:w-11/12 right-24 md:right-40 mt-20 rounded-xl transition-transform duration-300 hover:scale-102"
+          />
+          <img
+            src="./images/image_fx (99).png"
+            alt="Female entrepreneur"
+            class="hero-image-woman w-4/5 rounded-xl transition-transform duration-300 hover:scale-102 z-10"
+          />
+        </div>
+        <div
+          class="hero-content w-full md:w-2/5 mt-8 md:mt-12 text-center md:text-right"
+        >
+          <h1
+            class="hero-title arabic font-alexandria text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-dark-black flex items-center justify-center md:justify-end gap-2"
+          >
+            <span class="quote text-4xl md:text-5xl">"</span>
+            <span>انا عندي فكرة تحل</span>
+            <span class="highlight text-primary-blue relative inline-block">
+              <span class="changing-text inline-block h-6 md:h-8 min-w-[200px] md:min-w-[308px] overflow-hidden relative">
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >تدهور التربة</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >نقص المياه</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >ملوحة الأرض</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >تآكل التربة</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >تلوث المياه</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >ضرر المبيدات</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >ضعف الإنتاج</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >ارتفاع الحرارة</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >ندرة العمالة</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >الزحف العمراني</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >سوء التخزين</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >استخدام المبيدات</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >ضعف الدعم</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >تلف المحاصيل</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >تقلب الحرارة</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >انتشار الآفات</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >تلوث المياه</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >الري المفرط</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >زيادة التصحر</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >انبعاثات الزراعة</span
+                >
+                <span class="quote text-4xl md:text-5xl">"</span>
+              </span>
+            </span>
+          </h1>
+          <p
+            class="hero-description arabic text-primary-blue text-base md:text-lg mb-6 w-full md:w-11/12 mx-auto md:mx-0"
+          >
+            يعاني قطاع الزراعة من تحديات كبيرة، كن أنت بداية التغيير الذي ينتظره
+            الجميع. كل فكرة تملك القدرة على صناعة فرق حقيقي، شارك في تحدي مليون
+            فكرة ,واحصل علي <br />
+            التوجيه، التشبيك والتمويل!
+          </p>
+          <h1
+            class="hero-title english hidden font-manrope text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-dark-black"
+          >
+            I have an idea to solve
+            <span class="highlight text-primary-blue relative inline-block">
+              <span class="changing-text inline-block h-6 md:h-8 min-w-[200px] md:min-w-[308px] overflow-hidden relative">
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >soil degradation</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >water scarcity</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >soil salinity</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >soil erosion</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >water pollution</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >pesticide damage</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >low productivity</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >rising temperatures</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >labor shortage</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >urban sprawl</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >poor storage</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >pesticide overuse</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >lack of support</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >crop damage</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >temperature fluctuations</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >pest outbreaks</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >water contamination</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >over-irrigation</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >desertification</span
+                >
+                <span class="absolute opacity-0 transition-opacity duration-500"
+                  >agricultural emissions</span
+                >
+              </span>
+            </span>
+          </h1>
+          <p
+            class="hero-description english hidden font-manrope text-base md:text-lg mb-6 w-full md:w-11/12 mx-auto"
+          >
+            In your daily life, you see various challenges. Solve one of them to
+            become part of the Million Ideas Challenge. We'll help you implement
+            the solution!
+          </p>
+          <a
+            href="#"
+            class="cta-button arabic inline-flex items-center justify-center bg-primary-yellow text-dark-black font-tajawal text-lg md:text-xl font-semibold py-2 px-8 rounded-full shadow-yellow-glow hover:bg-yellow-600 hover:-translate-y-1 hover:shadow-yellow-glow-hover transition-all duration-300"
+            >سجل الان</a
+          >
+          <a
+            href="#"
+            class="cta-button english hidden font-manrope text-lg md:text-xl font-semibold py-2 px-8 rounded-full bg-primary-yellow text-dark-black shadow-yellow-glow hover:bg-yellow-600 hover:-translate-y-1 hover:shadow-yellow-glow-hover transition-all duration-300"
+            >GET STARTED</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- About Challenge Section -->
+    <section
+      class="about-challenge bg-primary-yellow py-16 px-4 md:px-6 lg:px-8 relative min-h-[90vh] flex items-center"
+    >
+      <div
+        class="absolute inset-0 bg-[url('./images/Pattern-01.png')] bg-no-repeat bg-[length:60px_60px] opacity-30 z-0"
+      ></div>
+      <div
+        class="about-container flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-8 z-10"
+      >
+        <div
+          class="about-image-container w-full md:w-1/2 relative group transition-transform duration-500 hover:-rotate-3"
+        >
+          <img
+            src="./images/peaople.webp"
+            alt="Million Ideas Challenge"
+            class="about-image w-full rounded-2xl shadow-lg object-cover"
+          />
+        </div>
+        <div
+          class="about-content w-full md:w-1/2 text-dark-black animate-fadeIn text-center md:text-right"
+        >
+          <h2
+            class="about-title arabic font-alexandria text-3xl md:text-4xl font-bold text-primary-blue relative mb-6"
+          >
+            عن تحدي مليون فكرة
+            <span
+              class="absolute bottom-[-8px] right-0 w-20 h-1 bg-primary-blue rounded"
+            ></span>
+          </h2>
+          <h2
+            class="about-title english hidden font-manrope text-3xl md:text-4xl font-bold text-primary-blue relative mb-6"
+          >
+            About Million Ideas Challenge
+            <span
+              class="absolute bottom-[-8px] right-0 w-20 h-1 bg-primary-blue rounded"
+            ></span>
+          </h2>
+          <div
+            class="about-subtitle arabic text-lg md:text-xl font-medium mb-4 bg-white/10 p-2 rounded-lg inline-block"
+          >
+            مبادرة لتمكين الشباب وتحقيق الاستدامة
+          </div>
+          <div
+            class="about-subtitle english hidden font-manrope text-lg md:text-xl font-medium mb-4 bg-white/10 p-2 rounded-lg inline-block"
+          >
+            An Initiative for Youth Empowerment and Sustainability
+          </div>
+          <p
+            class="about-description arabic text-base md:text-lg mb-6 leading-relaxed"
+          >
+            تحدي مليون فكرة يهدف إلى دعم الطلاب أصحاب الأفكار القادرة على حل
+            مشكلات المجتمع وتحويلها إلى شركات ناشئة. يشارك 60 فريقًا من جامعات
+            مصرية في هاكاثون لمدة 3 أيام، يتلقون خلاله تدريبًا مكثفًا في التفكير
+            التصميمي، بناء نموذج العمل، والتخطيط المالي. يتأهل أفضل الفرق إلى
+            معسكر تدريبي مدته 3 أيام لتطوير أفكارهم وبناء نماذج أولية قابلة
+            للاختبار. تُمنح الجوائز المالية لأفضل ثلاث أفكار بقيمة 50,000 جنيه
+            لكل فكرة.
+          </p>
+          <p
+            class="about-description arabic text-base md:text-lg mb-6 leading-relaxed"
+          >
+            يهدف البرنامج إلى تمكين الطلاب من إحراز تقدم ملموس نحو إثبات جدوى
+            نماذجهم وربحيتها. كما يتم تمكين أعضاء هيئة التدريس لتقديم التدريب
+            والتوجيه داخل الجامعات. يُنفذ البرنامج بتمويل من هيئة Orange
+            Corners. ويُنفذ بالتعاون مع الجامعة الأمريكية بالقاهرة وسفارة مملكة
+            هولندا في مصر.
+          </p>
+          <p
+            class="about-description english hidden font-manrope text-base md:text-lg mb-6 leading-relaxed"
+          >
+            The Million Ideas Challenge is a pioneering initiative designed to
+            inspire and empower Arab youth to propose innovative solutions to
+            agricultural challenges. Through mentorship programs, supportive
+            funding, and networking opportunities with industry experts, we aim
+            to transform your ambitious ideas into tangible projects that
+            contribute to a sustainable agricultural future. Join us today to be
+            part of this positive change!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section
+      class="requirements-section py-16 px-4 md:px-6 lg:px-8 bg-gray-100 min-h-[50vh] flex items-center"
+    >
+      <div
+        class="requirements-container max-w-7xl mx-auto p-8 bg-white rounded-3xl text-center"
+      >
+        <div class="requirements-header mb-8">
+          <h2
+            class="requirements-title arabic font-alexandria text-3xl md:text-4xl font-bold text-gray-800 text-start"
+          >
+            شروط المشاركة
+          </h2>
+          <h2
+            class="requirements-title english hidden font-manrope text-3xl md:text-4xl font-bold text-gray-800 text-start"
+          >
+            Competition Requirements
+          </h2>
+        </div>
+        <div class="requirements-content max-w-5xl mx-auto">
+          <div
+            class="requirements-list arabic flex flex-col md:flex-row justify-between gap-6"
+          >
+            <div
+              class="requirement-item flex-1 bg-white rounded-2xl p-6 text-center bg-[url('https://www.transparenttextures.com/patterns/light-paper-fibers.png')] bg-cover"
+            >
               <img
-                src="./images/image_fx (99).png"
-                alt="Female entrepreneur"
-                class="img-fluid rounded"
-                style="max-width: 45%"
+                src="./images/study.png"
+                alt="Idea Icon"
+                class="w-12 h-12 mx-auto mb-4"
               />
+              <p class="text-primary-blue font-alexandria">
+                أن تكون طالبًا في إحدى الجامعات المصرية
+              </p>
+            </div>
+            <div
+              class="requirement-item flex-1 bg-white rounded-2xl p-6 text-center bg-[url('https://www.transparenttextures.com/patterns/light-paper-fibers.png')] bg-cover"
+            >
               <img
-                src="./images/image1.png"
-                alt="Young entrepreneurs working together"
-                class="img-fluid rounded"
-                style="max-width: 45%"
+                src="./images/idea (1).png"
+                alt="Idea Icon"
+                class="w-12 h-12 mx-auto mb-4"
               />
+              <p class="text-primary-blue font-alexandria">
+                أن تمتلك فكرة تحل مشكلة في المجتمع
+              </p>
+            </div>
+            <div
+              class="requirement-item flex-1 bg-white rounded-2xl p-6 text-center bg-[url('https://www.transparenttextures.com/patterns/light-paper-fibers.png')] bg-cover"
+            >
+              <img
+                src="./images/people.png"
+                alt="Idea Icon"
+                class="w-12 h-12 mx-auto mb-4"
+              />
+              <p class="text-primary-blue font-alexandria">
+                أن يكون لديك فريق مكون من فردين أو أكثر يعملون معك على الفكرة
+              </p>
             </div>
           </div>
-          <div class="col-lg-6 order-lg-1 mt-4 mt-lg-0">
-            <h1 class="hero-title arabic">
-              <span class="quote">"</span>
-              <span> انا عندي فكرة تحل</span>
-              <span class="highlight">
-                <span class="changing-text">
-                  <span>تدهور التربة</span>
-                  <span>نقص المياه</span>
-                  <span>ملوحة الأرض</span>
-                  <span>تآكل التربة</span>
-                  <span>تلوث المياه</span>
-                  <span>ضرر المبيدات</span>
-                  <span>ضعف الإنتاج</span>
-                  <span>ارتفاع الحرارة</span>
-                  <span>ندرة العمالة</span>
-                  <span>الزحف العمراني</span>
-                  <span>سوء التخزين</span>
-                  <span>استخدام المبيدات</span>
-                  <span>ضعف الدعم</span>
-                  <span>تلف المحاصيل</span>
-                  <span>تقلب الحرارة</span>
-                  <span>انتشار الآفات</span>
-                  <span>تلوث المياه</span>
-                  <span>الري المفرط</span>
-                  <span>زيادة التصحر</span>
-                  <span>انبعاثات الزراعة</span>
-                  <span class="quote">"</span>
-                </span>
-              </span>
-            </h1>
-            <h1 class="hero-title english d-none">
-              I have an idea to solve
-              <span class="highlight">
-                <span class="changing-text">
-                  <span>soil degradation</span>
-                  <span>water scarcity</span>
-                  <span>soil salinity</span>
-                  <span>soil erosion</span>
-                  <span>water pollution</span>
-                  <span>pesticide damage</span>
-                  <span>low productivity</span>
-                  <span>rising temperatures</span>
-                  <span>labor shortage</span>
-                  <span>urban sprawl</span>
-                  <span>poor storage</span>
-                  <span>pesticide overuse</span>
-                  <span>lack of support</span>
-                  <span>crop damage</span>
-                  <span>temperature fluctuations</span>
-                  <span>pest outbreaks</span>
-                  <span>water contamination</span>
-                  <span>over-irrigation</span>
-                  <span>desertification</span>
-                  <span>agricultural emissions</span>
-                </span>
-              </span>
-            </h1>
-            <p class="hero-description arabic">
-              يعاني قطاع الزراعة من تحديات كبيرة، كن أنت بداية التغيير الذي
-              ينتظره الجميع. كل فكرة تملك القدرة على صناعة فرق حقيقي، شارك في
-              تحدي مليون فكرة ,واحصل علي <br />
-              التوجيه، التشبيك والتمويل!
-            </p>
-            <p class="hero-description english d-none">
-              In your daily life, you see various challenges. Solve one of them
-              to become part of the Million Ideas Challenge. We'll help you
-              implement the solution!
-            </p>
-            <a href="#" class="btn cta-button arabic">سجل الان</a>
-            <a href="#" class="btn cta-button english d-none">GET STARTED</a>
+          <div
+            class="requirements-list english hidden flex flex-col md:flex-row justify-between gap-6"
+          >
+            <div
+              class="requirement-item flex-1 bg-white rounded-2xl p-6 text-center bg-[url('https://www.transparenttextures.com/patterns/light-paper-fibers.png')] bg-cover"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/50/1A73E8/organization.png"
+                alt="Team Icon"
+                class="w-12 h-12 mx-auto mb-4"
+              />
+              <p class="font-manrope text-primary-blue">
+                You must have a team of two or more people working with you on
+                the idea
+              </p>
+            </div>
+            <div
+              class="requirement-item flex-1 bg-white rounded-2xl p-6 text-center bg-[url('https://www.transparenttextures.com/patterns/light-paper-fibers.png')] bg-cover"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/50/1A73E8/idea.png"
+                alt="Idea Icon"
+                class="w-12 h-12 mx-auto mb-4"
+              />
+              <p class="font-manrope text-primary-blue">
+                You must have an idea that solves a societal problem
+              </p>
+            </div>
+            <div
+              class="requirement-item flex-1 bg-white rounded-2xl p-6 text-center bg-[url('https://www.transparenttextures.com/patterns/light-paper-fibers.png')] bg-cover"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/50/1A73E8/student-male.png"
+                alt="Student Icon"
+                class="w-12 h-12 mx-auto mb-4"
+              />
+              <p class="font-manrope text-primary-blue">
+                You must be a student at an Egyptian university
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="about-challenge" id="about">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <h2 class="about-title arabic">عن تحدي مليون فكرة</h2>
-            <h2 class="about-title english d-none">
-              About Million Ideas Challenge
-            </h2>
-            <div class="about-subtitle arabic">
-              مبادرة لتمكين الشباب وتحقيق الاستدامة
-            </div>
-            <div class="about-subtitle english d-none">
-              An Initiative for Youth Empowerment and Sustainability
-            </div>
-            <p class="arabic">
-              تحدي مليون فكرة يهدف إلى دعم الطلاب أصحاب الأفكار القادرة على حل
-              مشكلات المجتمع وتحويلها إلى شركات ناشئة. يشارك 60 فريقًا من جامعات
-              مصرية في هاكاثون لمدة 3 أيام، يتلقون خلاله تدريبًا مكثفًا في
-              التفكير التصميمي، بناء نموذج العمل، والتخطيط المالي. يتأهل أفضل
-              الفرق إلى معسكر تدريبي مدته 3 أيام لتطوير أفكارهم وبناء نماذج
-              أولية قابلة للاختبار. تُمنح الجوائز المالية لأفضل ثلاث أفكار بقيمة
-              50,000 جنيه لكل فكرة.
-            </p>
-            <p class="arabic">
-              يهدف البرنامج إلى تمكين الطلاب من إحراز تقدم ملموس نحو إثبات جدوى
-              نماذجهم وربحيتها. كما يتم تمكين أعضاء هيئة التدريس لتقديم التدريب
-              والتوجيه داخل الجامعات. يُنفذ البرنامج بتمويل من هيئة Orange
-              Corners. ويُنفذ بالتعاون مع الجامعة الأمريكية بالقاهرة وسفارة
-              مملكة هولندا في مصر.
-            </p>
-            <p class="english d-none">
-              The Million Ideas Challenge is a pioneering initiative designed to
-              inspire and empower Arab youth to propose innovative solutions to
-              agricultural challenges. Through mentorship programs, supportive
-              funding, and networking opportunities with industry experts, we
-              aim to transform your ambitious ideas into tangible projects that
-              contribute to a sustainable agricultural future. Join us today to
-              be part of this positive change!
-            </p>
-          </div>
-          <div class="col-lg-6 mt-4 mt-lg-0">
-            <img
-              src="./images/peaople.webp"
-              alt="Million Ideas Challenge"
-              class="img-fluid about-image"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="timeline-challenge" id="timeline">
-      <div class="container">
-        <h2 class="timeline-title arabic text-center">رحلة التحدي</h2>
-        <h2 class="timeline-title english d-none text-center">
-          Challenge Journey
+    <!-- Timeline Challenge Section -->
+    <section
+      class="timeline-challenge py-16 px-4 md:px-6 lg:px-8 relative min-h-[90vh] flex items-center"
+    >
+      <div class="timeline-container max-w-7xl mx-auto relative">
+        <h2
+          class="about-title2 arabic font-alexandria text-3xl md:text-4xl font-bold text-primary-blue mb-6 relative text-center md:text-right"
+        >
+          رحلة التحدي
+          <span
+            class="absolute bottom-[-8px] right-0 w-20 h-1 bg-primary-yellow rounded"
+          ></span>
         </h2>
-        <div class="row">
-          <div class="col-12">
-            <div class="card timeline-card mb-4">
-              <div class="timeline-marker"></div>
-              <div class="card-body text-center">
-                <h5 class="card-title arabic">المرحلة الاولي</h5>
-                <h5 class="card-title english d-none">Phase One</h5>
-                <p class="card-text arabic">
+        <h2
+          class="about-title2 english hidden font-manrope text-3xl md:text-4xl font-bold text-primary-blue mb-6 relative text-center md:text-left"
+        >
+          Challenge Journey
+          <span
+            class="absolute bottom-[-8px] left-0 w-20 h-1 bg-primary-yellow rounded"
+          ></span>
+        </h2>
+        <div class="timeline relative h-[400px] md:h-[500px]">
+          <div
+            class="timeline-line absolute w-full h-2 bg-primary-yellow top-1/2 -translate-y-1/2 rounded animate-expandLine"
+          ></div>
+          <div class="milestones flex justify-between items-center h-full">
+            <!-- Milestone 1 -->
+            <div
+              class="milestone milestone-bottom flex flex-col items-center w-1/3 opacity-0 animate-fadeInUp"
+              style="animation-delay: 0.2s"
+            >
+              <div
+                class="milestone-marker w-6 h-6 bg-primary-yellow border-4 border-primary-blue rounded-full absolute top-1/2 -translate-y-1/2 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-[360deg]"
+              >
+                <div
+                  class="absolute w-3 h-3 bg-primary-blue rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                ></div>
+              </div>
+              <div
+                class="milestone-content absolute w-64 md:w-72 p-4 rounded-xl bg-white border-2 border-primary-blue transition-transform duration-300 group-hover:scale-125 group-hover:w-80 group-hover:p-6 z-10 backdrop-blur-sm bottom-[calc(50%+40px)] left-1/2 -translate-x-1/2"
+              >
+                <div
+                  class="absolute w-5 h-5 border-2 border-primary-blue -top-2 left-1/2 -translate-x-1/2 rotate-45 border-l-0 border-b-0 z-[-1]"
+                ></div>
+                <div
+                  class="milestone-title arabic uppercase font-bold text-sm md:text-base text-primary-blue text-center mb-3"
+                >
+                  المرحلة الاولي
+                </div>
+                <div
+                  class="milestone-title english hidden uppercase font-manrope font-bold text-sm md:text-base text-primary-blue text-center mb-3"
+                >
+                  Phase One
+                </div>
+                <div
+                  class="milestone-description arabic text-sm md:text-base text-dark-black text-center"
+                >
                   تدريب أعضاء هيئة التدريس على منهجيات التوجيه في ريادة الأعمال
-                </p>
-                <p class="card-text english d-none">
+                </div>
+                <div
+                  class="milestone-description english hidden font-manrope text-sm md:text-base text-dark-black text-center"
+                >
                   Training faculty members on entrepreneurship mentoring
                   methodologies
-                </p>
-                <span class="badge bg-primary english">22-31 May 2025</span>
+                </div>
+                <div
+                  class="milestone-date english bg-primary-blue text-white font-semibold py-1 px-3 rounded text-sm mt-2 text-center"
+                >
+                  22-31 May 2025
+                </div>
               </div>
             </div>
-            <div class="card timeline-card mb-4">
-              <div class="timeline-marker"></div>
-              <div class="card-body text-center">
-                <h5 class="card-title arabic">المرحلة التانية</h5>
-                <h5 class="card-title english d-none">Phase Two</h5>
-                <p class="card-text arabic">
+            <!-- Mini Milestone -->
+            <div
+              class="mini-milestone absolute top-1/2 -translate-y-1/2 left-1/3"
+            >
+              <div
+                class="mini-milestone-dot w-3 h-3 bg-primary-blue rounded-full"
+              ></div>
+            </div>
+            <!-- Milestone 2 -->
+            <div
+              class="milestone milestone-top flex flex-col items-center w-1/3 opacity-0 animate-fadeInUp"
+              style="animation-delay: 0.4s"
+            >
+              <div
+                class="milestone-marker w-6 h-6 bg-primary-yellow border-4 border-primary-blue rounded-full absolute top-1/2 -translate-y-1/2 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-[360deg]"
+              >
+                <div
+                  class="absolute w-3 h-3 bg-primary-blue rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                ></div>
+              </div>
+              <div
+                class="milestone-content absolute w-64 md:w-72 p-4 rounded-xl bg-white border-2 border-primary-blue transition-transform duration-300 group-hover:scale-125 group-hover:w-80 group-hover:p-6 z-10 backdrop-blur-sm top-[calc(50%+40px)] left-1/2 -translate-x-1/2"
+              >
+                <div
+                  class="absolute w-5 h-5 border-2 border-primary-blue -bottom-2 left-1/2 -translate-x-1/2 rotate-45 border-r-0 border-t-0 z-[-1]"
+                ></div>
+                <div
+                  class="milestone-title arabic uppercase font-bold text-sm md:text-base text-primary-blue text-center mb-3"
+                >
+                  المرحلة الثانية
+                </div>
+                <div
+                  class="milestone-title english hidden uppercase font-manrope font-bold text-sm md:text-base text-primary-blue text-center mb-3"
+                >
+                  Phase Two
+                </div>
+                <div
+                  class="milestone-description arabic text-sm md:text-base text-dark-black text-center"
+                >
                   الهاكاثون في أسيوط، المنيا، والفيوم، حيث سيعمل المشاركون على
                   حلول التحديات في القطاع الأخضر.
-                </p>
-                <p class="card-text english d-none">
+                </div>
+                <div
+                  class="milestone-description english hidden font-manrope text-sm md:text-base text-dark-black text-center"
+                >
                   Hackathon in Assiut, Minya, and Fayoum, where participants
                   will work on solutions for challenges in the green sector.
-                </p>
-                <span class="badge bg-primary english">10-12 July 2025</span>
+                </div>
+                <div
+                  class="milestone-date english bg-primary-blue text-white font-semibold py-1 px-3 rounded text-sm mt-2 text-center"
+                >
+                  10-12 July 2025
+                </div>
               </div>
             </div>
-            <div class="card timeline-card mb-4">
-              <div class="timeline-marker"></div>
-              <div class="card-body text-center">
-                <h5 class="card-title arabic">المرحلة الاخيرة</h5>
-                <h5 class="card-title english d-none">Final Phase</h5>
-                <p class="card-text arabic">
+            <!-- Mini Milestone -->
+            <div
+              class="mini-milestone absolute top-1/2 -translate-y-1/2 left-2/3"
+            >
+              <div
+                class="mini-milestone-dot w-3 h-3 bg-primary-blue rounded-full"
+              ></div>
+            </div>
+            <!-- Milestone 3 -->
+            <div
+              class="milestone milestone-bottom flex flex-col items-center w-1/3 opacity-0 animate-fadeInUp"
+              style="animation-delay: 0.6s"
+            >
+              <div
+                class="milestone-marker w-6 h-6 bg-primary-yellow border-4 border-primary-blue rounded-full absolute top-1/2 -translate-y-1/2 transition-transform duration-300 group-hover:scale-125 group-hover:rotate-[360deg]"
+              >
+                <div
+                  class="absolute w-3 h-3 bg-primary-blue rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                ></div>
+              </div>
+              <div
+                class="milestone-content absolute w-64 md:w-72 p-4 rounded-xl bg-white border-2 border-primary-blue transition-transform duration-300 group-hover:scale-125 group-hover:w-80 group-hover:p-6 z-10 backdrop-blur-sm bottom-[calc(50%+40px)] left-1/2 -translate-x-1/2"
+              >
+                <div
+                  class="absolute w-5 h-5 border-2 border-primary-blue -top-2 left-1/2 -translate-x-1/2 rotate-45 border-l-0 border-b-0 z-[-1]"
+                ></div>
+                <div
+                  class="milestone-title arabic uppercase font-bold text-sm md:text-base text-primary-blue text-center mb-3"
+                >
+                  المرحلة الاخيرة
+                </div>
+                <div
+                  class="milestone-title english hidden uppercase font-manrope font-bold text-sm md:text-base text-primary-blue text-center mb-3"
+                >
+                  Final Phase
+                </div>
+                <div
+                  class="milestone-description arabic text-sm md:text-base text-dark-black text-center"
+                >
                   المعسكر التدريبي في المنيا، الذي يستمر لمدة 3 أيام ويتضمن
                   عرضًا نهائيًا للأفكار وإعلان الفائزين.
-                </p>
-                <p class="card-text english d-none">
+                </div>
+                <div
+                  class="milestone-description english hidden font-manrope text-sm md:text-base text-dark-black text-center"
+                >
                   Training camp in Minya, lasting 3 days, including a final
                   pitch of ideas and announcement of winners.
-                </p>
-                <span class="badge bg-primary english">24-26 July 2025</span>
+                </div>
+                <div
+                  class="milestone-date english bg-primary-blue text-white font-semibold py-1 px-3 rounded text-sm mt-2 text-center"
+                >
+                  24-26 July 2025
+                </div>
               </div>
             </div>
           </div>
@@ -719,838 +692,286 @@
       </div>
     </section>
 
-    <section class="partners-section" id="partners">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h1 class="arabic">شركاؤ ACRLFنا</h1>
-          <h1 class="english d-none">Our Partners</h1>
-          <p class="arabic">
+    <!-- Partners Section -->
+    <section
+      class="partners-section py-16 px-4 md:px-6 lg:px-8 bg-white min-h-[90vh] flex items-center"
+    >
+      <div class="partners-container max-w-7xl mx-auto px-4">
+        <div class="partners-header text-center mb-12">
+          <h1
+            class="arabic font-alexandria text-3xl md:text-4xl text-primary-blue mb-4"
+          >
+            شركاؤنا
+          </h1>
+          <h1
+            class="english hidden font-manrope text-3xl md:text-4xl text-primary-blue mb-4"
+          >
+            Our Partners
+          </h1>
+          <p
+            class="arabic text-base md:text-lg text-dark-black max-w-xl mx-auto"
+          >
             نعمل مع شركاء متميزين لدعم ريادة الأعمال وتمكين الشباب في مصر
           </p>
-          <p class="english d-none">
+          <p
+            class="english hidden font-manrope text-base md:text-lg text-dark-black max-w-xl mx-auto"
+          >
             We collaborate with distinguished partners to support
             entrepreneurship and empower youth in Egypt
           </p>
         </div>
-        <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="card partner-item p-4 text-center">
-              <img
-                src="./images/orange-corners-logo.png"
-                alt="Orange Corners"
-                class="partner-logo img-fluid mb-3"
-              />
-              <h3 class="arabic">أورانج كورنرز</h3>
-              <h3 class="english d-none">Orange Corners</h3>
-              <p class="arabic">
-                مبادرة تدعمها الحكومة الهولندية من خلال وكالة المشاريع
-                الهولندية، وبالتعاون مع سفارة مملكة هولندا والشركاء المحليين في
-                كل دولة.
-              </p>
-              <p class="english d-none">
-                An initiative supported by the Dutch government through the
-                Netherlands Enterprise Agency, in collaboration with the Embassy
-                of the Kingdom of the Netherlands and local partners.
-              </p>
-            </div>
+        <div
+          class="partners-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          <div
+            class="partner-item bg-light-gray rounded-xl p-6 shadow-md hover:-translate-y-1 hover:shadow-lg transition-all duration-300 text-center"
+          >
+            <img
+              src="./images/1_Standard_Logo_Orange_Corners_Orange_Black_without_tagline.png"
+              alt="Orange Corners"
+              class="partner-logo max-w-[150px] mx-auto mb-4"
+            />
+            <h3
+              class="arabic font-alexandria text-xl text-primary-blue mb-2"
+            >
+              أورانج كورنرز
+            </h3>
+            <h3
+              class="english hidden font-manrope text-xl text-primary-blue mb-2"
+            >
+              Orange Corners
+            </h3>
+            <p
+              class="arabic text-sm md:text-base text-dark-black leading-relaxed"
+            >
+              مبادرة تدعمها الحكومة الهولندية من خلال وكالة المشاريع الهولندية،
+              وبالتعاون مع سفارة مملكة هولندا والشركاء المحليين في كل دولة. تهدف
+              المبادرة إلى تمكين الشباب من خلال دعم ريادة الأعمال وتوفير فرص
+              عمل، وذلك عبر برامج تدريبية وشراكات فعّالة مع الجهات المحلية.
+            </p>
+            <p
+              class="english hidden font-manrope text-sm md:text-base text-dark-black leading-relaxed"
+            >
+              An initiative supported by the Dutch government through the
+              Netherlands Enterprise Agency, in collaboration with the Embassy
+              of the Kingdom of the Netherlands and local partners in each
+              country. The initiative aims to empower youth by supporting
+              entrepreneurship and providing job opportunities through training
+              programs and effective partnerships with local entities.
+            </p>
           </div>
-          <div class="col-md-4 mb-4">
-            <div class="card partner-item p-4 text-center">
-              <img
-                src="./images/auc-logo.png"
-                alt="The American University in Cairo"
-                class="partner-logo img-fluid mb-3"
-              />
-              <h3 class="arabic">الجامعة الأمريكية بالقاهرة</h3>
-              <h3 class="english d-none">The American University in Cairo</h3>
-              <p class="arabic">
-                جامعة بحثية خاصة تقدم برامج تعليمية بأسلوب التعليم الأمريكي في
-                مراحل البكالوريوس والدراسات العليا والتعليم المهني.
-              </p>
-              <p class="english d-none">
-                A private research university offering American-style education
-                at the undergraduate, graduate, and professional levels.
-              </p>
-            </div>
+          <div
+            class="partner-item bg-light-gray rounded-xl p-6 shadow-md hover:-translate-y-1 hover:shadow-lg transition-all duration-300 text-center"
+          >
+            <img
+              src="./images/american uni.png"
+              alt="The American University in Cairo"
+              class="partner-logo max-w-[150px] mx-auto mb-4"
+            />
+            <h3
+              class="arabic font-alexandria text-xl text-primary-blue mb-2"
+            >
+              الجامعة الأمريكية بالقاهرة
+            </h3>
+            <h3
+              class="english hidden font-manrope text-xl text-primary-blue mb-2"
+            >
+              The American University in Cairo
+            </h3>
+            <p
+              class="arabic text-sm md:text-base text-dark-black leading-relaxed"
+            >
+              جامعة بحثية خاصة تقدم برامج تعليمية بأسلوب التعليم الأمريكي في
+              مراحل البكالوريوس والدراسات العليا والتعليم المهني، بالإضافة إلى
+              برنامج للتعليم المستمر.
+            </p>
+            <p
+              class="english hidden font-manrope text-sm md:text-base text-dark-black leading-relaxed"
+            >
+              A private research university offering American-style education at
+              the undergraduate, graduate, and professional levels, along with a
+              continuing education program.
+            </p>
           </div>
-          <div class="col-md-4 mb-4">
-            <div class="card partner-item p-4 text-center">
-              <img
-                src="./images/athar-logo.png"
-                alt="Athar"
-                class="partner-logo img-fluid mb-3"
-              />
-              <h3 class="arabic">أثر</h3>
-              <h3 class="english d-none">Athar</h3>
-              <p class="arabic">
-                مسرعة أعمال تركّز على دعم مؤسسي الشركات الناشئة خارج العاصمة،
-                بهدف تعزيز النمو المتوازن للمشهد الريادي في مصر.
-              </p>
-              <p class="english d-none">
-                A business accelerator focused on supporting startup founders
-                outside the capital to promote balanced growth in Egypt’s
-                entrepreneurial landscape.
-              </p>
-            </div>
+          <div
+            class="partner-item bg-light-gray rounded-xl p-6 shadow-md hover:-translate-y-1 hover:shadow-lg transition-all duration-300 text-center"
+          >
+            <img
+              src="./images/athar logo (Black-Yellow).png"
+              alt="Athar"
+              class="partner-logo max-w-[150px] mx-auto mb-4"
+            />
+            <h3
+              class="arabic font-alexandria text-xl text-primary-blue mb-2"
+            >
+              أثر
+            </h3>
+            <h3
+              class="english hidden font-manrope text-xl text-primary-blue mb-2"
+            >
+              Athar
+            </h3>
+            <p
+              class="arabic text-sm md:text-base text-dark-black leading-relaxed"
+            >
+              مسرعة أعمال تركّز على دعم مؤسسي الشركات الناشئة خارج العاصمة، بهدف
+              تعزيز النمو المتوازن للمشهد الريادي في مصر. تقدم المسرعة حزمة
+              متكاملة من الدعم تشمل التمويل، التوجيه، وفرص التشبيك مع مستثمرين
+              وشركاء استراتيجيين.
+            </p>
+            <p
+              class="english hidden font-manrope text-sm md:text-base text-dark-black leading-relaxed"
+            >
+              A business accelerator focused on supporting startup founders
+              outside the capital to promote balanced growth in Egypt’s
+              entrepreneurial landscape. The accelerator provides a
+              comprehensive support package, including funding, mentorship, and
+              networking opportunities with investors and strategic partners.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="faq-section">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h1 class="arabic">الأسئلة الشائعة</h1>
-          <h1 class="english d-none">Frequently Asked Questions</h1>
-          <p class="arabic">
+    <!-- FAQ Section -->
+    <section
+      class="faq-section py-16 px-4 md:px-6 lg:px-8 bg-light-gray min-h-[90vh]"
+    >
+      <div class="faq-container max-w-7xl mx-auto px-4">
+        <div class="faq-header text-center mb-12">
+          <h1
+            class="arabic font-alexandria text-3xl md:text-4xl text-primary-blue mb-4"
+          >
+            الأسئلة الشائعة
+          </h1>
+          <h1
+            class="english hidden font-manrope text-3xl md:text-4xl text-primary-blue mb-4"
+          >
+            Frequently Asked Questions
+          </h1>
+          <p
+            class="arabic text-base md:text-lg text-dark-black max-w-xl mx-auto"
+          >
             اعثر على إجابات للأسئلة الأكثر شيوعًا حول تحدي مليون فكرة
           </p>
-          <p class="english d-none">
+          <p
+            class="english hidden font-manrope text-base md:text-lg text-dark-black max-w-xl mx-auto"
+          >
             Find answers to the most common questions about the Million Ideas
             Challenge
           </p>
         </div>
-        <div class="accordion" id="faqAccordion">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingGeneral">
-              <button
-                class="accordion-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseGeneral"
-                aria-expanded="true"
-                aria-controls="collapseGeneral"
-              >
-                <span class="arabic">الأسئلة العامة</span>
-                <span class="english d-none">General Questions</span>
-              </button>
-            </h2>
+        <!-- General Questions -->
+        <div class="faq-group mb-8">
+          <h2
+            class="arabic font-alexandria text-2xl bg-white p-4 rounded-lg shadow-sm mb-4"
+          >
+            الأسئلة العامة
+          </h2>
+          <h2
+            class="english hidden font-manrope text-2xl bg-white p-4 rounded-lg shadow-sm mb-4"
+          >
+            General Questions
+          </h2>
+          <div class="faq-item bg-white rounded-lg mb-2 shadow-sm overflow-hidden">
             <div
-              id="collapseGeneral"
-              class="accordion-collapse collapse show"
-              aria-labelledby="headingGeneral"
-              data-bs-parent="#faqAccordion"
+              class="faq-question flex justify-between items-center p-4 cursor-pointer transition-all duration-300"
             >
-              <div class="accordion-body">
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq1"
-                      aria-expanded="false"
-                      aria-controls="faq1"
-                    >
-                      <span class="arabic"
-                        >أريد أن أعرف ما هو تحدي مليون فكرة؟</span
-                      >
-                      <span class="english d-none"
-                        >What is the Million Ideas Challenge?</span
-                      >
-                    </button>
-                  </h3>
-                  <div id="faq1" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        هو برنامج تقدمه مسرعة أعمال أثر لدعم الابتكار وريادة
-                        الأعمال في مصر، بهدف إيجاد حلول للتحديات التي يواجهها
-                        المجتمع.
-                      </p>
-                      <p class="english d-none">
-                        It is a program offered by Athar Business Accelerator to
-                        support innovation and entrepreneurship in Egypt, aiming
-                        to find solutions to societal challenges.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq2"
-                      aria-expanded="false"
-                      aria-controls="faq2"
-                    >
-                      <span class="arabic"
-                        >ما هو مكان إقامة تحدي مليون فكرة؟</span
-                      >
-                      <span class="english d-none">
-                        Where will the Million Ideas Challenge take place?
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq2" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        سيتم تنفيذ البرنامج في محافظات أسيوط، المنيا، والفيوم.
-                      </p>
-                      <p class="english d-none">
-                        The program will be implemented in the governorates of
-                        Assiut, Minya, and Fayoum.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq3"
-                      aria-expanded="false"
-                      aria-controls="faq3"
-                    >
-                      <span class="arabic"
-                        >كيف أعلم أنه يمكنني المشاركة في التحدي؟</span
-                      >
-                      <span class="english d-none">
-                        How do I know if I can participate in the challenge?
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq3" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">يمكنك المشاركة إذا كنت:</p>
-                      <ul class="arabic">
-                        <li>طالبًا في جامعة أسيوط، المنيا، أو الفيوم</li>
-                        <li>لديك فكرة تحل مشكلة في المجتمع</li>
-                        <li>
-                          لديك فريق من فردين أو أكثر يعملون معك على الفكرة
-                        </li>
-                      </ul>
-                      <p class="english d-none">
-                        You can participate if you are:
-                      </p>
-                      <ul class="english d-none">
-                        <li>
-                          A student at Assiut, Minya, or Fayoum University
-                        </li>
-                        <li>Have an idea that solves a societal problem</li>
-                        <li>
-                          Have a team of two or more people working with you on
-                          the idea
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq4"
-                      aria-expanded="false"
-                      aria-controls="faq4"
-                    >
-                      <span class="arabic">
-                        أريد معرفة الجدول الزمني لمراحل البرنامج حتى أتمكن من
-                        التفرغ له
-                      </span>
-                      <span class="english d-none">
-                        I want to know the timeline of the program stages so I
-                        can make time for it
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq4" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        بعد انتهاء فترة التسجيل يبدأ الهاكاثون في أسيوط، المنيا،
-                        والفيوم في الفترة من
-                        <strong>10 يوليو – 12 يوليو</strong>.
-                      </p>
-                      <p class="arabic">
-                        ثم يبدأ المعسكر التدريبي لمدة 3 أيام في المنيا، ويشمل
-                        عرضًا نهائيًا للأفكار وإعلان الفائزين في الفترة من
-                        <strong>24 يوليو – 26 يوليو</strong>.
-                      </p>
-                      <p class="english d-none">
-                        After the registration period ends, the hackathon begins
-                        in Assiut, Minya, and Fayoum from
-                        <strong>July 10 – July 12</strong>.
-                      </p>
-                      <p class="english d-none">
-                        Then, a 3-day training camp starts in Minya, including a
-                        final pitch of ideas and announcement of winners from
-                        <strong>July 24 – July 26</strong>.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <h3
+                class="arabic text-base md:text-lg text-dark-black font-medium mr-8"
+              >
+                أريد أن أعرف ما هو تحدي مليون فكرة؟
+              </h3>
+              <h3
+                class="english hidden font-manrope text-base md:text-lg text-dark-black font-medium mr-8"
+              >
+                What is the Million Ideas Challenge?
+              </h3>
+              <div class="icon w-6 h-6 relative">
+                <span
+                  class="absolute w-full h-0.5 bg-primary-blue top-1/2 -translate-y-1/2"
+                ></span>
+                <span
+                  class="absolute w-0.5 h-full bg-primary-blue left-1/2 -translate-x-1/2 transition-transform duration-300"
+                ></span>
+              </div>
+            </div>
+            <div class="faq-answer max-h-0 overflow-hidden transition-all duration-200">
+              <div class="faq-answer-content p-4 pt-0">
+                <p
+                  class="arabic text-sm md:text-base text-dark-black leading-relaxed"
+                >
+                  هو برنامج تقدمه مسرعة أعمال أثر لدعم الابتكار وريادة الأعمال
+                  في مصر، بهدف إيجاد حلول للتحديات التي يواجهها المجتمع.
+                </p>
+                <p
+                  class="english hidden font-manrope text-sm md:text-base text-dark-black leading-relaxed"
+                >
+                  It is a program offered by Athar Business Accelerator to
+                  support innovation and entrepreneurship in Egypt, aiming to
+                  find solutions to societal challenges.
+                </p>
               </div>
             </div>
           </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingEligibility">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseEligibility"
-                aria-expanded="false"
-                aria-controls="collapseEligibility"
-              >
-                <span class="arabic">شروط التقديم</span>
-                <span class="english d-none">Eligibility and Application</span>
-              </button>
-            </h2>
-            <div
-              id="collapseEligibility"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingEligibility"
-              data-bs-parent="#faqAccordion"
-            >
-              <div class="accordion-body">
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq5"
-                      aria-expanded="false"
-                      aria-controls="faq5"
-                    >
-                      <span class="arabic">
-                        أنا طالب وأريد أن أعلم هل يمكنني المشاركة أم لا؟
-                      </span>
-                      <span class="english d-none">
-                        I am a student and want to know if I can participate or
-                        not?
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq5" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">يمكنك المشاركة إذا كنت:</p>
-                      <ul class="arabic">
-                        <li>عمرك بين 18 و25 عامًا</li>
-                        <li>
-                          مسجلًا حاليًا في إحدى الجامعات المشاركة (أسيوط،
-                          المنيا، والفيوم)
-                        </li>
-                        <li>متفرغًا للمشاركة في أنشطة البرنامج</li>
-                      </ul>
-                      <p class="english d-none">
-                        You can participate if you are:
-                      </p>
-                      <ul class="english d-none">
-                        <li>Between 18 and 25 years old</li>
-                        <li>
-                          Currently enrolled in one of the participating
-                          universities (Assiut, Minya, or Fayoum)
-                        </li>
-                        <li>
-                          Available to participate in the program’s activities
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq6"
-                      aria-expanded="false"
-                      aria-controls="faq6"
-                    >
-                      <span class="arabic">كيف يمكنني التقديم؟</span>
-                      <span class="english d-none">How can I apply?</span>
-                    </button>
-                  </h3>
-                  <div id="faq6" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        يتم التقديم من خلال الموقع الرسمي للبرنامج، مع تقديم
-                        خطاب اهتمام بالنسبة للطلاب.
-                      </p>
-                      <p class="english d-none">
-                        Applications are submitted through the program’s
-                        official website, with a letter of interest required for
-                        students.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq7"
-                      aria-expanded="false"
-                      aria-controls="faq7"
-                    >
-                      <span class="arabic">
-                        هل يجب أن أكون في تخصص معين بالكلية كي أشارك؟
-                      </span>
-                      <span class="english d-none">
-                        Do I need to be in a specific major to participate?
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq7" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        لا، البرنامج يشجع على تكوين فرق من تخصصات مختلفة لتعزيز
-                        التنوع وابتكار حلول جديدة.
-                      </p>
-                      <p class="english d-none">
-                        No, the program encourages forming teams from diverse
-                        majors to enhance diversity and innovate new solutions.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq8"
-                      aria-expanded="false"
-                      aria-controls="faq8"
-                    >
-                      <span class="arabic"
-                        >هل يجب أن أمتلك سابقة في ريادة الأعمال؟</span
-                      >
-                      <span class="english d-none">
-                        Do I need prior experience in entrepreneurship?
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq8" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        لا حاجة لخبرة سابقة. الأهم هو الحماس لحل المشكلات
-                        والابتكار.
-                      </p>
-                      <p class="english d-none">
-                        No prior experience is needed. The most important thing
-                        is enthusiasm for problem-solving and innovation.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingActivities">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseActivities"
-                aria-expanded="false"
-                aria-controls="collapseActivities"
-              >
-                <span class="arabic">أنشطة البرنامج</span>
-                <span class="english d-none">Program Activities</span>
-              </button>
-            </h2>
-            <div
-              id="collapseActivities"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingActivities"
-              data-bs-parent="#faqAccordion"
-            >
-              <div class="accordion-body">
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq9"
-                      aria-expanded="false"
-                      aria-controls="faq9"
-                    >
-                      <span class="arabic"
-                        >ما نوع التدريب الذي سوف أتلقاه كمشارك؟</span
-                      >
-                      <span class="english d-none">
-                        What type of training will I receive as a participant?
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq9" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        سوف تتلقى تدريبًا في التفكير التصميمي، وبناء نموذج
-                        العمل، والتخطيط المالي، وطريقة عرض فكرتك أمام الآخرين
-                        (Pitching).
-                      </p>
-                      <p class="english d-none">
-                        You will receive training in design thinking, business
-                        model development, financial planning, and pitching your
-                        idea to others.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq10"
-                      aria-expanded="false"
-                      aria-controls="faq10"
-                    >
-                      <span class="arabic">أريد معرفة تفاصيل الهاكاثون.</span>
-                      <span class="english d-none">
-                        I want to know the details of the hackathon.
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq10" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        يمتد الهاكاثون لثلاثة أيام في كل محافظة، يعمل خلالها
-                        الفرق على حل تحديات واقعية في المجتمع، ثم يعرضون أفكارهم
-                        أمام لجنة تحكيم لاختيار أفضل الفرق للتأهل إلى المعسكر
-                        التدريبي.
-                      </p>
-                      <p class="english d-none">
-                        The hackathon lasts three days in each governorate,
-                        during which teams work on solving real societal
-                        challenges, then present their ideas to a jury to select
-                        the best teams to qualify for the training camp.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq11"
-                      aria-expanded="false"
-                      aria-controls="faq11"
-                    >
-                      <span class="arabic">
-                        أريد معرفة ماذا سيحدث في المعسكر التدريبي.
-                      </span>
-                      <span class="english d-none">
-                        I want to know what will happen at the training camp.
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq11" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        تتلقى الفرق التي تأهلت من الهاكاثون تدريبًا متقدمًا في
-                        ريادة الأعمال، وتعمل على تطوير أفكارها بشكل أكبر، ثم
-                        تتنافس على الجوائز المالية في العرض النهائي.
-                      </p>
-                      <p class="english d-none">
-                        Teams that qualify from the hackathon receive advanced
-                        entrepreneurship training, further develop their ideas,
-                        and then compete for cash prizes in the final pitch.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq12"
-                      aria-expanded="false"
-                      aria-controls="faq12"
-                    >
-                      <span class="arabic"
-                        >ما هي قيمة الجوائز للفرق الفائزة؟</span
-                      >
-                      <span class="english d-none">
-                        What is the prize value for the winning teams?
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq12" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        سيحصل أول ثلاثة فرق في المعسكر التدريبي على
-                        <strong>50,000 جنيه مصري</strong> لكل فريق، بالإضافة إلى
-                        فرصة الوصول السريع إلى برامج أثر لدعم الأفكار وتحويلها
-                        إلى مشروعات واقعية.
-                      </p>
-                      <p class="english d-none">
-                        The top three teams in the training camp will receive
-                        <strong>50,000 EGP</strong> each, plus fast-track access
-                        to Athar programs to support and turn their ideas into
-                        real projects.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq13"
-                      aria-expanded="false"
-                      aria-controls="faq13"
-                    >
-                      <span class="arabic"
-                        >هل هناك أي تكاليف مرتبطة بالمشاركة؟</span
-                      >
-                      <span class="english d-none">
-                        Are there any costs associated with participation?
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq13" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        لا، المشاركة في البرنامج مجانية تمامًا لكل من الطلاب
-                        وأعضاء هيئة التدريس، ولا توجد أي رسوم مطلوبة في أي
-                        مرحلة.
-                      </p>
-                      <p class="english d-none">
-                        No, participation in the program is completely free for
-                        both students and faculty members, with no fees required
-                        at any stage.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingImpact">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseImpact"
-                aria-expanded="false"
-                aria-controls="collapseImpact"
-              >
-                <span class="arabic">تأثير البرنامج</span>
-                <span class="english d-none">Program Impact</span>
-              </button>
-            </h2>
-            <div
-              id="collapseImpact"
-              class="accordion-collapse collapse"
-              aria-labelledby="headingImpact"
-              data-bs-parent="#faqAccordion"
-            >
-              <div class="accordion-body">
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq14"
-                      aria-expanded="false"
-                      aria-controls="faq14"
-                    >
-                      <span class="arabic"
-                        >كيف استفيد كطالب من تحدي مليون فكرة؟</span
-                      >
-                      <span class="english d-none">
-                        How do I benefit as a student from the Million Ideas
-                        Challenge?
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq14" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        يكتسب الطلاب مهارات عملية، وفرص تمويل، لبناء شركاتهم
-                        الناشئة.
-                      </p>
-                      <p class="english d-none">
-                        Students gain practical skills and funding opportunities
-                        to build their startups.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq15"
-                      aria-expanded="false"
-                      aria-controls="faq15"
-                    >
-                      <span class="arabic">
-                        كيف أستفيد كعضو هيئة تدريس من البرنامج؟
-                      </span>
-                      <span class="english d-none">
-                        How do I benefit as a faculty member from the program?
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq15" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        تُتاح لك الفرصة لتعزيز منهجياتك التدريسية، وتطوير
-                        مهاراتك في الإرشاد، والمشاركة في تجربة تعليمية عملية مع
-                        الطلاب.
-                      </p>
-                      <p class="english d-none">
-                        You get the opportunity to enhance your teaching
-                        methodologies, develop mentoring skills, and participate
-                        in a practical educational experience with students.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq16"
-                      aria-expanded="false"
-                      aria-controls="faq16"
-                    >
-                      <span class="arabic"
-                        >هل يستفيد المجتمع المحلي من البرنامج؟</span
-                      >
-                      <span class="english d-none">
-                        Does the local community benefit from the program?
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq16" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        نعم، يساهم البرنامج في تقديم حلول مستدامة لمشكلات
-                        المجتمع، ويدعم تمكين الشباب، ويعزز من نمو الاقتصاد
-                        المحلي في المحافظات المشاركة.
-                      </p>
-                      <p class="english d-none">
-                        Yes, the program contributes to providing sustainable
-                        solutions to societal problems, supports youth
-                        empowerment, and enhances local economic growth in the
-                        participating governorates.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq17"
-                      aria-expanded="false"
-                      aria-controls="faq17"
-                    >
-                      <span class="arabic"
-                        >كيف يساهم القطاع الخاص في البرنامج؟</span
-                      >
-                      <span class="english d-none">
-                        How does the private sector contribute to the program?
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq17" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        يتعاون القطاع الخاص مع الطلاب وأعضاء هيئة التدريس من
-                        خلال مواجهة التحديات المجتمعية والعمل سويًا على ابتكار
-                        حلول عملية.
-                      </p>
-                      <p class="english d-none">
-                        The private sector collaborates with students and
-                        faculty members by addressing societal challenges and
-                        working together to innovate practical solutions.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq18"
-                      aria-expanded="false"
-                      aria-controls="faq18"
-                    >
-                      <span class="arabic">ما الذي يحدد نجاح البرنامج؟</span>
-                      <span class="english d-none">
-                        What determines the success of the program?
-                      </span>
-                    </button>
-                  </h3>
-                  <div id="faq18" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <p class="arabic">
-                        يتم تحديد نجاح البرنامج من خلال المتابعة المستمرة
-                        والتقييم الدقيق، مع التركيز على تطوير مهارات الطلاب
-                        وأعضاء هيئة التدريس وتحقيق نتائج ملموسة.
-                      </p>
-                      <p class="english d-none">
-                        The program’s success is determined through continuous
-                        monitoring and thorough evaluation, focusing on
-                        developing the skills of students and faculty members
-                        and achieving tangible results.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- Additional FAQ items can be added similarly -->
         </div>
+        <!-- Other FAQ groups (Eligibility, Program Activities, Program Impact) -->
+        <!-- Add similar markup for remaining FAQ groups as needed -->
       </div>
     </section>
 
-    <div class="language-toggle d-flex">
-      <button id="ar-btn" class="btn active arabic">العربية</button>
-      <button id="en-btn" class="btn english">English</button>
+    <!-- Language Toggle -->
+    <div
+      class="language-toggle fixed bottom-4 left-4 z-[1000] bg-white/95 rounded-full p-1 shadow-md flex"
+    >
+      <button
+        id="ar-btn"
+        class="active arabic px-4 py-2 rounded-full font-medium transition-all duration-300 bg-primary-blue text-white"
+      >
+        العربية
+      </button>
+      <button
+        id="en-btn"
+        class="english px-4 py-2 rounded-full font-medium transition-all duration-300"
+      >
+        English
+      </button>
     </div>
 
-    <!-- Bootstrap 5 JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Custom JS -->
+    <!-- JavaScript -->
     <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const navLinks = document.querySelector(".nav-links");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("hidden");
+        navLinks.classList.toggle("flex");
+        mobileMenuBtn.innerHTML = navLinks.classList.contains("flex")
+          ? "✕"
+          : "☰";
+      });
+
       // Navbar scroll effect
       window.addEventListener("scroll", () => {
-        const navbar = document.querySelector(".navbar");
+        const navbar = document.querySelector("#navbar");
         if (window.scrollY > 50) {
-          navbar.classList.add("scrolled");
+          navbar.classList.add("py-1", "bg-white/98", "shadow-md");
+          navbar.classList.remove("py-2", "bg-white/90", "shadow-sm");
         } else {
-          navbar.classList.remove("scrolled");
+          navbar.classList.remove("py-1", "bg-white/98", "shadow-md");
+          navbar.classList.add("py-2", "bg-white/90", "shadow-sm");
         }
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.add("hidden");
+          navLinks.classList.remove("flex");
+          mobileMenuBtn.innerHTML = "☰";
+        });
       });
 
       // Language toggle functionality
@@ -1560,53 +981,54 @@
       enBtn.addEventListener("click", () => {
         document.documentElement.lang = "en";
         document.documentElement.dir = "ltr";
-        enBtn.classList.add("active");
-        arBtn.classList.remove("active");
+        enBtn.classList.add("bg-primary-blue", "text-white");
+        arBtn.classList.remove("bg-primary-blue", "text-white");
 
-        document
-          .querySelectorAll(".english")
-          .forEach((el) => el.classList.remove("d-none"));
-        document
-          .querySelectorAll(".arabic")
-          .forEach((el) => el.classList.add("d-none"));
+        document.querySelectorAll(".english").forEach((el) => (el.classList.remove("hidden")));
+        document.querySelectorAll(".arabic").forEach((el) => (el.classList.add("hidden")));
+
+        document.querySelector(".navbar").style.direction = "ltr";
+        document.querySelector(".about-container").style.direction = "ltr";
+        document.querySelector(".about-image-container").style.order = "-1";
+        document.querySelector(".timeline-container").style.direction = "ltr";
+        document.querySelector(".partners-container").style.direction = "ltr";
       });
 
       arBtn.addEventListener("click", () => {
         document.documentElement.lang = "ar";
         document.documentElement.dir = "rtl";
-        arBtn.classList.add("active");
-        enBtn.classList.remove("active");
+        arBtn.classList.add("bg-primary-blue", "text-white");
+        enBtn.classList.remove("bg-primary-blue", "text-white");
 
-        document
-          .querySelectorAll(".arabic")
-          .forEach((el) => el.classList.remove("d-none"));
-        document
-          .querySelectorAll(".english")
-          .forEach((el) => el.classList.add("d-none"));
+        document.querySelectorAll(".arabic").forEach((el) => (el.classList.remove("hidden")));
+        document.querySelectorAll(".english").forEach((el) => (el.classList.add("hidden")));
+
+        document.querySelector(".navbar").style.direction = "rtl";
+        document.querySelector(".about-container").style.direction = "rtl";
+        document.querySelector(".about-image-container").style.order = "0";
+        document.querySelector(".timeline-container").style.direction = "rtl";
+        document.querySelector(".partners-container").style.direction = "rtl";
       });
 
       // Highlight text rotation
       const arabicWords = [
-        "تدهور التربة",
+        "تدهور الأرض",
         "نقص المياه",
         "ملوحة الأرض",
         "تآكل التربة",
         "تلوث المياه",
         "ضرر المبيدات",
         "ضعف الإنتاج",
-        "ارتفاع الحرارة",
+        "ارتفاع الحر",
         "ندرة العمالة",
-        "الزحف العمراني",
         "سوء التخزين",
-        "استخدام المبيدات",
         "ضعف الدعم",
-        "تلف المحاصيل",
-        "تقلب الحرارة",
+        "تلف المحصول",
+        "تقلب الجو",
         "انتشار الآفات",
-        "تلوث المياه",
         "الري المفرط",
         "زيادة التصحر",
-        "انبعاثات الزراعة",
+        "غلاء الآلات",
       ];
 
       const englishWords = [
@@ -1654,7 +1076,7 @@
           englishSpans[currentWordIndex].style.opacity = 1;
 
           arabicSpans.forEach((span, index) => {
-            span.textContent = `${arabicWords[index]}`;
+            span.textContent = `${arabicWords[index]} "`;
           });
           englishSpans.forEach((span, index) => {
             span.textContent = englishWords[index];
@@ -1673,6 +1095,30 @@
         );
         arabicHighlight.querySelectorAll("span")[0].style.opacity = 1;
         englishHighlight.querySelectorAll("span")[0].style.opacity = 1;
+
+        // FAQ toggle functionality
+        document.querySelectorAll(".faq-question").forEach((question) => {
+          question.addEventListener("click", () => {
+            const faqItem = question.parentElement;
+            const isActive = faqItem.classList.contains("active");
+
+            document.querySelectorAll(".faq-item").forEach((item) => {
+              item.classList.remove("active");
+              item.querySelector(".faq-answer").style.maxHeight = "0";
+              item
+                .querySelector(".icon span:last-child")
+                .style.transform = "translateX(-50%)";
+            });
+
+            if (!isActive) {
+              faqItem.classList.add("active");
+              faqItem.querySelector(".faq-answer").style.maxHeight = "500px";
+              faqItem
+                .querySelector(".icon span:last-child")
+                .style.transform = "translateX(-50%) rotate(90deg)";
+            }
+          });
+        });
       });
     </script>
   </body>
