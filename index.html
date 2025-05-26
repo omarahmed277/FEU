@@ -19,19 +19,41 @@
   <body>
     <div class="background-image-container"></div>
     <nav class="navbar">
-      <div class="logo arabic">
+      <div class="logo">
         <img
           width="50"
           height="50"
           src="./images/Logo تحدي مليون فكرة ازرق.png"
           alt=""
+          class="logo-img"
         />
       </div>
       <ul class="nav-links">
-        <li><a href="#about" class="arabic">عن التحدي</a></li>
-        <li><a href="#timeline" class="arabic">الجدول الزمني</a></li>
-        <li><a href="#requirements" class="arabic">الشروط</a></li>
-        <li><a href="#partners" class="arabic">الشركاء</a></li>
+        <!-- Arabic Links -->
+        <li class="arabic">
+          <a href="./test.html" class="arabic">الرئيسية</a>
+        </li>
+        <li class="arabic"><a href="#about" class="arabic">عن التحدي</a></li>
+        <li class="arabic">
+          <a href="#timeline" class="arabic">الجدول الزمني</a>
+        </li>
+        <li class="arabic">
+          <a href="#requirements" class="arabic">الشروط</a>
+        </li>
+
+        <!-- English Links -->
+        <li class="english" style="display: none">
+          <a href="./test.html" class="english">Home</a>
+        </li>
+        <li class="english" style="display: none">
+          <a href="#about" class="english">About the Challenge</a>
+        </li>
+        <li class="english" style="display: none">
+          <a href="#timeline" class="english">Timeline</a>
+        </li>
+        <li class="english" style="display: none">
+          <a href="#requirements" class="english">Requirements</a>
+        </li>
       </ul>
       <button class="mobile-menu-btn">☰</button>
     </nav>
@@ -39,16 +61,7 @@
     <section class="hero">
       <div class="hero-container">
         <div class="hero-image-container">
-          <img
-            src="./images/image_fx (99).png"
-            alt="Female entrepreneur"
-            class="hero-image-woman"
-          />
-          <img
-            src="./images/image1.png"
-            alt="Young entrepreneurs working together"
-            class="hero-image"
-          />
+          <img src="./images/tow.png" alt="" class="hero-image-persons" />
         </div>
         <div class="hero-content">
           <h1 class="hero-title arabic">
@@ -56,27 +69,27 @@
             <span> انا عندي فكرة تحل</span>
             <span class="highlight">
               <span class="changing-text">
-                <span>تدهور التربة</span>
-                <span>نقص المياه</span>
-                <span>ملوحة الأرض</span>
-                <span>تآكل التربة</span>
-                <span>تلوث المياه</span>
-                <span>ضرر المبيدات</span>
-                <span>ضعف الإنتاج</span>
-                <span>ارتفاع الحرارة</span>
-                <span>ندرة العمالة</span>
-                <span>الزحف العمراني</span>
-                <span>سوء التخزين</span>
-                <span>استخدام المبيدات</span>
-                <span>ضعف الدعم</span>
-                <span>تلف المحاصيل</span>
-                <span>تقلب الحرارة</span>
-                <span>انتشار الآفات</span>
-                <span>تلوث المياه</span>
-                <span>الري المفرط</span>
-                <span>زيادة التصحر</span>
-                <span>انبعاثات الزراعة</span>
-                <span class="quote">"</span>
+                <span>تدهور التربة"</span>
+                <span>نقص المياه"</span>
+                <span>ملوحة الأرض"</span>
+                <span>تآكل التربة"</span>
+                <span>تلوث المياه"</span>
+                <span>ضرر المبيدات"</span>
+                <span>ضعف الإنتاج"</span>
+                <span>ارتفاع الحرارة"</span>
+                <span>ندرة العمالة"</span>
+                <span>الزحف العمراني"</span>
+                <span>سوء التخزين"</span>
+                <span>استخدام المبيدات"</span>
+                <span>ضعف الدعم"</span>
+                <span>تلف المحاصيل"</span>
+                <span>تقلب الحرارة"</span>
+                <span>انتشار الآفات"</span>
+                <span>تلوث المياه"</span>
+                <span>الري المفرط"</span>
+                <span>زيادة التصحر"</span>
+                <span>انبعاثات الزراعة"</span>
+                <!-- <span class="quote">"</span> -->
               </span>
             </span>
           </h1>
@@ -207,27 +220,18 @@
           </div>
           <div class="requirements-list english" style="display: none">
             <div class="requirement-item">
-              <img
-                src="https://img.icons8.com/ios-filled/50/1A73E8/organization.png"
-                alt="Team Icon"
-              />
+              <img src="./images/people.png" alt="Idea Icon" />
               <p>
                 You must have a team of two or more people working with you on
                 the idea
               </p>
             </div>
             <div class="requirement-item">
-              <img
-                src="https://img.icons8.com/ios-filled/50/1A73E8/idea.png"
-                alt="Idea Icon"
-              />
+              <img src="./images/idea (1).png" alt="Idea Icon" />
               <p>You must have an idea that solves a societal problem</p>
             </div>
             <div class="requirement-item">
-              <img
-                src="https://img.icons8.com/ios-filled/50/1A73E8/student-male.png"
-                alt="Student Icon"
-              />
+              <img src="./images/study.png" alt="Idea Icon" />
               <p>You must be a student at an Egyptian university</p>
             </div>
           </div>
@@ -244,7 +248,6 @@
         <div class="timeline">
           <div class="timeline-line"></div>
           <div class="milestones">
-            <!-- Milestone 1 -->
             <div class="milestone milestone-bottom" style="--order: 1">
               <div class="milestone-marker"></div>
               <div class="milestone-content">
@@ -255,6 +258,7 @@
                 <div class="milestone-description arabic">
                   تدريب أعضاء هيئة التدريس على منهجيات التوجيه في ريادة الأعمال
                 </div>
+
                 <div
                   class="milestone-description english"
                   style="display: none"
@@ -265,11 +269,9 @@
                 <div class="milestone-date english">22-31 May 2025</div>
               </div>
             </div>
-            <!-- Mini milestone -->
             <div class="mini-milestone" style="left: 33%; --order: 1">
               <div class="mini-milestone-dot"></div>
             </div>
-            <!-- Milestone 2 -->
             <div class="milestone milestone-top" style="--order: 2">
               <div class="milestone-marker"></div>
               <div class="milestone-content">
@@ -291,11 +293,9 @@
                 <div class="milestone-date english">10-12 July 2025</div>
               </div>
             </div>
-            <!-- Mini milestone -->
             <div class="mini-milestone" style="left: 66%; --order: 2">
               <div class="mini-milestone-dot"></div>
             </div>
-            <!-- Milestone 3 -->
             <div class="milestone milestone-bottom" style="--order: 3">
               <div class="milestone-marker"></div>
               <div class="milestone-content">
@@ -322,92 +322,6 @@
       </div>
     </section>
 
-    <section class="partners-section" id="partners">
-      <div class="partners-container">
-        <div class="partners-header">
-          <h1 class="arabic">شركاؤنا</h1>
-          <h1 class="english" style="display: none">Our Partners</h1>
-          <p class="arabic">
-            نعمل مع شركاء متميزين لدعم ريادة الأعمال وتمكين الشباب في مصر
-          </p>
-          <p class="english" style="display: none">
-            We collaborate with distinguished partners to support
-            entrepreneurship and empower youth in Egypt
-          </p>
-        </div>
-        <div class="partners-grid">
-          <div class="partner-item">
-            <img
-              src="./images/1_Standard_Logo_Orange_Corners_Orange_Black_without_tagline.png"
-              alt="Orange Corners"
-              class="partner-logo"
-            />
-            <h3 class="arabic">أورانج كورنرز</h3>
-            <h3 class="english" style="display: none">Orange Corners</h3>
-            <p class="arabic">
-              مبادرة تدعمها الحكومة الهولندية من خلال وكالة المشاريع الهولندية،
-              وبالتعاون مع سفارة مملكة هولندا والشركاء المحليين في كل دولة. تهدف
-              المبادرة إلى تمكين الشباب من خلال دعم ريادة الأعمال وتوفير فرص
-              عمل، وذلك عبر برامج تدريبية وشراكات فعّالة مع الجهات المحلية.
-            </p>
-            <p class="english" style="display: none">
-              An initiative supported by the Dutch government through the
-              Netherlands Enterprise Agency, in collaboration with the Embassy
-              of the Kingdom of the Netherlands and local partners in each
-              country. The initiative aims to empower youth by supporting
-              entrepreneurship and providing job opportunities through training
-              programs and effective partnerships with local entities.
-            </p>
-          </div>
-          <div class="partner-item">
-            <img
-              src="./images/americanuniversity.svg"
-              alt="The American University in Cairo"
-              class="partner-logo"
-            />
-            <h3 class="arabic">مركز الإبتكار بالجامعة الأمريكية</h3>
-            <h3 class="english" style="display: none">
-              The American University in Cairo
-            </h3>
-            <p class="arabic">
-              جامعة بحثية خاصة تقدم برامج تعليمية بأسلوب التعليم الأمريكي في
-              مراحل البكالوريوس والدراسات العليا والتعليم المهني، بالإضافة إلى
-              برنامج للتعليم المستم Ascotap - 3.6.4
-            </p>
-
-            <p class="english" style="display: none">
-              A private research university offering American-style education at
-              the undergraduate, graduate, and professional levels, along with a
-              continuing education program. AUC’s student community includes
-              students from over 50 countries.
-            </p>
-          </div>
-          <div class="partner-item">
-            <img
-              src="./images/athar logo (Black-Yellow).png"
-              alt="Athar"
-              class="partner-logo"
-            />
-            <h3 class="arabic">أثر</h3>
-            <h3 class="english" style="display: none">Athar</h3>
-            <p class="arabic">
-              مسرعة أعمال تركّز على دعم مؤسسي الشركات الناشئة خارج العاصمة، بهدف
-              تعزيز النمو المتوازن للمشهد الريادي في مصر. تقدم المسرعة حزمة
-              متكاملة من الدعم تشمل التمويل، التوجيه، وفرص التشبيك مع مستثمرين
-              وشركاء استراتيجيين.
-            </p>
-            <p class="english" style="display: none">
-              A business accelerator focused on supporting startup founders
-              outside the capital to promote balanced growth in Egypt’s
-              entrepreneurial landscape. The accelerator provides a
-              comprehensive support package, including funding, mentorship, and
-              networking opportunities with investors and strategic partners.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="faq-section">
       <div class="faq-container">
         <div class="faq-header">
@@ -424,7 +338,6 @@
           </p>
         </div>
 
-        <!-- General Questions -->
         <div class="faq-group">
           <h2 class="arabic">الأسئلة العامة</h2>
           <h2 class="english" style="display: none">General Questions</h2>
@@ -538,7 +451,6 @@
           </div>
         </div>
 
-        <!-- Eligibility and Application -->
         <div class="faq-group">
           <h2 class="arabic">شروط التقديم</h2>
           <h2 class="english" style="display: none">
@@ -643,7 +555,6 @@
           </div>
         </div>
 
-        <!-- Program Activities -->
         <div class="faq-group">
           <h2 class="arabic">أنشطة البرنامج</h2>
           <h2 class="english" style="display: none">Program Activities</h2>
@@ -765,7 +676,6 @@
           </div>
         </div>
 
-        <!-- Program Impact -->
         <div class="faq-group">
           <h2 class="arabic">تأثير البرنامج</h2>
           <h2 class="english" style="display: none">Program Impact</h2>
@@ -791,7 +701,9 @@
           </div>
           <div class="faq-item">
             <div class="faq-question">
-              <h3 class="arabic">كيف أستفيد كعضو هيئة تدريس من البرنامج؟</h3>
+              <h3 class="arabic">
+                كيف أستفيد كعضو هيئ corral تدريس من البرنامج؟
+              </h3>
               <h3 class="english" style="display: none">
                 How do I benefit as a faculty member from the program?
               </h3>
@@ -827,63 +739,19 @@
             <div class="faq-answer">
               <div class="faq-answer-content">
                 <p class="arabic">
-                  نعم، يساهم البرنامج في تقديم حلول مستدامة لمشكلات المجتمع،
-                  ويدعم تمكين الشباب، ويعزز من نمو الاقتصاد المحلي في المحافظات
-                  المشاركة.
+                  نعم، يساهم البرنامج في حل مشكلات المجتمع من خلال دعم الأفكار
+                  المبتكرة التي يقدمها الطلاب، والتي تركز على تحديات مثل الزراعة
+                  المستدامة، إدارة الموارد، وتحسين البيئة. كما يعزز البرنامج
+                  الاقتصاد المحلي من خلال خلق فرص عمل جديدة ودعم الشركات
+                  الناشئة.
                 </p>
                 <p class="english" style="display: none">
-                  Yes, the program contributes to providing sustainable
-                  solutions to societal problems, supports youth empowerment,
-                  and enhances local economic growth in the participating
-                  governorates.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">كيف يساهم القطاع الخاص في البرنامج؟</h3>
-              <h3 class="english" style="display: none">
-                How does the private sector contribute to the program?
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  يتعاون القطاع الخاص مع الطلاب وأعضاء هيئة التدريس من خلال
-                  مواجهة التحديات المجتمعية والعمل سويًا على ابتكار حلول عملية
-                  تسهم في تطوير المجتمع وتحقيق التنمية المستدامة.
-                </p>
-                <p class="english" style="display: none">
-                  The private sector collaborates with students and faculty
-                  members by addressing societal challenges and working together
-                  to innovate practical solutions that contribute to community
-                  development and sustainable growth.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">ما الذي يحدد نجاح البرنامج؟</h3>
-              <h3 class="english" style="display: none">
-                What determines the success of the program?
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  يتم تحديد نجاح البرنامج من خلال المتابعة المستمرة والتقييم
-                  الدقيق، مع التركيز على تطوير مهارات الطلاب وأعضاء هيئة التدريس
-                  وتحقيق نتائج ملموسة في حل التحديات المجتمعية.
-                </p>
-                <p class="english" style="display: none">
-                  The program’s success is determined through continuous
-                  monitoring and thorough evaluation, focusing on developing the
-                  skills of students and faculty members and achieving tangible
-                  results in addressing societal challenges.
+                  Yes, the program contributes to solving societal problems by
+                  supporting innovative ideas from students, focusing on
+                  challenges like sustainable agriculture, resource management,
+                  and environmental improvement. It also boosts the local
+                  economy by creating new job opportunities and supporting
+                  startups.
                 </p>
               </div>
             </div>
@@ -893,190 +761,106 @@
     </section>
 
     <div class="language-toggle">
-      <button id="ar-btn" class="active arabic">العربية</button>
-      <button id="en-btn" class="english">English</button>
+      <button class="active" data-lang="ar">العربية</button>
+      <button data-lang="en">English</button>
     </div>
 
     <script>
-      // Mobile menu toggle
+      // Mobile Menu Toggle
       const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
       const navLinks = document.querySelector(".nav-links");
 
       mobileMenuBtn.addEventListener("click", () => {
         navLinks.classList.toggle("active");
-        mobileMenuBtn.innerHTML = navLinks.classList.contains("active")
+        mobileMenuBtn.textContent = navLinks.classList.contains("active")
           ? "✕"
           : "☰";
       });
 
-      // Navbar scroll effect
-      const navbar = document.querySelector(".navbar");
+      // Language Toggle
+      const languageButtons = document.querySelectorAll(
+        ".language-toggle button"
+      );
+      const arabicElements = document.querySelectorAll(".arabic");
+      const englishElements = document.querySelectorAll(".english");
 
+      languageButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const lang = button.getAttribute("data-lang");
+
+          // Toggle active class
+          languageButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          // Toggle language content
+          if (lang === "ar") {
+            document.documentElement.setAttribute("lang", "ar");
+            document.documentElement.setAttribute("dir", "rtl");
+            arabicElements.forEach((el) => (el.style.display = ""));
+            englishElements.forEach((el) => (el.style.display = "none"));
+            document.querySelector(".logo-img").src =
+              "./images/Logo تحدي مليون فكرة ازرق.png";
+          } else {
+            document.documentElement.setAttribute("lang", "en");
+            document.documentElement.setAttribute("dir", "ltr");
+            arabicElements.forEach((el) => (el.style.display = "none"));
+            englishElements.forEach((el) => (el.style.display = ""));
+            document.querySelector(".logo-img").src =
+              "./images/Logo تحدي مليون فكرة ازرق.png"; // Replace with English logo path if available
+          }
+        });
+      });
+      // Changing Text Animation
+      const changingText = document.querySelectorAll(".changing-text span");
+      let currentIndex = 0;
+
+      function changeText() {
+        changingText.forEach((text, index) => {
+          text.style.opacity = index === currentIndex ? "1" : "0";
+          text.style.transform =
+            index === currentIndex
+              ? "translateY(0)"
+              : index < currentIndex
+              ? "translateY(-100%)"
+              : "translateY(100%)";
+        });
+        currentIndex = (currentIndex + 1) % changingText.length;
+      }
+
+      changeText();
+      setInterval(changeText, 3000);
+
+      // FAQ Accordion
+      const faqQuestions = document.querySelectorAll(".faq-question");
+
+      faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+          const faqItem = question.parentElement;
+          const isActive = faqItem.classList.contains("active");
+
+          // Close all FAQ items
+          document.querySelectorAll(".faq-item").forEach((item) => {
+            item.classList.remove("active");
+            item.querySelector(".faq-answer").style.maxHeight = null;
+          });
+
+          // Toggle current FAQ item
+          if (!isActive) {
+            faqItem.classList.add("active");
+            const answer = faqItem.querySelector(".faq-answer");
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          }
+        });
+      });
+
+      // Navbar Scroll Effect
       window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
         if (window.scrollY > 50) {
           navbar.classList.add("scrolled");
         } else {
           navbar.classList.remove("scrolled");
         }
-      });
-
-      // Close mobile menu when clicking a link
-      document.querySelectorAll(".nav-links a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("active");
-          mobileMenuBtn.innerHTML = "☰";
-        });
-      });
-
-      // Language toggle functionality
-      const enBtn = document.getElementById("en-btn");
-      const arBtn = document.getElementById("ar-btn");
-
-      enBtn.addEventListener("click", () => {
-        document.documentElement.lang = "en";
-        document.documentElement.dir = "ltr";
-        enBtn.classList.add("active");
-        arBtn.classList.remove("active");
-
-        document
-          .querySelectorAll(".english")
-          .forEach((el) => (el.style.display = "block"));
-        document
-          .querySelectorAll(".arabic")
-          .forEach((el) => (el.style.display = "none"));
-
-        document.querySelector(".navbar").style.direction = "ltr";
-        document.querySelector(".logo").textContent = "OrangeCorners";
-        document.querySelector(".about-container").style.direction = "ltr";
-        document.querySelector(".about-image-container").style.order = "-1";
-        document.querySelector(".timeline-container").style.direction = "ltr";
-        document.querySelector(".partners-container").style.direction = "ltr";
-      });
-
-      arBtn.addEventListener("click", () => {
-        document.documentElement.lang = "ar";
-        document.documentElement.dir = "rtl";
-        arBtn.classList.add("active");
-        enBtn.classList.remove("active");
-
-        document
-          .querySelectorAll(".arabic")
-          .forEach((el) => (el.style.display = "block"));
-        document
-          .querySelectorAll(".english")
-          .forEach((el) => (el.style.display = "none"));
-
-        document.querySelector(".navbar").style.direction = "rtl";
-        document.querySelector(".logo").textContent = "أورانجكورنرز";
-        document.querySelector(".about-container").style.direction = "rtl";
-        document.querySelector(".about-image-container").style.order = "0";
-        document.querySelector(".timeline-container").style.direction = "rtl";
-        document.querySelector(".partners-container").style.direction = "rtl";
-      });
-
-      // Highlight text rotation
-      const arabicWords = [
-        "تدهور الأرض",
-        "نقص المياه",
-        "ملوحة الأرض",
-        "تآكل التربة",
-        "تلوث المياه",
-        "ضرر المبيدات",
-        "ضعف الإنتاج",
-        "ارتفاع الحر",
-        "ندرة العمالة",
-        "سوء التخزين",
-        "ضعف الدعم",
-        "تلف المحصول",
-        "تقلب الجو",
-        "انتشار الآفات",
-        "الري المفرط",
-        "زيادة التصحر",
-        "غلاء الآلات",
-      ];
-
-      const englishWords = [
-        "soil degradation",
-        "water scarcity",
-        "soil salinity",
-        "soil erosion",
-        "water pollution",
-        "pesticide damage",
-        "low productivity",
-        "rising temperatures",
-        "labor shortage",
-        "urban sprawl",
-        "poor storage",
-        "pesticide overuse",
-        "lack of support",
-        "crop damage",
-        "temperature fluctuations",
-        "pest outbreaks",
-        "water contamination",
-        "over-irrigation",
-        "desertification",
-        "agricultural emissions",
-      ];
-
-      let currentWordIndex = 0;
-
-      function rotateWords() {
-        const arabicHighlight = document.querySelector(
-          ".hero-title.arabic .changing-text"
-        );
-        const englishHighlight = document.querySelector(
-          ".hero-title.english .changing-text"
-        );
-
-        const arabicSpans = arabicHighlight.querySelectorAll("span");
-        const englishSpans = englishHighlight.querySelectorAll("span");
-
-        arabicSpans.forEach((span) => (span.style.opacity = 0));
-        englishSpans.forEach((span) => (span.style.opacity = 0));
-
-        setTimeout(() => {
-          currentWordIndex = (currentWordIndex + 1) % arabicWords.length;
-          arabicSpans[currentWordIndex].style.opacity = 1;
-          englishSpans[currentWordIndex].style.opacity = 1;
-
-          arabicSpans.forEach((span, index) => {
-            span.textContent = `${arabicWords[index]} "`;
-          });
-          englishSpans.forEach((span, index) => {
-            span.textContent = englishWords[index];
-          });
-        }, 500);
-      }
-
-      setInterval(rotateWords, 2000);
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const arabicHighlight = document.querySelector(
-          ".hero-title.arabic .changing-text"
-        );
-        const englishHighlight = document.querySelector(
-          ".hero-title.english .changing-text"
-        );
-        arabicHighlight.querySelectorAll("span")[0].style.opacity = 1;
-        englishHighlight.querySelectorAll("span")[0].style.opacity = 1;
-
-        // FAQ toggle functionality
-        document.querySelectorAll(".faq-question").forEach((question) => {
-          question.addEventListener("click", () => {
-            const faqItem = question.parentElement;
-            const isActive = faqItem.classList.contains("active");
-
-            // Close all other FAQ items
-            document.querySelectorAll(".faq-item").forEach((item) => {
-              item.classList.remove("active");
-            });
-
-            // Toggle the clicked FAQ item
-            if (!isActive) {
-              faqItem.classList.add("active");
-            }
-          });
-        });
       });
     </script>
   </body>
