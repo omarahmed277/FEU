@@ -31,7 +31,7 @@
       }
 
       body {
-        background-color: var(--white);
+        background-color: #fffce3;
         color: var(--dark-black);
         font-family: var(--font-family);
       }
@@ -47,7 +47,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 20px 40px;
-        background-color: var(--white);
+        background-color: #fffce3;
         position: sticky;
         top: 0;
         z-index: 1000;
@@ -78,11 +78,6 @@
         font-family: var(--font-family);
         cursor: pointer;
         transition: var(--transition);
-      }
-
-      .language-switch:hover {
-        background-color: var(--primary-yellow);
-        color: var(--dark-black);
       }
 
       /* Nav Styles */
@@ -166,9 +161,10 @@
       }
 
       .hero h1 {
+        color: var(--primary-yellow);
         font-family: var(--heading-font);
-        font-size: 36px;
-        margin-bottom: 28px;
+        font-size: 38px;
+        margin-bottom: 32px;
         position: relative;
         z-index: 2;
         animation: fadeInDown 1s ease-out;
@@ -232,124 +228,153 @@
         border-color: var(--white);
       }
 
-      /* Introduction Section */
-      .introduction-section {
+      .combined-section {
         padding: 80px 20px;
-        text-align: center;
-        background-color: var(--light-gray);
-      }
-
-      .introduction-content {
-        max-width: 900px;
+        max-width: 1400px;
         margin: 0 auto;
       }
 
+      .introduction-content {
+        background: var(--white);
+        padding: 40px;
+        border-radius: 20px;
+
+        text-align: justify;
+        margin-bottom: 60px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
       .introduction-content h2 {
-        font-family: var(--heading-font);
-        font-size: 36px;
-        color: var(--primary-blue);
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--dark-black);
         margin-bottom: 30px;
-        position: relative;
-        display: inline-block;
+        line-height: 1.2;
+        text-align: center;
       }
 
       .introduction-content p {
-        font-size: 16px;
-        font-family: var(--font-family);
-        color: var(--dark-black);
+        font-size: 1.1rem;
+        color: #555;
         line-height: 1.8;
-        margin-bottom: 20px;
-      }
-
-      /* Features Section */
-      .features {
-        padding: 80px 20px;
+        padding: 0% 14%;
         text-align: center;
-        background-color: var(--white);
-      }
-
-      .features h2 {
-        font-family: var(--heading-font);
-        font-size: 36px;
-        color: var(--primary-blue);
-        margin-bottom: 60px;
-        position: relative;
-        display: inline-block;
       }
 
       .features-grid {
-        display: flex;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 40px;
-        flex-wrap: wrap;
-        max-width: 1200px;
+        max-width: 1000px;
         margin: 0 auto;
       }
 
       .feature-card {
-        background-color: var(--white);
-        border-radius: 15px;
-        padding: 40px 20px;
-        width: 280px;
-        box-shadow: var(--shadow-md);
-        transition: var(--transition);
+        position: relative;
+        border-radius: 20px;
+        padding: 100px;
+        text-align: center;
+        /* box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25),
+          0 0 0 2px rgba(255, 255, 255, 0.1); */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.15), transparent);
+        border: 2px solid transparent;
+        /* border-image: linear-gradient(
+            135deg,
+            var(--primary-yellow),
+            var(--primary-blue)
+          )
+          1; */
       }
 
-      .feature-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--shadow-lg);
+      .feature-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+        opacity: 0.9;
       }
 
-      .feature-icon {
-        margin-bottom: 20px;
-        color: var(--primary-blue);
+      .feature-card:nth-child(1)::before {
+        background-image: url("./images/tot.jpg");
       }
 
-      .feature-icon svg {
-        width: 50px;
-        height: 50px;
-        fill: var(--primary-blue);
-        transition: var(--transition);
+      .feature-card:nth-child(2)::before {
+        background-image: url("./images/ideachallenge.jpg");
       }
 
-      .feature-card:hover .feature-icon svg {
-        fill: var(--primary-yellow);
-        transform: scale(1.1);
+      .feature-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            rgba(26, 38, 202, 0.8),
+            rgba(40, 53, 147, 0.8)
+          ),
+          radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        z-index: 1;
+        border-radius: 18px;
+        /* backdrop-filter: blur(8px); */
       }
 
       .feature-title {
-        font-family: var(--heading-font);
-        font-size: 22px;
-        font-weight: bold;
-        margin-bottom: 15px;
-        color: var(--primary-blue);
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        /* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); */
+        color: var(--primary-yellow);
+        position: relative;
+        z-index: 2;
       }
 
       .feature-desc {
-        font-size: 14px;
-        font-family: var(--font-family);
-        color: #666;
-        margin-bottom: 20px;
+        font-size: 1.2rem;
+        margin-bottom: 52px;
         line-height: 1.6;
+        color: var(--light-gray);
+        /* text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); */
+        position: relative;
+        z-index: 2;
       }
 
       .more-link {
-        color: var(--primary-blue);
-        font-size: 14px;
-        font-family: var(--font-family);
-        display: inline-block;
-        transition: var(--transition);
+        display: inline-flex;
+        align-items: flex-end;
+        gap: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 14px 28px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+        /* background: linear-gradient(90deg, var(--primary-yellow), #e6d324); */
+        color: var(--primary-yellow);
+        border: 1px solid;
+        /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25); */
+        position: relative;
+        z-index: 2;
       }
 
       .more-link:hover {
-        color: var(--primary-yellow);
-        text-decoration: underline;
+        background: linear-gradient(90deg, var(--primary-blue), #0f1a8f);
+        color: var(--white);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(26, 38, 202, 0.5);
       }
-
       /* Partners Section */
       .partners-section {
         padding: 80px 5%;
-        background-color: var(--light-gray);
+        /* background-color: var(--light-gray); */
         position: relative;
         display: flex;
         align-items: center;
@@ -394,14 +419,9 @@
         background: var(--white);
         border-radius: 15px;
         padding: 30px;
-        box-shadow: var(--shadow-md);
+        /* box-shadow: var(--shadow-md); */
         transition: var(--transition);
         text-align: center;
-      }
-
-      .partner-item:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--shadow-lg);
       }
 
       .partner-logo {
@@ -444,7 +464,7 @@
         margin: 0 auto;
         display: flex;
         flex-direction: row-reverse;
-        background-color: #ffffff82;
+        /* background-color: #ffffff82; */
         overflow: hidden;
       }
 
@@ -495,13 +515,16 @@
         text-align: start;
         padding-bottom: 0px;
         position: relative;
+        --after-right: 0;
+        --after-left: auto;
       }
 
       .main-title::after {
         content: "";
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: var(--after-right);
+        left: var(--after-left);
         width: 80px;
         height: 3px;
         background-color: var(--primary-yellow);
@@ -521,12 +544,10 @@
       }
 
       .goal-list {
-        list-style: none;
+        list-style-type: disc;
       }
 
       .goal-list li {
-        position: relative;
-        padding-right: 20px;
         margin-bottom: 6px;
         line-height: 1.5;
         font-size: 15px;
@@ -534,15 +555,16 @@
         color: var(--dark-black);
       }
 
-      .goal-list li::before {
-        content: "•";
-        position: absolute;
-        right: 0;
-        font-size: 18px;
-        font-weight: bold;
+      html[lang="ar"] .goal-list li {
+        padding-right: 20px;
+        padding-left: 0;
       }
 
-      /* Stages Section */
+      html[lang="en"] .goal-list li {
+        padding-left: 20px;
+        padding-right: 0;
+      }
+
       /* Stages Section */
       .section {
         margin: 36px auto;
@@ -559,12 +581,7 @@
         padding: 30px;
         display: flex;
         align-items: center;
-        /* box-shadow: var(--shadow-md); */
         overflow: visible;
-      }
-
-      .stage.light {
-        /* background-color: #fff8dc; */
       }
 
       .stage .content {
@@ -609,6 +626,7 @@
       }
 
       h2 {
+        /* display: none; */
         font-size: 28px;
         margin-bottom: 10px;
         font-family: var(--heading-font);
@@ -617,14 +635,15 @@
 
       h3 {
         font-size: 24px;
-        margin-bottom: 10px;
+        font-weight: 500;
+        margin-bottom: 16px;
         color: #333;
         font-family: var(--heading-font);
       }
 
       ul {
         margin: 0 0 10px 0;
-        padding-right: 20px;
+        padding-right: 0px;
       }
 
       ul li {
@@ -667,100 +686,150 @@
         line-height: 1.6;
       }
 
-      /* Footer */
+      /* Enhanced Footer Styles */
       .footer {
-        background-color: var(--primary-blue);
-        padding: 60px 20px;
+        margin: 0 5%;
+        width: 90%;
+        background: linear-gradient(135deg, var(--primary-blue), #0f1a8f);
+        padding: 40px 20px;
         color: var(--white);
+        border-radius: 26px 26px 0 0;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
       }
 
       .footer-content {
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
         max-width: 1200px;
         margin: 0 auto;
-        gap: 30px;
+        gap: 20px;
       }
 
-      .footer-info,
-      .footer-nav,
-      .footer-contact {
-        flex: 1;
-        min-width: 250px;
+      .footer-logo-container {
+        text-align: center;
+        margin-bottom: 20px;
       }
 
       .footer-logo {
-        font-size: 28px;
-        font-weight: bold;
-        font-family: var(--heading-font);
-        margin-bottom: 15px;
+        width: 120px;
+        height: auto;
+        transition: var(--transition);
+        filter: brightness(1.2);
       }
 
-      .footer-logo span {
-        color: var(--primary-yellow);
+      .footer-logo:hover {
+        transform: scale(1.1);
+        filter: brightness(1.5);
       }
 
-      .footer-desc {
-        max-width: 300px;
-        font-size: 14px;
-        font-family: var(--font-family);
-        line-height: 1.6;
-      }
-
-      .footer-nav h3,
-      .footer-contact h3 {
-        font-size: 20px;
-        font-family: var(--heading-font);
-        margin-bottom: 20px;
-        color: var(--primary-yellow);
+      .footer-links-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       .footer-links {
+        display: flex;
+        gap: 20px;
         list-style: none;
+        margin: 0;
+        padding: 0;
       }
 
       .footer-links li {
-        margin-bottom: 10px;
         font-family: var(--font-family);
+        font-size: 16px;
         transition: var(--transition);
       }
 
       .footer-links li:hover {
         color: var(--primary-yellow);
-        transform: translateX(-5px);
-      }
-
-      .contact-info div {
-        margin-bottom: 10px;
-        font-size: 14px;
-        font-family: var(--font-family);
+        transform: translateY(-2px);
       }
 
       .social-links {
         display: flex;
-        gap: 15px;
-        margin-top: 20px;
+        gap: 20px;
+        align-items: center;
       }
 
-      .social-links div {
-        font-size: 16px;
+      .social-links a {
+        font-size: 18px;
         font-family: var(--font-family);
+        color: var(--white);
         transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
 
-      .social-links div:hover {
+      .social-links a:hover {
         color: var(--primary-yellow);
-        transform: scale(1.2);
+        transform: scale(1.1);
+      }
+
+      .social-links a::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .social-links a.instagram::before {
+        background-image: url("https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png");
+      }
+
+      .social-links a.linkedin::before {
+        background-image: url("https://img.icons8.com/ios-filled/50/ffffff/linkedin.png");
+      }
+
+      .social-links a.facebook::before {
+        background-image: url("https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png");
+      }
+
+      .contact-info {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        font-family: var(--font-family);
+        font-size: 14px;
+      }
+
+      .contact-info div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .contact-info div::before {
+        content: "";
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .contact-info .email::before {
+        background-image: url("https://img.icons8.com/ios-filled/50/ffffff/email.png");
+      }
+
+      .contact-info .phone::before {
+        background-image: url("https://img.icons8.com/ios-filled/50/ffffff/phone.png");
       }
 
       .copyright {
         text-align: center;
-        padding-top: 40px;
+        padding-top: 20px;
         font-size: 14px;
         font-family: var(--font-family);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        margin-top: 40px;
+        border-top: 1px solid rgba(255, 255, 0.1);
+        margin-top: 20px;
       }
 
       /* Animations */
@@ -879,7 +948,7 @@
         }
 
         .program-goals {
-          flex-direction: column;
+          flex-direction: column !important;
           height: auto;
           padding: 20px;
         }
@@ -888,7 +957,8 @@
         .content-container {
           width: 100%;
           position: relative;
-          left: 0;
+          left: 0 !important;
+          right: 0 !important;
           top: 0;
           height: auto;
           margin-bottom: 20px;
@@ -912,21 +982,32 @@
 
         .main-title {
           font-size: 28px;
-          text-align: center;
+          text-align: center !important;
         }
 
         .main-title::after {
-          right: 50%;
-          transform: translateX(50%);
+          right: 50% !important;
+          left: 50% !important;
+          transform: translateX(-50%);
         }
 
         .category-title {
           font-size: 20px;
+          text-align: center !important;
         }
 
         .goal-list li {
           font-size: 14px;
+        }
+
+        html[lang="ar"] .goal-list li {
           padding-right: 15px;
+          padding-left: 0;
+        }
+
+        html[lang="en"] .goal-list li {
+          padding-left: 15px;
+          padding-right: 0;
         }
 
         .section {
@@ -1044,7 +1125,7 @@
         }
 
         .program-goals {
-          flex-direction: column;
+          flex-direction: column !important;
           height: auto;
           padding: 30px;
         }
@@ -1053,7 +1134,8 @@
         .content-container {
           width: 100%;
           position: relative;
-          left: 0;
+          left: 0 !important;
+          right: 0 !important;
           top: 0;
           height: auto;
           margin-bottom: 30px;
@@ -1077,14 +1159,32 @@
 
         .main-title {
           font-size: 32px;
+          text-align: center !important;
+        }
+
+        .main-title::after {
+          right: 50% !important;
+          left: 50% !important;
+          transform: translateX(-50%);
         }
 
         .category-title {
           font-size: 20px;
+          text-align: center !important;
         }
 
         .goal-list li {
           font-size: 15px;
+        }
+
+        html[lang="ar"] .goal-list li {
+          padding-right: 15px;
+          padding-left: 0;
+        }
+
+        html[lang="en"] .goal-list li {
+          padding-left: 15px;
+          padding-right: 0;
         }
 
         .section {
@@ -1128,13 +1228,9 @@
   </head>
   <body>
     <header class="header">
-      <div
-        class="logo"
-        data-ar="Million <span>Idea</span> Challenge"
-        data-en="Million <span>Idea</span> Challenge"
-      >
-        Million <span>Idea</span> Challenge
-      </div>
+      <a class="logo">
+        <img src="./images/Blue Plane-01.png" width="50" alt=""
+      /></a>
       <div class="nav">
         <a
           href="./index.html"
@@ -1157,18 +1253,25 @@
           href="./index.html#requirements"
           data-ar="الشروط"
           data-en="Terms"
-          >الشروط</a
         >
+          الشروط
+        </a>
         <a
           href="#partners"
           class="nav-item"
           data-ar="الشركاء"
           data-en="Partners"
-          >الشركاء</a
         >
-        <button class="register-btn" data-ar="سجل الآن" data-en="Register Now">
+          الشركاء
+        </a>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLScI_a_fywtTkwZ_JiMdgRU5uNXzwV_GF4Nk2NGlFgO4sy3WTQ/viewform?usp=sharing&ouid=105202443836807584595"
+          class="register-btn"
+          data-ar="سجل الآن"
+          data-en="Register Now"
+        >
           سجل الآن
-        </button>
+        </a>
         <div class="language-switch" onclick="toggleLanguage()">English</div>
       </div>
     </header>
@@ -1185,13 +1288,7 @@
         >
           برنامج تعزيز ريادة الأعمال في الجامعات
         </h1>
-        <div
-          class="subtitle"
-          data-ar="Fostering Entrepreneurship in Universities"
-          data-en="Fostering Entrepreneurship in Universities"
-        >
-          Fostering Entrepreneurship in Universities
-        </div>
+
         <div
           class="hero-description"
           data-ar="يجمع البرنامج بين التدريب والتوجيه لتعزيز دور أعضاء هيئة التدريس في دعم الأفكار الريادية داخل الجامعة، من خلال توفير مساحات للتفاعل بين المعرفة الأكاديمية والمشاريع الابتكارية، وتشجيع تطوير حلول تنطلق من الواقع وتستجيب للتحديات المجتمعية."
@@ -1213,12 +1310,12 @@
       </div>
     </section>
 
-    <section class="introduction-section" id="About-Program">
+    <section class="combined-section" id="About-Program">
       <div class="introduction-content">
         <h2 data-ar="عن البرنامج" data-en="About the Program">عن البرنامج</h2>
         <p
           data-ar="في إطار رؤية مصر 2030 لتعزيز الابتكار وريادة الأعمال، يأتي برنامج تعزيز ريادة الأعمال في الجامعات لربط الأبحاث الأكاديمية بالواقع العملي، ودعم الطلاب في تحويل أفكارهم إلى مشاريع ناشئة ذات تأثير مجتمعي. بالتعاون مع الجامعات المصرية نعمل على بناء قدرات أعضاء هيئة التدريس وتوجيه الطلاب نحو تحقيق حلول مبتكرة تساهم في التنمية المستدامة. نهدف إلى غرس ثقافة ريادة الأعمال كمنهج تفكير، ليكون حافزًا للطلاب وأعضاء هيئة التدريس على توجيه مجهوداتهم الأكاديمية أو البحثية نحو تطبيقات عملية تُحدث أثرًا حقيقيًا في المجتمع. لذلك يشكّل التعاون مع أعضاء هيئة التدريس عاملًا مهمًا في نشر فكر ريادة الأعمال داخل الجامعات، حيث يمكن من خلال دعمهم الأكاديمي والعملي للفرق الطلابية تحفيز التفكير الريادي في مختلف التخصصات. يساعد هذا التعاون في تحسين نماذج الأعمال وتطوير حلول واقعية، وربط المشاريع بالتحديات المجتمعية لتعزيز أثرها واستدامتها."
-          data-en="Within the framework of Egypt Vision 2030 to promote innovation and entrepreneurship, the University Entrepreneurship Promotion Program comes to bridge academic research with practical reality, supporting students in turning their ideas into impactful startups. In collaboration with Egyptian universities, we work on building the capacities of faculty members and guiding students towards achieving innovative solutions that contribute to sustainable development. We aim to instill an entrepreneurial culture as a mindset, serving as an incentive for students and faculty to direct their academic or research efforts towards practical applications that create a real impact in society. Therefore, collaboration with faculty members plays a crucial role in spreading entrepreneurial thinking within universities, as their academic and practical support for student teams can stimulate entrepreneurial thinking across various disciplines. This collaboration helps improve business models, develop realistic solutions, and connect projects to societal challenges to enhance their impact and sustainability."
+          data-en="Within the framework of Egypt Vision 2030 to promote innovation and entrepreneurship, the University Entrepreneurship Promotion Program bridges academic research with practical reality, supporting students in turning their ideas into impactful startups. In collaboration with Egyptian universities, we work on building the capacities of faculty members and guiding students towards achieving innovative solutions that contribute to sustainable development. We aim to instill an entrepreneurial culture as a mindset, serving as an incentive for students and faculty to direct their academic or research efforts towards practical applications that create a real impact in society. Therefore, collaboration with faculty members plays a crucial role in spreading entrepreneurial thinking within universities, as their academic and practical support for student teams can stimulate entrepreneurial thinking across various disciplines. This collaboration helps improve business models, develop realistic solutions, and connect projects to societal challenges to enhance their impact and sustainability."
         >
           في إطار رؤية مصر 2030 لتعزيز الابتكار وريادة الأعمال، يأتي برنامج
           تعزيز ريادة الأعمال في الجامعات لربط الأبحاث الأكاديمية بالواقع
@@ -1235,21 +1332,9 @@
           لتعزيز أثرها واستدامتها.
         </p>
       </div>
-    </section>
 
-    <section class="features">
-      <h2 data-ar="عناصر البرنامج" data-en="Program Elements">
-        عناصر البرنامج
-      </h2>
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M12 2a10 10 0 0 0-7.35 16.83 1 1 0 0 0 1.41-.14 1 1 0 0 0-.14-1.41A8 8 0 1 1 12 20a8 8 0 0 1-5.66-2.34A6 6 0 0 0 12 14a1 1 0 0 0-1-1H8a1 1 0 0 0 0 2h2a1 1 0 0 0 1-1 4 4 0 0 1 7.89-.89 1 1 0 0 0 1.41.14 1 1 0 0 0 .14-1.41A10 10 0 0 0 12 2zm0 16a2 2 0 1 1 2-2 2 2 0 0 1-2 2z"
-              />
-            </svg>
-          </div>
           <div
             class="feature-title"
             data-ar="تدريب المدربين"
@@ -1259,27 +1344,23 @@
           </div>
           <div
             class="feature-desc"
-            data-ar="تعرف على تحدي مليون فكرة و أهدافه"
-            data-en="Learn about the Million Idea Challenge and its goals"
+            data-ar="بناء شبكة داعمة للابتكار داخل الجامعات من خلال تدريب 30 عضو هيئة تدريس على منهجيات تأسيس الشركات الناشئة، اختبار الحلول، تطوير النماذج الأولية، وتوجيه الطلاب بأساليب عملية."
+            data-en="Building a supportive network for innovation within universities by training 30 faculty members on methodologies for establishing startups, testing solutions, developing prototypes, and guiding students practically."
           >
-            تعرف على تحدي مليون فكرة و أهدافه
+            بناء شبكة داعمة للابتكار داخل الجامعات من خلال تدريب 30 عضو هيئة
+            تدريس على منهجيات تأسيس الشركات الناشئة، اختبار الحلول، تطوير
+            النماذج الأولية، وتوجيه الطلاب بأساليب عملية.
           </div>
           <a
-            href="#"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScI_a_fywtTkwZ_JiMdgRU5uNXzwV_GF4Nk2NGlFgO4sy3WTQ/viewform?usp=sharing&ouid=105202443836807584595"
             class="more-link"
-            data-ar="عرض المزيد ←"
-            data-en="View More →"
-            >عرض المزيد ←</a
+            data-ar="سجل الان"
+            data-en="ٌRegister Now"
           >
+            سجل الان
+          </a>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M19 3h-4a1 1 0 0 0-1 1v1h-4V4a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8 18a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm0-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm0-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm6 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm0-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm0-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm0-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm0-4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
-              />
-            </svg>
-          </div>
           <div
             class="feature-title"
             data-ar="تحدي مليون فكرة"
@@ -1289,102 +1370,21 @@
           </div>
           <div
             class="feature-desc"
-            data-ar="تعرف على مراحل التحدي والمواعيد المهمة"
-            data-en="Learn about the challenge stages and key dates"
+            data-ar="بعد إعداد المدربين، ينطلق تحدي مليون فكرة لتمكين الطلاب من خلال هاكاثون ريادة الأعمال، معسكر تدريبي مكثف حول نماذج الأعمال والتمويل والتسويق، وتوجيه مباشر من أعضاء هيئة التدريس."
+            data-en="After preparing trainers, the Million Idea Challenge launches to empower students through an entrepreneurship hackathon, an intensive training bootcamp on business models, financing, and marketing, and direct guidance from faculty members."
           >
-            تعرف على مراحل التحدي والمواعيد المهمة
+            بعد إعداد المدربين، ينطلق تحدي مليون فكرة لتمكين الطلاب من خلال
+            هاكاثون ريادة الأعمال، معسكر تدريبي مكثف حول نماذج الأعمال والتمويل
+            والتسويق، وتوجيه مباشر من أعضاء هيئة التدريس.
           </div>
           <a
-            href="#"
+            href="./index.html"
             class="more-link"
-            data-ar="عرض المزيد ←"
-            data-en="View More →"
-            >عرض المزيد ←</a
+            data-ar=" سجل الان "
+            data-en="  Register Now "
           >
-        </div>
-      </div>
-    </section>
-
-    <section class="partners-section" id="partners">
-      <div class="partners-container">
-        <div class="partners-header">
-          <h1 class="arabic" data-ar="شركاؤنا" data-en="Our Partners">
-            شركاؤنا
-          </h1>
-          <p
-            class="arabic"
-            data-ar="نعمل مع شركاء متميزين لدعم ريادة الأعمال وتمكين الشباب في مصر"
-            data-en="We collaborate with distinguished partners to support entrepreneurship and empower youth in Egypt"
-          >
-            نعمل مع شركاء متميزين لدعم ريادة الأعمال وتمكين الشباب في مصر
-          </p>
-        </div>
-        <div class="partners-grid">
-          <div class="partner-item">
-            <img
-              src="./images/1_Standard_Logo_Orange_Corners_Orange_Black_without_tagline.png"
-              alt="Orange Corners"
-              class="partner-logo orange-cornersLogo"
-            />
-            <h3
-              class="arabic orangeTitle"
-              data-ar="أورانج كورنرز"
-              data-en="Orange Corners"
-            >
-              أورانج كورنرز
-            </h3>
-            <p
-              class="arabic OrangeCornersDescription"
-              data-ar="مبادرة تدعمها الحكومة الهولندية من خلال وكالة المشاريع الهولندية، وبالتعاون مع سفارة مملكة هولندا والشركاء المحليين في كل دولة. تهدف المبادرة إلى تمكين الشباب من خلال دعم ريادة الأعمال وتوفير فرص عمل، وذلك عبر برامج تدريبية وشراكات فعّالة مع الجهات المحلية."
-              data-en="An initiative supported by the Dutch government through the Netherlands Enterprise Agency, in collaboration with the Embassy of the Kingdom of the Netherlands and local partners in each country. The initiative aims to empower youth by supporting entrepreneurship and providing job opportunities through training programs and effective partnerships with local entities."
-            >
-              مبادرة تدعمها الحكومة الهولندية من خلال وكالة المشاريع الهولندية،
-              وبالتعاون مع سفارة مملكة هولندا والشركاء المحليين في كل دولة. تهدف
-              المبادرة إلى تمكين الشباب من خلال دعم ريادة الأعمال وتوفير فرص
-              عمل، وذلك عبر برامج تدريبية وشراكات فعّالة مع الجهات المحلية.
-            </p>
-          </div>
-          <div class="partner-item">
-            <img
-              src="./images/americanuniversity.svg"
-              alt="The American University in Cairo"
-              class="partner-logo"
-            />
-            <h3
-              class="arabic"
-              data-ar="مركز الابتكار بالجامعة الأمريكية بالقاهرة"
-              data-en="The American University in Cairo"
-            >
-              مركز الابتكار بالجامعة الأمريكية بالقاهرة
-            </h3>
-            <p
-              class="arabic"
-              data-ar="جامعة بحثية خاصة تقدم برامج تعليمية بأسلوب التعليم الأمريكي في مراحل البكالوريوس والدراسات العليا والتعليم المهني، بالإضافة إلى برنامج للتعليم المستمر."
-              data-en="A private research university offering American-style education at the undergraduate, graduate, and professional levels, along with a continuing education program."
-            >
-              جامعة بحثية خاصة تقدم برامج تعليمية بأسلوب التعليم الأمريكي في
-              مراحل البكالوريوس والدراسات العليا والتعليم المهني، بالإضافة إلى
-              برنامج للتعليم المستمر.
-            </p>
-          </div>
-          <div class="partner-item">
-            <img
-              src="./images/athar logo (Black-Yellow).png"
-              alt="Athar"
-              class="partner-logo"
-            />
-            <h3 class="arabic atharTitle" data-ar="أثر" data-en="Athar">أثر</h3>
-            <p
-              class="arabic atharDescription"
-              data-ar="مسرعة أعمال تركّز على دعم مؤسسي الشركات الناشئة خارج العاصمة، بهدف تعزيز النمو المتوازن للمشهد الريادي في مصر. تقدم المسرعة حزمة متكاملة من الدعم تشمل التمويل، التوجيه، وفرص التشبيك مع مستثمرين وشركاء استراتيجيين."
-              data-en="A business accelerator focused on supporting startup founders outside the capital to promote balanced growth in Egypt’s entrepreneurial landscape. The accelerator provides a comprehensive support package, including funding, mentorship, and networking opportunities with investors and strategic partners."
-            >
-              مسرعة أعمال تركّز على دعم مؤسسي الشركات الناشئة خارج العاصمة، بهدف
-              تعزيز النمو المتوازن للمشهد الريادي في مصر. تقدم المسرعة حزمة
-              متكاملة من الدعم تشمل التمويل، التوجيه، وفرص التشبيك مع مستثمرين
-              وشركاء استراتيجيين.
-            </p>
-          </div>
+            سجل الان
+          </a>
         </div>
       </div>
     </section>
@@ -1500,271 +1500,212 @@
       </div>
     </div>
 
-    <div class="section">
-      <!-- Stage 1 -->
-      <div class="stage stage-1">
-        <img src="./images/photo1.JPG" alt="Stage 1 Image" />
-        <div class="content">
-          <h2 data-ar="مراحل البرنامج" data-en="Program Stages">
-            مراحل البرنامج
-          </h2>
-          <h3
-            data-ar="المرحلة الأولى تدريب المدربين"
-            data-en="Stage 1: Training of Trainers"
-          >
-            المرحلة الأولى <br />تدريب المدربين
-          </h3>
+    <section class="partners-section" id="partners">
+      <div class="partners-container">
+        <div class="partners-header">
+          <h1 class="arabic" data-ar="شركاؤنا" data-en="Our Partners">
+            شركاؤنا
+          </h1>
           <p
-            data-ar="بناء شبكة داعمة للابتكار داخل الجامعات"
-            data-en="Building a supportive network for innovation within universities"
+            class="arabic"
+            data-ar="نعمل مع شركاء متميزين لدعم ريادة الأعمال وتمكين الشباب في مصر"
+            data-en="We collaborate with distinguished partners to support entrepreneurship and empower youth in Egypt"
           >
-            بناء شبكة داعمة للابتكار داخل الجامعات
-          </p>
-          <ul>
-            <li
-              data-ar="تدريب 30 عضو هيئة تدريس من الجامعات المصرية على:"
-              data-en="Training 30 faculty members from Egyptian universities on:"
-            >
-              تدريب 30 عضو هيئة تدريس من الجامعات المصرية على:
-            </li>
-            <li
-              data-ar="منهجيات تأسيس الشركات الناشئة."
-              data-en="Methodologies for establishing startups."
-            >
-              منهجيات تأسيس الشركات الناشئة.
-            </li>
-            <li
-              data-ar="اختبار الحلول وتطوير النماذج الأولية."
-              data-en="Testing solutions and developing prototypes."
-            >
-              اختبار الحلول وتطوير النماذج الأولية.
-            </li>
-            <li
-              data-ar="توجيه الطلاب بأساليب عملية."
-              data-en="Guiding students with practical methods."
-            >
-              توجيه الطلاب بأساليب عملية.
-            </li>
-          </ul>
-          <p
-            class="goal"
-            data-ar="الهدف: إنشاء كوادر أكاديمية قادرة على دعم الطلاب في تحويل أفكارهم إلى مشاريع ريادية."
-            data-en="Goal: Creating academic cadres capable of supporting students in transforming their ideas into entrepreneurial projects."
-          >
-            الهدف: إنشاء كوادر أكاديمية قادرة على دعم الطلاب في تحويل أفكارهم
-            إلى مشاريع ريادية.
+            نعمل مع شركاء متميزين لدعم ريادة الأعمال وتمكين الشباب في مصر
           </p>
         </div>
-      </div>
-
-      <!-- Stage 2 -->
-      <div class="stage stage-2 light">
-        <img src="./images/photo7.JPG" alt="Stage 2 Image" />
-        <div class="content">
-          <h3
-            data-ar="المرحلة الثانية تدريب المدربين"
-            data-en="Stage 2: Training of Trainers"
-          >
-            المرحلة الثانية<br />
-            تدريب المدربين
-          </h3>
-          <p
-            data-ar="بناء شبكة داعمة للابتكار داخل الجامعات"
-            data-en="Building a supportive network for innovation within universities"
-          >
-            بناء شبكة داعمة للابتكار داخل الجامعات
-          </p>
-          <ul>
-            <li
-              data-ar="تدريب 30 عضو هيئة تدريس من الجامعات المصرية على:"
-              data-en="Training 30 faculty members from Egyptian universities on:"
+        <div class="partners-grid">
+          <div class="partner-item">
+            <img
+              src="./images/athar logo (Black-Yellow).png"
+              alt="Athar"
+              class="partner-logo"
+              style="margin-bottom: 0px"
+            />
+            <h3 class="arabic atharTitle"></h3>
+            <p
+              class="arabic atharDescription"
+              data-ar="مسرعة أعمال تركّز على دعم مؤسسي الشركات الناشئة خارج العاصمة، بهدف تعزيز النمو المتوازن للمشهد الريادي في مصر. تقدم المسرعة حزمة متكاملة من الدعم تشمل التمويل، التوجيه، وفرص التشبيك مع مستثمرين وشركاء استراتيجيين."
+              data-en="A business accelerator focused on supporting startup founders outside the capital to promote balanced growth in Egypt’s entrepreneurial landscape. The accelerator provides a comprehensive support package, including funding, mentorship, and networking opportunities with investors and strategic partners."
             >
-              تدريب 30 عضو هيئة تدريس من الجامعات المصرية على:
-            </li>
-            <li
-              data-ar="منهجيات تأسيس الشركات الناشئة."
-              data-en="Methodologies for establishing startups."
+              مسرعة أعمال تركّز على دعم مؤسسي الشركات الناشئة خارج العاصمة، بهدف
+              تعزيز النمو المتوازن للمشهد الريادي في مصر. تقدم المسرعة حزمة
+              متكاملة من الدعم تشمل التمويل، التوجيه، وفرص التشبيك مع مستثمرين
+              وشركاء استراتيجيين.
+            </p>
+          </div>
+          <div class="partner-item">
+            <img
+              src="./images/1_Standard_Logo_Orange_Corners_Orange_Black_without_tagline.png"
+              alt="Orange Corners"
+              class="partner-logo orange-cornersLogo"
+            />
+            <h3 class="arabic orangeTitle"></h3>
+            <p
+              class="arabic OrangeCornersDescription"
+              data-ar="مبادرة تدعمها الحكومة الهولندية من خلال وكالة المشاريع الهولندية، وبالتعاون مع سفارة مملكة هولندا والشركاء المحليين في كل دولة. تهدف المبادرة إلى تمكين الشباب من خلال دعم ريادة الأعمال وتوفير فرص عمل، وذلك عبر برامج تدريبية وشراكات فعّالة مع الجهات المحلية."
+              data-en="An initiative supported by the Dutch government through the Netherlands Enterprise Agency, in collaboration with the Embassy of the Kingdom of the Netherlands and local partners in each country. The initiative aims to empower youth by supporting entrepreneurship and providing job opportunities through training programs and effective partnerships with local entities."
             >
-              منهجيات تأسيس الشركات الناشئة.
-            </li>
-            <li
-              data-ar="اختبار الحلول وتطوير النماذج الأولية."
-              data-en="Testing solutions and developing prototypes."
+              مبادرة تدعمها الحكومة الهولندية من خلال وكالة المشاريع الهولندية،
+              وبالتعاون مع سفارة مملكة هولندا والشركاء المحليين في كل دولة. تهدف
+              المبادرة إلى تمكين الشباب من خلال دعم ريادة الأعمال وتوفير فرص
+              عمل، وذلك عبر برامج تدريبية وشراكات فعّالة مع الجهات المحلية.
+            </p>
+          </div>
+          <div class="partner-item">
+            <img
+              src="./images/americanuniversity.svg"
+              alt="The American University in Cairo"
+              class="partner-logo"
+            />
+            <h3 class="arabic"></h3>
+            <p
+              class="arabic"
+              data-ar="جامعة بحثية خاصة تقدم برامج تعليمية بأسلوب التعليم الأمريكي في مراحل البكالوريوس والدراسات العليا والتعليم المهني، بالإضافة إلى برنامج للتعليم المستمر."
+              data-en="A private research university offering American-style education at the undergraduate, graduate, and professional levels, along with a continuing education program."
             >
-              اختبار الحلول وتطوير النماذج الأولية.
-            </li>
-            <li
-              data-ar="توجيه الطلاب بأساليب عملية."
-              data-en="Guiding students with practical methods."
-            >
-              توجيه الطلاب بأساليب عملية.
-            </li>
-          </ul>
-          <p
-            class="goal"
-            data-ar="الهدف: إنشاء كوادر أكاديمية قادرة على دعم الطلاب في تحويل أفكارهم إلى مشاريع ريادية."
-            data-en="Goal: Creating academic cadres capable of supporting students in transforming their ideas into entrepreneurial projects."
-          >
-            الهدف: إنشاء كوادر أكاديمية قادرة على دعم الطلاب في تحويل أفكارهم
-            إلى مشاريع ريادية.
-          </p>
+              جامعة بحثية خاصة تقدم برامج تعليمية بأسلوب التعليم الأمريكي في
+              مراحل البكالوريوس والدراسات العليا والتعليم المهني، بالإضافة إلى
+              برنامج للتعليم المستمر.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-
-    <section class="registration">
-      <h2
-        data-ar="هل أنت مستعد للمشاركة؟"
-        data-en="Are You Ready to Participate?"
-      >
-        هل أنت مستعد للمشاركة؟
-      </h2>
-      <p
-        data-ar="سجل الآن في تحدي مليون فكرة وكن جزءا من رحلة تحويل فكرتك إلى واقع"
-        data-en="Register now for the Million Idea Challenge and be part of the journey to turn your idea into reality"
-      >
-        سجل الآن في تحدي مليون فكرة وكن جزءا من رحلة تحويل فكرتك إلى واقع
-      </p>
-      <button
-        class="cta-btn blue-btn"
-        data-ar="سجل الآن"
-        data-en="Register Now"
-      >
-        سجل الآن
-      </button>
     </section>
 
     <footer class="footer">
       <div class="footer-content">
-        <div class="footer-info">
-          <div
+        <div class="footer-logo-container">
+          <img
+            src="./images/Plane white-01.png"
+            alt="Footer Logo"
             class="footer-logo"
-            data-ar="Million <span>Idea</span> Challenge"
-            data-en="Million <span>Idea</span> Challenge"
-          >
-            Million <span>Idea</span> Challenge
-          </div>
-          <div
-            class="footer-desc"
-            data-ar="مبادرة لتمكين الشباب وتحقيق الإستدامة"
-            data-en="An initiative to empower youth and achieve sustainability"
-          >
-            مبادرة لتمكين الشباب وتحقيق الإستدامة
-          </div>
+          />
         </div>
-
-        <div class="footer-nav">
-          <h3 data-ar="تصفح" data-en="Browse">تصفح</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="#" data-ar="عن التحدي" data-en="About the Challenge"
-                >عن التحدي</a
-              >
-            </li>
-            <li>
-              <a href="#" data-ar="الجدول الزمني" data-en="Timeline"
-                >الجدول الزمني</a
-              >
-            </li>
-            <li><a href="#" data-ar="الشروط" data-en="Terms">الشروط</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-contact">
-          <h3 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h3>
-          <div class="contact-info">
-            <div data-ar="البريد الإلكتروني" data-en="Email">
-              البريد الإلكتروني
-            </div>
-            <div>info@millionidea.org</div>
-            <div data-ar="الهاتف" data-en="Phone">الهاتف</div>
-            <div>+20 123 456 7890</div>
-          </div>
+        <div class="footer-links-container">
           <div class="social-links">
-            <div data-ar="إنستغرام" data-en="Instagram">IG</div>
-            <div incompatibility: nonbreaking space
-            <div data-ar="تويتر/فيسبوك" data-en="Twitter/Facebook">TWFB</div>
+            <a
+              href="https://www.instagram.com/atharaccelerator?igsh=MXNrd3JhYmptMjMyMA%3D%3D&utm_source=qr"
+              class="instagram"
+              data-ar="إنستغرام"
+              data-en="Instagram"
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/athar-accelerator/"
+              class="linkedin"
+              data-ar="لينكد إن"
+              data-en="LinkedIn"
+            ></a>
+            <a
+              href="https://www.facebook.com/AtharAccelerator"
+              class="facebook"
+              data-ar="فيسبوك"
+              data-en="Facebook"
+            ></a>
+          </div>
+          <div class="contact-info">
+            <div class="email">
+              <a href="mailto:shoaib@athareg.com">shoaib@athareg.com</a>
+            </div>
           </div>
         </div>
       </div>
       <div
         class="copyright"
-        data-ar="© Million Idea Challenge 2025. جميع الحقوق محفوظة."
-        data-en="© Million Idea Challenge 2025. All rights reserved."
+        data-ar="© 2025 تعزيز ريادة الأعمال في الجامعات. جميع الحقوق محفوظة."
+        data-en="© 2025 Fostering Entrepreneurship in Universities. All rights reserved."
       >
-        © Million Idea Challenge 2025. All rights reserved.
+        © 2025 تعزيز ريادة الأعمال في الجامعات. جميع الحقوق محفوظة.
       </div>
     </footer>
 
     <script>
       function toggleLanguage() {
+        // Get current language and determine new language/direction
         const body = document.body;
         const currentLang = body.getAttribute("lang");
         const newLang = currentLang === "ar" ? "en" : "ar";
         const newDir = newLang === "ar" ? "rtl" : "ltr";
 
+        // Update document language and direction
         body.setAttribute("lang", newLang);
         body.setAttribute("dir", newDir);
 
+        // Select hero section elements
         const heroH1 = document.querySelector(".hero h1");
         const subtitle = document.querySelector(".hero .subtitle");
 
+        // Update text content for all elements with data-ar and data-en attributes
         document.querySelectorAll("[data-ar][data-en]").forEach((element) => {
           element.innerHTML = element.getAttribute(`data-${newLang}`);
         });
 
+        // Update language switch button text
         const langSwitch = document.querySelector(".language-switch");
         langSwitch.textContent = newLang === "ar" ? "English" : "العربية";
 
-        if (newLang === "en") {
-          heroH1.style.color = "var(--primary-yellow)";
-          subtitle.style.display = "none";
-        } else {
-          heroH1.style.color = "var(--white)";
-          subtitle.style.display = "block";
-        }
-
+        // Select program-goals section elements
         const programGoals = document.querySelector(".program-goals");
         const imageContainer = document.querySelector(".image-container");
+        const categoryTitle = document.querySelector(".category-title");
         const contentContainer = document.querySelector(".content-container");
         const mainTitle = document.querySelector(".main-title");
         const goalListItems = document.querySelectorAll(".goal-list li");
+        const goalCategories = document.querySelectorAll(".goal-category");
 
+        // Adjust program-goals section styling based on language
         if (newLang === "en") {
+          // Set layout for English (left-to-right)
           programGoals.style.flexDirection = "row";
           imageContainer.style.left = "auto";
           imageContainer.style.right = "10%";
           contentContainer.style.left = "0";
           mainTitle.style.textAlign = "left";
-          mainTitle.style.paddingBottom = "0";
-          mainTitle.querySelector("::after").style.right = "auto";
-          mainTitle.querySelector("::after").style.left = "0";
+          mainTitle.style.setProperty("--after-right", "auto");
+          mainTitle.style.setProperty("--after-left", "0");
+
+          categoryTitle.style.marginBottom = "8px";
+          // Adjust category titles and list items
+          goalCategories.forEach((category) => {
+            category.querySelector(".category-title").style.textAlign = "left";
+          });
 
           goalListItems.forEach((li) => {
             li.style.paddingLeft = "20px";
             li.style.paddingRight = "0";
             li.style.listStyleType = "disc";
-            li.style.listStylePosition = "outside";
+            li.style.marginBottom = "0px";
           });
         } else {
+          // Set layout for Arabic (right-to-left)
           programGoals.style.flexDirection = "row-reverse";
-          imageContainer.style.right = "auto";
+          imageContainer.style.position = "absolute";
+          imageContainer.style.width = "50%";
+          imageContainer.style.right = "40%";
+          imageContainer.style.height = "90%";
           contentContainer.style.left = "50%";
           mainTitle.style.textAlign = "start";
-          mainTitle.querySelector("::after").style.left = "auto";
-          mainTitle.querySelector("::after").style.right = "0";
+          mainTitle.style.setProperty("--after-left", "auto");
+          mainTitle.style.setProperty("--after-right", "0");
+          // Adjust category titles and list items
+
+          categoryTitle.style.marginBottom = "8px";
+          goalCategories.forEach((category) => {
+            category.querySelector(".category-title").style.textAlign = "right";
+          });
 
           goalListItems.forEach((li) => {
             li.style.paddingRight = "20px";
             li.style.paddingLeft = "0";
-            li.style.listStyleType = "none";
-            li.querySelector("::before").style.left = "auto";
-            li.querySelector("::before").style.right = "0";
+            li.style.listStyleType = "disc";
+            li.style.marginBottom = "6px";
           });
         }
       }
     </script>
+    <!-- Code injected by live-server -->
     <script>
+      // <![CDATA[  <-- For SVG support
       if ("WebSocket" in window) {
         (function () {
           function refreshCSS() {
@@ -1812,6 +1753,59 @@
           "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
         );
       }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
     </script>
     <!-- Code injected by live-server -->
     <script>

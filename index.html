@@ -15,6 +15,174 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
+    <style>
+      /* FAQ Section Styling */
+      .faq-section {
+        background-color: #fff;
+        padding: 40px 20px;
+      }
+
+      .faq-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .faq-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .faq-header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        /* color: #333; */
+      }
+
+      .faq-header p {
+        font-size: 1.2rem;
+        /* color: #666; */
+      }
+
+      .faq-group {
+        margin-bottom: 20px;
+      }
+
+      .faq-group-header {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .faq-group-header:hover {
+        background-color: #f5f5f5;
+      }
+
+      .faq-group-header h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        /* color: #333; */
+      }
+
+      .faq-group-header .icon {
+        width: 24px;
+        height: 24px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>')
+          no-repeat center;
+        transition: transform 0.3s;
+      }
+
+      .faq-group-header.active .icon {
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>')
+          no-repeat center;
+      }
+
+      .faq-group-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+
+      .faq-group-content.active {
+        max-height: 1000px; /* Adjust based on content */
+      }
+
+      .faq-item {
+        margin: 10px 0;
+      }
+
+      .faq-question {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .faq-question:hover {
+        background-color: #f5f5f5;
+      }
+
+      .faq-question h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        /* color: #333; */
+      }
+
+      .faq-question .icon {
+        width: 24px;
+        height: 24px;
+        /* background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>')
+          no-repeat center; */
+        transition: transform 0.3s;
+      }
+
+      .faq-item.active .faq-question .icon {
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>')
+          no-repeat center;
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+
+      .faq-answer-content {
+        padding: 15px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-top: none;
+        border-radius: 0 0 5px 5px;
+        color: #333;
+      }
+
+      .faq-answer-content p,
+      .faq-answer-content ul {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .faq-answer-content ul {
+        padding-right: 20px; /* RTL padding */
+        list-style-type: disc;
+      }
+
+      .faq-highlight {
+        color: #ff6200;
+        font-weight: 600;
+      }
+
+      /* English (LTR) Adjustments */
+      [dir="ltr"] .faq-group-header,
+      [dir="ltr"] .faq-question {
+        flex-direction: row;
+      }
+
+      [dir="ltr"] .faq-group-header h2,
+      [dir="ltr"] .faq-question h3,
+      [dir="ltr"] .faq-answer-content p,
+      [dir="ltr"] .faq-answer-content ul {
+        text-align: left;
+      }
+
+      [dir="ltr"] .faq-answer-content ul {
+        padding-left: 20px;
+        padding-right: 0;
+      }
+    </style>
   </head>
   <body>
     <div class="background-image-container"></div>
@@ -42,7 +210,6 @@
         <li class="arabic">
           <a href="#requirements" class="arabic">الشروط</a>
         </li>
-
         <!-- English Links -->
         <li class="english" style="display: none">
           <a href="./test.html" class="english">Home</a>
@@ -56,7 +223,6 @@
         <li class="english" style="display: none">
           <a href="#requirements" class="english">Requirements</a>
         </li>
-        
       </ul>
       <button class="mobile-menu-btn">☰</button>
     </nav>
@@ -92,7 +258,6 @@
                 <span>الري المفرط"</span>
                 <span>زيادة التصحر"</span>
                 <span>انبعاثات الزراعة"</span>
-                <!-- <span class="quote">"</span> -->
               </span>
             </span>
           </h1>
@@ -101,7 +266,6 @@
             الجميع. كل فكرة تملك القدرة على صناعة فرق حقيقي، شارك في تحدي مليون
             فكرة ,واحصل علي التوجيه، التشبيك والتمويل!
           </p>
-
           <h1 class="hero-title english" style="display: none">
             I have an idea to solve
             <span class="highlight">
@@ -135,7 +299,6 @@
             the solution! I have an idea to solve the Million Ideas Challenge.
             We'll help you implement the solution!
           </p>
-
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLScI_a_fywtTkwZ_JiMdgRU5uNXzwV_GF4Nk2NGlFgO4sy3WTQ/viewform?usp=sharing&ouid=105202443836807584595"
             class="cta-button arabic"
@@ -265,7 +428,6 @@
                 <div class="milestone-description arabic">
                   تدريب أعضاء هيئة التدريس على منهجيات التوجيه في ريادة الأعمال
                 </div>
-
                 <div
                   class="milestone-description english"
                   style="display: none"
@@ -345,421 +507,450 @@
           </p>
         </div>
 
+        <!-- General Questions Group -->
         <div class="faq-group">
-          <h2 class="arabic">الأسئلة العامة</h2>
-          <h2 class="english" style="display: none">General Questions</h2>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">أريد أن أعرف ما هو تحدي مليون فكرة؟</h3>
-              <h3 class="english" style="display: none">
-                What is the Million Ideas Challenge?
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  هو برنامج تقدمه مسرعة أعمال أثر لدعم الابتكار وريادة الأعمال
-                  في مصر، بهدف إيجاد حلول للتحديات التي يواجهها المجتمع.
-                </p>
-                <p class="english" style="display: none">
-                  It is a program offered by Athar Business Accelerator to
-                  support innovation and entrepreneurship in Egypt, aiming to
-                  find solutions to societal challenges.
-                </p>
+          <div class="faq-group-header">
+            <h2 class="arabic">الأسئلة العامة</h2>
+            <h2 class="english" style="display: none">General Questions</h2>
+            <div class="icon"></div>
+          </div>
+          <div class="faq-group-content">
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">أريد أن أعرف ما هو تحدي مليون فكرة؟</h3>
+                <h3 class="english" style="display: none">
+                  What is the Million Ideas Challenge?
+                </h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">
+                    هو برنامج تقدمه مسرعة أعمال أثر لدعم الابتكار وريادة الأعمال
+                    في مصر، بهدف إيجاد حلول للتحديات التي يواجهها المجتمع.
+                  </p>
+                  <p class="english" style="display: none">
+                    It is a program offered by Athar Business Accelerator to
+                    support innovation and entrepreneurship in Egypt, aiming to
+                    find solutions to societal challenges.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">ما هو مكان إقامة تحدي مليون فكرة؟</h3>
-              <h3 class="english" style="display: none">
-                Where will the Million Ideas Challenge take place?
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  سيتم تنفيذ البرنامج في محافظات أسيوط، المنيا، والفيوم.
-                </p>
-                <p class="english" style="display: none">
-                  The program will be implemented in the governorates of Assiut,
-                  Minya, and Fayoum.
-                </p>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">ما هو مكان إقامة تحدي مليون فكرة؟</h3>
+                <h3 class="english" style="display: none">
+                  Where will the Million Ideas Challenge take place?
+                </h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">
+                    سيتم تنفيذ البرنامج في محافظات أسيوط، المنيا، والفيوم.
+                  </p>
+                  <p class="english" style="display: none">
+                    The program will be implemented in the governorates of
+                    Assiut, Minya, and Fayoum.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">كيف أعلم أنه يمكنني المشاركة في التحدي؟</h3>
-              <h3 class="english" style="display: none">
-                How do I know if I can participate in the challenge?
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">يمكنك المشاركة إذا كنت:</p>
-                <ul class="arabic">
-                  <li>طالبًا في جامعة أسيوط، المنيا، أو الفيوم</li>
-                  <li>لديك فكرة تحل مشكلة في المجتمع</li>
-                  <li>لديك فريق من فردين أو أكثر يعملون معك على الفكرة</li>
-                </ul>
-                <p class="english" style="display: none">
-                  You can participate if you are:
-                </p>
-                <ul class="english" style="display: none">
-                  <li>A student at Assiut, Minya, or Fayoum University</li>
-                  <li>Have an idea that solves a societal problem</li>
-                  <li>
-                    Have a team of two or more people working with you on the
-                    idea
-                  </li>
-                </ul>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">كيف أعلم أنه يمكنني المشاركة في التحدي؟</h3>
+                <h3 class="english" style="display: none">
+                  How do I know if I can participate in the challenge?
+                </h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">يمكنك المشاركة إذا كنت:</p>
+                  <ul class="arabic">
+                    <li>طالبًا في جامعة أسيوط، المنيا، أو الفيوم</li>
+                    <li>لديك فكرة تحل مشكلة في المجتمع</li>
+                    <li>لديك فريق من فردين أو أكثر يعملون معك على الفكرة</li>
+                  </ul>
+                  <p class="english" style="display: none">
+                    You can participate if you are:
+                  </p>
+                  <ul class="english" style="display: none">
+                    <li>A student at Assiut, Minya, or Fayoum University</li>
+                    <li>Have an idea that solves a societal problem</li>
+                    <li>
+                      Have a team of two or more people working with you on the
+                      idea
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">
-                أريد معرفة الجدول الزمني لمراحل البرنامج حتى أتمكن من التفرغ له
-              </h3>
-              <h3 class="english" style="display: none">
-                I want to know the timeline of the program stages so I can make
-                time for it
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  بعد انتهاء فترة التسجيل يبدأ الهاكاثون في أسيوط، المنيا،
-                  والفيوم في الفترة من
-                  <span class="faq-highlight">10 يوليو – 12 يوليو</span>.
-                </p>
-                <p class="arabic">
-                  ثم يبدأ المعسكر التدريبي لمدة 3 أيام في المنيا، ويشمل عرضًا
-                  نهائيًا للأفكار وإعلان الفائزين في الفترة من
-                  <span class="faq-highlight">24 يوليو – 26 يوليو</span>.
-                </p>
-                <p class="english" style="display: none">
-                  After the registration period ends, the hackathon begins in
-                  Assiut, Minya, and Fayoum from
-                  <span class="faq-highlight">July 10 – July 12</span>.
-                </p>
-                <p class="english" style="display: none">
-                  Then, a 3-day training camp starts in Minya, including a final
-                  pitch of ideas and announcement of winners from
-                  <span class="faq-highlight">July 24 – July 26</span>.
-                </p>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">
+                  أريد معرفة الجدول الزمني لمراحل البرنامج حتى أتمكن من التفرغ
+                  له
+                </h3>
+                <h3 class="english" style="display: none">
+                  I want to know the timeline of the program stages so I can
+                  make time for it
+                </h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">
+                    بعد انتهاء فترة التسجيل يبدأ الهاكاثون في أسيوط، المنيا،
+                    والفيوم في الفترة من
+                    <span class="faq-highlight">10 يوليو – 12 يوليو</span>.
+                  </p>
+                  <p class="arabic">
+                    ثم يبدأ المعسكر التدريبي لمدة 3 أيام في المنيا، ويشمل عرضًا
+                    نهائيًا للأفكار وإعلان الفائزين في الفترة من
+                    <span class="faq-highlight">24 يوليو – 26 يوليو</span>.
+                  </p>
+                  <p class="english" style="display: none">
+                    After the registration period ends, the hackathon begins in
+                    Assiut, Minya, and Fayoum from
+                    <span class="faq-highlight">July 10 – July 12</span>.
+                  </p>
+                  <p class="english" style="display: none">
+                    Then, a 3-day training camp starts in Minya, including a
+                    final pitch of ideas and announcement of winners from
+                    <span class="faq-highlight">July 24 – July 26</span>.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Eligibility and Application Group -->
         <div class="faq-group">
-          <h2 class="arabic">شروط التقديم</h2>
-          <h2 class="english" style="display: none">
-            Eligibility and Application
-          </h2>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">
-                أنا طالب وأريد أن أعلم هل يمكنني المشاركة أم لا؟
-              </h3>
-              <h3 class="english" style="display: none">
-                I am a student and want to know if I can participate or not?
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">يمكنك المشاركة إذا كنت:</p>
-                <ul class="arabic">
-                  <li>عمرك بين 18 و25 عامًا</li>
-                  <li>
-                    مسجلًا حاليًا في إحدى الجامعات المشاركة (أسيوط، المنيا،
-                    والفيوم)
-                  </li>
-                  <li>متفرغًا للمشاركة في أنشطة البرنامج</li>
-                </ul>
-                <p class="english" style="display: none">
-                  You can participate if you are:
-                </p>
-                <ul class="english" style="display: none">
-                  <li>Between 18 and 25 years old</li>
-                  <li>
-                    Currently enrolled in one of the participating universities
-                    (Assiut, Minya, or Fayoum)
-                  </li>
-                  <li>Available to participate in the program’s activities</li>
-                </ul>
+          <div class="faq-group-header">
+            <h2 class="arabic">شروط التقديم</h2>
+            <h2 class="english" style="display: none">
+              Eligibility and Application
+            </h2>
+            <div class="icon"></div>
+          </div>
+          <div class="faq-group-content">
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">
+                  أنا طالب وأريد أن أعلم هل يمكنني المشاركة أم لا؟
+                </h3>
+                <h3 class="english" style="display: none">
+                  I am a student and want to know if I can participate or not?
+                </h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">يمكنك المشاركة إذا كنت:</p>
+                  <ul class="arabic">
+                    <li>عمرك بين 18 و25 عامًا</li>
+                    <li>
+                      مسجلًا حاليًا في إحدى الجامعات المشاركة (أسيوط، المنيا،
+                      والفيوم)
+                    </li>
+                    <li>متفرغًا للمشاركة في أنشطة البرنامج</li>
+                  </ul>
+                  <p class="english" style="display: none">
+                    You can participate if you are:
+                  </p>
+                  <ul class="english" style="display: none">
+                    <li>Between 18 and 25 years old</li>
+                    <li>
+                      Currently enrolled in one of the participating
+                      universities (Assiut, Minya, or Fayoum)
+                    </li>
+                    <li>
+                      Available to participate in the program’s activities
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">كيف يمكنني التقديم؟</h3>
-              <h3 class="english" style="display: none">How can I apply?</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  يتم التقديم من خلال الموقع الرسمي للبرنامج، مع تقديم خطاب
-                  اهتمام بالنسبة للطلاب.
-                </p>
-                <p class="english" style="display: none">
-                  Applications are submitted through the program’s official
-                  website, with a letter of interest required for students.
-                </p>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">كيف يمكنني التقديم؟</h3>
+                <h3 class="english" style="display: none">How can I apply?</h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">
+                    يتم التقديم من خلال الموقع الرسمي للبرنامج، مع تقديم خطاب
+                    اهتمام بالنسبة للطلاب.
+                  </p>
+                  <p class="english" style="display: none">
+                    Applications are submitted through the program’s official
+                    website, with a letter of interest required for students.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">
-                هل يجب أن أكون في تخصص معين بالكلية كي أشارك؟
-              </h3>
-              <h3 class="english" style="display: none">
-                Do I need to be in a specific major to participate?
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  لا، البرنامج يشجع على تكوين فرق من تخصصات مختلفة لتعزيز التنوع
-                  وابتكار حلول جديدة.
-                </p>
-                <p class="english" style="display: none">
-                  No, the program encourages forming teams from diverse majors
-                  to enhance diversity and innovate new solutions.
-                </p>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">
+                  هل يجب أن أكون في تخصص معين بالكلية كي أشارك؟
+                </h3>
+                <h3 class="english" style="display: none">
+                  Do I need to be in a specific major to participate?
+                </h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">
+                    لا، البرنامج يشجع على تكوين فرق من تخصصات مختلفة لتعزيز
+                    التنوع وابتكار حلول جديدة.
+                  </p>
+                  <p class="english" style="display: none">
+                    No, the program encourages forming teams from diverse majors
+                    to enhance diversity and innovate new solutions.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">هل يجب أن أمتلك سابقة في ريادة الأعمال؟</h3>
-              <h3 class="english" style="display: none">
-                Do I need prior experience in entrepreneurship?
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  لا حاجة لخبرة سابقة. الأهم هو الحماس لحل المشكلات والابتكار.
-                </p>
-                <p class="english" style="display: none">
-                  No prior experience is needed. The most important thing is
-                  enthusiasm for problem-solving and innovation.
-                </p>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">هل يجب أن أمتلك سابقة في ريادة الأعمال؟</h3>
+                <h3 class="english" style="display: none">
+                  Do I need prior experience in entrepreneurship?
+                </h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">
+                    لا حاجة لخبرة سابقة. الأهم هو الحماس لحل المشكلات والابتكار.
+                  </p>
+                  <p class="english" style="display: none">
+                    No prior experience is needed. The most important thing is
+                    enthusiasm for problem-solving and innovation.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Program Activities Group -->
         <div class="faq-group">
-          <h2 class="arabic">أنشطة البرنامج</h2>
-          <h2 class="english" style="display: none">Program Activities</h2>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">ما نوع التدريب الذي سوف أتلقاه كمشارك؟</h3>
-              <h3 class="english" style="display: none">
-                What type of training will I receive as a participant?
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  سوف تتلقى تدريبًا في التفكير التصميمي، وبناء نموذج العمل،
-                  والتخطيط المالي، وطريقة عرض فكرتك أمام الآخرين (Pitching).
-                </p>
-                <p class="english" style="display: none">
-                  You will receive training in design thinking, business model
-                  development, financial planning, and pitching your idea to
-                  others.
-                </p>
+          <div class="faq-group-header">
+            <h2 class="arabic">أنشطة البرنامج</h2>
+            <h2 class="english" style="display: none">Program Activities</h2>
+            <div class="icon"></div>
+          </div>
+          <div class="faq-group-content">
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">ما نوع التدريب الذي سوف أتلقاه كمشارك؟</h3>
+                <h3 class="english" style="display: none">
+                  What type of training will I receive as a participant?
+                </h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">
+                    سوف تتلقى تدريبًا في التفكير التصميمي، وبناء نموذج العمل،
+                    والتخطيط المالي، وطريقة عرض فكرتك أمام الآخرين (Pitching).
+                  </p>
+                  <p class="english" style="display: none">
+                    You will receive training in design thinking, business model
+                    development, financial planning, and pitching your idea to
+                    others.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">أريد معرفة تفاصيل الهاكاثون.</h3>
-              <h3 class="english" style="display: none">
-                I want to know the details of the hackathon.
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  يمتد الهاكاثون لثلاثة أيام في كل محافظة، يعمل خلالها الفرق على
-                  حل تحديات واقعية في المجتمع، ثم يعرضون أفكارهم أمام لجنة تحكيم
-                  لاختيار أفضل الفرق للتأهل إلى المعسكر التدريبي.
-                </p>
-                <p class="english" style="display: none">
-                  The hackathon lasts three days in each governorate, during
-                  which teams work on solving real societal challenges, then
-                  present their ideas to a jury to select the best teams to
-                  qualify for the training camp.
-                </p>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">أريد معرفة تفاصيل الهاكاثون.</h3>
+                <h3 class="english" style="display: none">
+                  I want to know the details of the hackathon.
+                </h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">
+                    يمتد الهاكاثون لثلاثة أيام في كل محافظة، يعمل خلالها الفرق
+                    على حل تحديات واقعية في المجتمع، ثم يعرضون أفكارهم أمام لجنة
+                    تحكيم لاختيار أفضل الفرق للتأهل إلى المعسكر التدريبي.
+                  </p>
+                  <p class="english" style="display: none">
+                    The hackathon lasts three days in each governorate, during
+                    which teams work on solving real societal challenges, then
+                    present their ideas to a jury to select the best teams to
+                    qualify for the training camp.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">أريد معرفة ماذا سيحدث في المعسكر التدريبي.</h3>
-              <h3 class="english" style="display: none">
-                I want to know what will happen at the training camp.
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  تتلقى الفرق التي تأهلت من الهاكاثون تدريبًا متقدمًا في ريادة
-                  الأعمال، وتعمل على تطوير أفكارها بشكل أكبر، ثم تتنافس على
-                  الجوائز المالية في العرض النهائي.
-                </p>
-                <p class="english" style="display: none">
-                  Teams that qualify from the hackathon receive advanced
-                  entrepreneurship training, further develop their ideas, and
-                  then compete for cash prizes in the final pitch.
-                </p>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">
+                  أريد معرفة ماذا سيحدث في المعسكر التدريبي.
+                </h3>
+                <h3 class="english" style="display: none">
+                  I want to know what will happen at the training camp.
+                </h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">
+                    تتلقى الفرق التي تأهلت من الهاكاثون تدريبًا متقدمًا في ريادة
+                    الأعمال، وتعمل على تطوير أفكارها بشكل أكبر، ثم تتنافس على
+                    الجوائز المالية في العرض النهائي.
+                  </p>
+                  <p class="english" style="display: none">
+                    Teams that qualify from the hackathon receive advanced
+                    entrepreneurship training, further develop their ideas, and
+                    then compete for cash prizes in the final pitch.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">ما هي قيمة الجوائز للفرق الفائزة؟</h3>
-              <h3 class="english" style="display: none">
-                What is the prize value for the winning teams?
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  سيحصل أول ثلاثة فرق في المعسكر التدريبي على
-                  <span class="faq-highlight">50,000 جنيه مصري</span> لكل فريق،
-                  بالإضافة إلى فرصة الوصول السريع إلى برامج أثر لدعم الأفكار
-                  وتحويلها إلى مشروعات واقعية.
-                </p>
-                <p class="english" style="display: none">
-                  The top three teams in the training camp will receive
-                  <span class="faq-highlight">50,000 EGP</span> each, plus
-                  fast-track access to Athar programs to support and turn their
-                  ideas into real projects.
-                </p>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">ما هي قيمة الجوائز للفرق الفائزة؟</h3>
+                <h3 class="english" style="display: none">
+                  What is the prize value for the winning teams?
+                </h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">
+                    سيحصل أول ثلاثة فرق في المعسكر التدريبي على
+                    <span class="faq-highlight">50,000 جنيه مصري</span> لكل
+                    فريق، بالإضافة إلى فرصة الوصول السريع إلى برامج أثر لدعم
+                    الأفكار وتحويلها إلى مشروعات واقعية.
+                  </p>
+                  <p class="english" style="display: none">
+                    The top three teams in the training camp will receive
+                    <span class="faq-highlight">50,000 EGP</span> each, plus
+                    fast-track access to Athar programs to support and turn
+                    their ideas into real projects.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">هل هناك أي تكاليف مرتبطة بالمشاركة؟</h3>
-              <h3 class="english" style="display: none">
-                Are there any costs associated with participation?
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  لا، المشاركة في البرنامج مجانية تمامًا لكل من الطلاب وأعضاء
-                  هيئة التدريس، ولا توجد أي رسوم مطلوبة في أي مرحلة.
-                </p>
-                <p class="english" style="display: none">
-                  No, participation in the program is completely free for both
-                  students and faculty members, with no fees required at any
-                  stage.
-                </p>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">هل هناك أي تكاليف مرتبطة بالمشاركة؟</h3>
+                <h3 class="english" style="display: none">
+                  Are there any costs associated with participation?
+                </h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">
+                    لا، المشاركة في البرنامج مجانية تمامًا لكل من الطلاب وأعضاء
+                    هيئة التدريس، ولا توجد أي رسوم مطلوبة في أي مرحلة.
+                  </p>
+                  <p class="english" style="display: none">
+                    No, participation in the program is completely free for both
+                    students and faculty members, with no fees required at any
+                    stage.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Program Impact Group -->
         <div class="faq-group">
-          <h2 class="arabic">تأثير البرنامج</h2>
-          <h2 class="english" style="display: none">Program Impact</h2>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">كيف استفيد كطالب من تحدي مليون فكرة؟</h3>
-              <h3 class="english" style="display: none">
-                How do I benefit as a student from the Million Ideas Challenge?
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  يكتسب الطلاب مهارات عملية، وفرص تمويل، لبناء شركاتهم الناشئة.
-                </p>
-                <p class="english" style="display: none">
-                  Students gain practical skills and funding opportunities to
-                  build their startups.
-                </p>
+          <div class="faq-group-header">
+            <h2 class="arabic">تأثير البرنامج</h2>
+            <h2 class="english" style="display: none">Program Impact</h2>
+            <div class="icon"></div>
+          </div>
+          <div class="faq-group-content">
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">كيف استفيد كطالب من تحدي مليون فكرة؟</h3>
+                <h3 class="english" style="display: none">
+                  How do I benefit as a student from the Million Ideas
+                  Challenge?
+                </h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">
+                    يكتسب الطلاب مهارات عملية، وفرص تمويل، لبناء شركاتهم
+                    الناشئة.
+                  </p>
+                  <p class="english" style="display: none">
+                    Students gain practical skills and funding opportunities to
+                    build their startups.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">
-                كيف أستفيد كعضو هيئ corral تدريس من البرنامج؟
-              </h3>
-              <h3 class="english" style="display: none">
-                How do I benefit as a faculty member from the program?
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  تُتاح لك الفرصة لتعزيز منهجياتك التدريسية، وتطوير مهاراتك في
-                  الإرشاد، والمشاركة في تجربة تعليمية عملية مع الطلاب. كما
-                  يساعدك البرنامج على دمج مفاهيم ريادة الأعمال في مقرراتك، وبناء
-                  خبرة عملية في دعم الابتكار داخل الجامعة.
-                </p>
-                <p class="english" style="display: none">
-                  You get the opportunity to enhance your teaching
-                  methodologies, develop mentoring skills, and participate in a
-                  practical educational experience with students. The program
-                  also helps you integrate entrepreneurship concepts into your
-                  courses and build practical experience in supporting
-                  innovation within the university.
-                </p>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">كيف أستفيد كعضو هيئة تدريس من البرنامج؟</h3>
+                <h3 class="english" style="display: none">
+                  How do I benefit as a faculty member from the program?
+                </h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">
+                    تُتاح لك الفرصة لتعزيز منهجياتك التدريسية، وتطوير مهاراتك في
+                    الإرشاد، والمشاركة في تجربة تعليمية عملية مع الطلاب. كما
+                    يساعدك البرنامج على دمج مفاهيم ريادة الأعمال في مقرراتك،
+                    وبناء خبرة عملية في دعم الابتكار داخل الجامعة.
+                  </p>
+                  <p class="english" style="display: none">
+                    You get the opportunity to enhance your teaching
+                    methodologies, develop mentoring skills, and participate in
+                    a practical educational experience with students. The
+                    program also helps you integrate entrepreneurship concepts
+                    into your courses and build practical experience in
+                    supporting innovation within the university.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="arabic">هل يستفيد المجتمع المحلي من البرنامج؟</h3>
-              <h3 class="english" style="display: none">
-                Does the local community benefit from the program?
-              </h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p class="arabic">
-                  نعم، يساهم البرنامج في حل مشكلات المجتمع من خلال دعم الأفكار
-                  المبتكرة التي يقدمها الطلاب، والتي تركز على تحديات مثل الزراعة
-                  المستدامة، إدارة الموارد، وتحسين البيئة. كما يعزز البرنامج
-                  الاقتصاد المحلي من خلال خلق فرص عمل جديدة ودعم الشركات
-                  الناشئة.
-                </p>
-                <p class="english" style="display: none">
-                  Yes, the program contributes to solving societal problems by
-                  supporting innovative ideas from students, focusing on
-                  challenges like sustainable agriculture, resource management,
-                  and environmental improvement. It also boosts the local
-                  economy by creating new job opportunities and supporting
-                  startups.
-                </p>
+            <div class="faq-item">
+              <div class="faq-question">
+                <h3 class="arabic">هل يستفيد المجتمع المحلي من البرنامج؟</h3>
+                <h3 class="english" style="display: none">
+                  Does the local community benefit from the program?
+                </h3>
+                <div class="icon"></div>
+              </div>
+              <div class="faq-answer">
+                <div class="faq-answer-content">
+                  <p class="arabic">
+                    نعم، يساهم البرنامج في حل مشكلات المجتمع من خلال دعم الأفكار
+                    المبتكرة التي يقدمها الطلاب، والتي تركز على تحديات مثل
+                    الزراعة المستدامة، إدارة الموارد، وتحسين البيئة. كما يعزز
+                    البرنامج الاقتصاد المحلي من خلال خلق فرص عمل جديدة ودعم
+                    الشركات الناشئة.
+                  </p>
+                  <p class="english" style="display: none">
+                    Yes, the program contributes to solving societal problems by
+                    supporting innovative ideas from students, focusing on
+                    challenges like sustainable agriculture, resource
+                    management, and environmental improvement. It also boosts
+                    the local economy by creating new job opportunities and
+                    supporting startups.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -817,6 +1008,7 @@
           }
         });
       });
+
       // Changing Text Animation
       const changingText = document.querySelectorAll(".changing-text span");
       let currentIndex = 0;
@@ -837,7 +1029,37 @@
       changeText();
       setInterval(changeText, 3000);
 
-      // FAQ Accordion
+      // FAQ Group Accordion
+      const faqGroupHeaders = document.querySelectorAll(".faq-group-header");
+
+      faqGroupHeaders.forEach((header) => {
+        header.addEventListener("click", () => {
+          const faqGroup = header.parentElement;
+          const isActive = faqGroup.classList.contains("active");
+          const content = faqGroup.querySelector(".faq-group-content");
+
+          // Close all FAQ groups and items
+          document.querySelectorAll(".faq-group").forEach((group) => {
+            group.classList.remove("active");
+            const groupContent = group.querySelector(".faq-group-content");
+            if (groupContent) {
+              groupContent.style.maxHeight = null;
+            }
+          });
+          document.querySelectorAll(".faq-item").forEach((item) => {
+            item.classList.remove("active");
+            item.querySelector(".faq-answer").style.maxHeight = null;
+          });
+
+          // Toggle current FAQ group
+          if (!isActive) {
+            faqGroup.classList.add("active");
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      });
+
+      // FAQ Item Accordion
       const faqQuestions = document.querySelectorAll(".faq-question");
 
       faqQuestions.forEach((question) => {
@@ -845,7 +1067,14 @@
           const faqItem = question.parentElement;
           const isActive = faqItem.classList.contains("active");
 
-          // Close all FAQ items
+          // Close all FAQ groups and items
+          document.querySelectorAll(".faq-group").forEach((group) => {
+            group.classList.remove("active");
+            const groupContent = group.querySelector(".faq-group-content");
+            if (groupContent) {
+              groupContent.style.maxHeight = null;
+            }
+          });
           document.querySelectorAll(".faq-item").forEach((item) => {
             item.classList.remove("active");
             item.querySelector(".faq-answer").style.maxHeight = null;
@@ -856,6 +1085,14 @@
             faqItem.classList.add("active");
             const answer = faqItem.querySelector(".faq-answer");
             answer.style.maxHeight = answer.scrollHeight + "px";
+            // Ensure the parent group is open
+            const parentGroup = faqItem.closest(".faq-group");
+            const groupContent =
+              parentGroup.querySelector(".faq-group-content");
+            if (groupContent) {
+              parentGroup.classList.add("active");
+              groupContent.style.maxHeight = groupContent.scrollHeight + "px";
+            }
           }
         });
       });
