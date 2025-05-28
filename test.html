@@ -48,7 +48,6 @@
         align-items: center;
         padding: 20px 40px;
         background-color: var(--white);
-        box-shadow: var(--shadow-sm);
         position: sticky;
         top: 0;
         z-index: 1000;
@@ -128,19 +127,27 @@
 
       /* Hero Section */
       .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 90vh;
         text-align: center;
+        margin: 24px 48px;
+        border-radius: 26px;
         padding: 100px 20px;
-        background: linear-gradient(
-            rgba(26, 38, 202, 0.8),
-            rgba(40, 53, 147, 0.8)
-          ),
-          url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        color: var(--white);
         position: relative;
         overflow: hidden;
+        color: var(--white);
+      }
+
+      .hero video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
       }
 
       .hero::before {
@@ -150,18 +157,18 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.1) 0%,
-          transparent 70%
-        );
+        background: linear-gradient(
+            rgba(26, 38, 202, 0.8),
+            rgba(40, 53, 147, 0.8)
+          ),
+          radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
         z-index: 1;
       }
 
       .hero h1 {
         font-family: var(--heading-font);
-        font-size: 40px;
-        margin-bottom: 10px;
+        font-size: 36px;
+        margin-bottom: 28px;
         position: relative;
         z-index: 2;
         animation: fadeInDown 1s ease-out;
@@ -169,7 +176,7 @@
 
       .hero .subtitle {
         font-family: var(--heading-font);
-        font-size: 24px;
+        font-size: 26px;
         margin-bottom: 30px;
         color: var(--primary-yellow);
         position: relative;
@@ -178,7 +185,7 @@
       }
 
       .hero-description {
-        max-width: 800px;
+        max-width: 659px;
         margin: 0 auto;
         margin-bottom: 40px;
         font-size: 18px;
@@ -193,7 +200,7 @@
         display: inline-block;
         background-color: var(--primary-yellow);
         color: var(--dark-black);
-        padding: 14px 40px;
+        padding: 14px 24px;
         border-radius: 30px;
         font-weight: bold;
         font-size: 18px;
@@ -501,7 +508,7 @@
       }
 
       .goal-category {
-        margin-bottom: 25px;
+        margin-bottom: 12px;
       }
 
       .category-title {
@@ -520,7 +527,7 @@
       .goal-list li {
         position: relative;
         padding-right: 20px;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         line-height: 1.5;
         font-size: 15px;
         font-family: var(--font-family);
@@ -536,172 +543,97 @@
       }
 
       /* Stages Section */
-      .stages-section {
-        padding: 80px 20px;
-        background: linear-gradient(
-          180deg,
-          var(--white) 0%,
-          var(--light-gray) 100%
-        );
-      }
-
-      .stages-content {
-        max-width: 1000px;
-        margin: 0 auto;
-        position: relative;
-      }
-
-      .stages-content h2 {
-        font-family: var(--heading-font);
-        font-size: 36px;
-        color: var(--primary-blue);
-        margin-bottom: 40px;
-        position: relative;
-        display: inline-block;
-      }
-
-      .stages-content h2::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        right: 0;
-        width: 100px;
-        height: 5px;
-        border-radius: 5px;
-        background-color: var(--primary-blue);
+      /* Stages Section */
+      .section {
+        margin: 36px auto;
+        padding: 80px 5%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
       }
 
       .stage {
-        border-radius: 15px;
-        padding: 40px;
-        margin-bottom: 40px;
-        box-shadow: var(--shadow-md);
         position: relative;
-        transition: var(--transition);
-        overflow: hidden;
-      }
-
-      .stage1 {
-        background: linear-gradient(
-          135deg,
-          var(--primary-yellow) 0%,
-          #f7e017 100%
-        );
-      }
-
-      .stage2 {
-        background: linear-gradient(135deg, var(--light-gray) 0%, #f0f4f8 100%);
-      }
-
-      .stage:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--shadow-lg);
-      }
-
-      .stage-header {
-        margin-bottom: 30px;
-      }
-
-      .stage-header h2 {
-        font-family: var(--heading-font);
-        font-size: 40px;
-        font-weight: 700;
-        color: var(--dark-black);
-        text-align: center;
-        letter-spacing: 1px;
-      }
-
-      .stage-body {
+        border-radius: 16px;
+        padding: 30px;
         display: flex;
-        align-items: flex-start;
-        gap: 40px;
+        align-items: center;
+        /* box-shadow: var(--shadow-md); */
+        overflow: visible;
       }
 
-      .stage-image {
-        width: 35%;
-        flex-shrink: 0;
-        position: relative;
-        transition: var(--transition);
+      .stage.light {
+        /* background-color: #fff8dc; */
       }
 
-      .stage-image img {
+      .stage .content {
         width: 100%;
+        padding: 20px 20px 20px 56%;
+        background-color: #ffe53f;
+        border-radius: 12px;
+        z-index: 0;
+      }
+
+      .stage img {
+        width: 40%;
         height: auto;
         border-radius: 12px;
-        object-fit: cover;
-        max-height: 220px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .stage-image:hover {
-        transform: scale(1.03);
-      }
-
-      .stage1 .stage-image {
-        order: -1; /* Image on the left for Stage 1 (RTL) */
-      }
-
-      .stage2 .stage-image {
-        order: 1; /* Image on the right for Stage 2 (RTL) */
-      }
-
-      .stage-content {
-        flex: 1;
-        text-align: right;
-      }
-
-      .stage-content h3 {
-        font-family: var(--heading-font);
-        font-size: 26px;
-        color: var(--dark-black);
-        margin-bottom: 15px;
-      }
-
-      .stage-content p {
-        font-size: 16px;
-        font-family: var(--font-family);
-        color: var(--dark-black);
-        line-height: 1.8;
-        margin-bottom: 20px;
-      }
-
-      .stage-content span {
-        font-weight: 600;
-        margin-bottom: 15px;
-        display: block;
-      }
-
-      .stage-list {
-        list-style: none;
-        padding-right: 20px;
-      }
-
-      .stage-list li {
-        position: relative;
-        padding-right: 20px;
-        margin-bottom: 12px;
-        font-size: 16px;
-        font-weight: 500;
-      }
-
-      .stage-list li::before {
-        content: "•";
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        z-index: 1;
         position: absolute;
+      }
+
+      .stage.stage-1 {
+        flex-direction: row-reverse;
+      }
+
+      .stage.stage-1 img {
+        width: 50%;
+        margin-left: 20px;
+        left: 0;
+      }
+
+      .stage.stage-2 {
+        flex-direction: row;
+      }
+
+      .stage.stage-2 img {
+        width: 50%;
+        margin-right: 20px;
         right: 0;
-        color: var(--dark-black);
-        font-size: 20px;
-        font-weight: bold;
       }
 
-      .stage-list ul {
-        list-style: disc;
-        padding-right: 20px;
-        margin-top: 10px;
+      .stage.stage-2 .content {
+        padding: 20px 56% 20px 20px;
       }
 
-      .stage-list ul li {
-        padding-right: 20px;
+      h2 {
+        font-size: 28px;
         margin-bottom: 10px;
+        font-family: var(--heading-font);
+        color: var(--primary-blue);
+      }
+
+      h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #333;
+        font-family: var(--heading-font);
+      }
+
+      ul {
+        margin: 0 0 10px 0;
+        padding-right: 20px;
+      }
+
+      ul li {
+        margin-bottom: 6px;
+      }
+
+      .goal {
+        font-weight: bold;
+        margin-top: 12px;
       }
 
       /* Registration Section */
@@ -722,6 +654,7 @@
         margin-bottom: 20px;
         position: relative;
         display: inline-block;
+        color: var(--primary-yellow);
       }
 
       .registration p {
@@ -854,8 +787,6 @@
       }
 
       /* Responsive Design */
-
-      /* Extra small devices (phones, 600px and down) */
       @media only screen and (max-width: 600px) {
         .header {
           padding: 15px 20px;
@@ -893,18 +824,15 @@
 
         .hero {
           padding: 60px 15px;
+          margin: 10px 15px;
         }
 
         .hero h1 {
-          font-size: 32px;
-        }
-
-        .hero .subtitle {
-          font-size: 20px;
+          font-size: 28px;
         }
 
         .hero-description {
-          font-size: 16px;
+          font-size: 14px;
         }
 
         .cta-btn {
@@ -915,18 +843,35 @@
         .introduction-section,
         .features,
         .partners-section,
-        .stages-section,
         .registration,
         .footer {
           padding: 40px 15px;
+          margin: 10px;
         }
 
-        .introduction-content h2,
+        .introduction-content,
         .features h2,
         .partners-header h1,
-        .stages-content h2,
         .registration h2 {
           font-size: 28px;
+        }
+
+        .introduction-content {
+          padding: 20px;
+        }
+
+        .introduction-content p {
+          font-size: 14px;
+        }
+
+        .features-grid {
+          gap: 20px;
+        }
+
+        .feature-card {
+          width: 100%;
+          max-width: 320px;
+          margin: 0 auto;
         }
 
         .partners-grid {
@@ -936,7 +881,7 @@
         .program-goals {
           flex-direction: column;
           height: auto;
-          padding: 20px 0;
+          padding: 20px;
         }
 
         .image-container,
@@ -984,24 +929,42 @@
           padding-right: 15px;
         }
 
-        .stage {
-          padding: 20px;
-          width: 100%;
+        .section {
+          padding: 40px 15px;
+          gap: 40px;
         }
 
-        .stage-image {
+        .stage {
+          flex-direction: column;
+          padding: 20px;
+          align-items: stretch;
+        }
+
+        .stage .content {
+          width: 100%;
+          padding: 15px;
+        }
+
+        .stage img {
           width: 100%;
           max-width: 300px;
           margin: 0 auto 20px;
+          position: relative;
         }
 
-        .stage1 .stage-image,
-        .stage2 .stage-image {
-          order: 0;
+        .stage.stage-1,
+        .stage.stage-2 {
+          flex-direction: column;
         }
 
-        .stage-content {
-          text-align: center;
+        .stage.stage-1 img,
+        .stage.stage-2 img {
+          width: 85%;
+          margin: 0 auto 20px;
+        }
+
+        .stage.stage-2 .content {
+          padding: 15px;
         }
 
         .stage-content h3 {
@@ -1010,26 +973,6 @@
 
         .stage-content p {
           font-size: 14px;
-        }
-
-        .stage-list {
-          padding-right: 0;
-        }
-
-        .stage-list li {
-          padding-right: 0;
-        }
-
-        .stage-list li::before {
-          display: none;
-        }
-
-        .stage-list ul {
-          padding-right: 0;
-        }
-
-        .stage-list ul li {
-          padding-right: 0;
         }
 
         .footer-content {
@@ -1053,7 +996,6 @@
         }
       }
 
-      /* Small devices (portrait tablets and large phones, 601px to 992px) */
       @media only screen and (min-width: 601px) and (max-width: 992px) {
         .header {
           padding: 20px 30px;
@@ -1065,27 +1007,28 @@
 
         .hero {
           padding: 80px 20px;
+          margin: 10px 20px;
         }
 
         .hero h1 {
           font-size: 36px;
         }
 
-        .hero .subtitle {
-          font-size: 22px;
-        }
-
         .hero-description {
-          font-size: 17px;
+          font-size: 16px;
         }
 
         .introduction-section,
         .features,
         .partners-section,
-        .stages-section,
         .registration,
         .footer {
           padding: 60px 20px;
+          margin: 10px;
+        }
+
+        .introduction-content {
+          padding: 25px;
         }
 
         .features-grid {
@@ -1103,7 +1046,7 @@
         .program-goals {
           flex-direction: column;
           height: auto;
-          padding: 30px 0;
+          padding: 30px;
         }
 
         .image-container,
@@ -1144,25 +1087,41 @@
           font-size: 15px;
         }
 
+        .section {
+          padding: 60px 20px;
+          gap: 50px;
+        }
+
         .stage {
+          flex-direction: column;
           padding: 30px;
+          align-items: stretch;
+        }
+
+        .stage .content {
           width: 100%;
+          padding: 20px;
         }
 
-        .stage-image {
-          width: 40%;
+        .stage img {
+          width: 100%;
+          max-width: 400px;
+          margin: 0 auto 20px;
+          position: relative;
         }
 
-        .stage-content h3 {
-          font-size: 22px;
+        .stage.stage-1,
+        .stage.stage-2 {
+          flex-direction: column;
         }
 
-        .stage-content p {
-          font-size: 15px;
+        .stage.stage-1 img,
+        .stage.stage-2 img {
+          margin: 0 auto 20px;
         }
 
-        .footer-content {
-          gap: 20px;
+        .stage.stage-2 .content {
+          padding: 20px;
         }
       }
     </style>
@@ -1177,14 +1136,36 @@
         Million <span>Idea</span> Challenge
       </div>
       <div class="nav">
-        <div class="nav-item" data-ar="عن التحدي" data-en="About the Challenge">
+        <a
+          href="./index.html"
+          class="nav-item"
+          data-ar="عن التحدي"
+          data-en="About the Challenge"
+        >
           عن التحدي
-        </div>
-        <div class="nav-item" data-ar="الجدول الزمني" data-en="Timeline">
+        </a>
+        <a
+          href="./index.html#timeline"
+          class="nav-item"
+          data-ar="الجدول الزمني"
+          data-en="Timeline"
+        >
           الجدول الزمني
-        </div>
-        <div class="nav-item" data-ar="الشروط" data-en="Terms">الشروط</div>
-        <div class="nav-item" data-ar="الشركاء" data-en="Partners">الشركاء</div>
+        </a>
+        <a
+          class="nav-item"
+          href="./index.html#requirements"
+          data-ar="الشروط"
+          data-en="Terms"
+          >الشروط</a
+        >
+        <a
+          href="#partners"
+          class="nav-item"
+          data-ar="الشركاء"
+          data-en="Partners"
+          >الشركاء</a
+        >
         <button class="register-btn" data-ar="سجل الآن" data-en="Register Now">
           سجل الآن
         </button>
@@ -1193,39 +1174,46 @@
     </header>
 
     <section class="hero">
-      <h1
-        data-ar="برنامج تعزيز ريادة الأعمال في الجامعات"
-        data-en="Fostering Entrepreneurship in Universities"
-      >
-        برنامج تعزيز ريادة الأعمال في الجامعات
-      </h1>
-      <div
-        class="subtitle"
-        data-ar="Fostering Entrepreneurship in Universities"
-        data-en="Fostering Entrepreneurship in Universities"
-      >
-        Fostering Entrepreneurship in Universities
+      <video autoplay muted loop playsinline>
+        <source src="accelerator-startup.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div>
+        <h1
+          data-ar="برنامج تعزيز ريادة الأعمال في الجامعات"
+          data-en="Fostering Entrepreneurship in Universities"
+        >
+          برنامج تعزيز ريادة الأعمال في الجامعات
+        </h1>
+        <div
+          class="subtitle"
+          data-ar="Fostering Entrepreneurship in Universities"
+          data-en="Fostering Entrepreneurship in Universities"
+        >
+          Fostering Entrepreneurship in Universities
+        </div>
+        <div
+          class="hero-description"
+          data-ar="يجمع البرنامج بين التدريب والتوجيه لتعزيز دور أعضاء هيئة التدريس في دعم الأفكار الريادية داخل الجامعة، من خلال توفير مساحات للتفاعل بين المعرفة الأكاديمية والمشاريع الابتكارية، وتشجيع تطوير حلول تنطلق من الواقع وتستجيب للتحديات المجتمعية."
+          data-en="The program combines training and mentorship to enhance the role of faculty members in supporting entrepreneurial ideas within the university, by providing spaces for interaction between academic knowledge and innovative projects, and encouraging the development of solutions rooted in reality and responsive to societal challenges."
+        >
+          يجمع البرنامج بين التدريب والتوجيه لتعزيز دور أعضاء هيئة التدريس في
+          دعم الأفكار الريادية داخل الجامعة، من خلال توفير مساحات للتفاعل بين
+          المعرفة الأكاديمية والمشاريع الابتكارية، وتشجيع تطوير حلول تنطلق من
+          الواقع وتستجيب للتحديات المجتمعية.
+        </div>
+        <a
+          href="#About-Program"
+          class="cta-btn"
+          data-ar="استكشف البرنامج"
+          data-en="Explore The Program"
+        >
+          استكشف البرنامج
+        </a>
       </div>
-      <div
-        class="hero-description"
-        data-ar="يجمع البرنامج بين التدريب والتوجيه لتعزيز دور أعضاء هيئة التدريس في دعم الأفكار الريادية داخل الجامعة، من خلال توفير مساحات للتفاعل بين المعرفة الأكاديمية والمشاريع الابتكارية، وتشجيع تطوير حلول تنطلق من الواقع وتستجيب للتحديات المجتمعية."
-        data-en="The program combines training and mentorship to enhance the role of faculty members in supporting entrepreneurial ideas within the university, by providing spaces for interaction between academic knowledge and innovative projects, and encouraging the development of solutions rooted in reality and responsive to societal challenges."
-      >
-        يجمع البرنامج بين التدريب والتوجيه لتعزيز دور أعضاء هيئة التدريس في دعم
-        الأفكار الريادية داخل الجامعة، من خلال توفير مساحات للتفاعل بين المعرفة
-        الأكاديمية والمشاريع الابتكارية، وتشجيع تطوير حلول تنطلق من الواقع
-        وتستجيب للتحديات المجتمعية.
-      </div>
-      <button
-        class="cta-btn"
-        data-ar="استكشف البرنامج"
-        data-en="Explore the Program"
-      >
-        استكشف البرنامج
-      </button>
     </section>
 
-    <section class="introduction-section">
+    <section class="introduction-section" id="About-Program">
       <div class="introduction-content">
         <h2 data-ar="عن البرنامج" data-en="About the Program">عن البرنامج</h2>
         <p
@@ -1404,7 +1392,7 @@
     <div class="program-goals">
       <div class="image-container">
         <img
-          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+          src="./images/peaoplebackground.JPG"
           alt="صورة لأوراق ملاحظات صفراء ويد تكتب عليها"
         />
       </div>
@@ -1512,102 +1500,117 @@
       </div>
     </div>
 
-    <section class="stages-section">
-      <div class="stages-content">
-        <div class="stage stage1">
-          <div class="stage-image">
-            <img
-              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Participants working on documents"
-            />
-          </div>
-          <div class="stage-header">
-            <h2 data-ar="مراحل البرنامج" data-en="Program Stages">
-              مراحل البرنامج
-            </h2>
-          </div>
-          <div class="stage-body">
-            <div class="stage-content">
-              <h3
-                data-ar="المرحلة الأولى: تدريب المدربين"
-                data-en="Stage 1: Training of Trainers"
-              >
-                المرحلة الأولى: تدريب المدربين
-              </h3>
-              <span
-                data-ar="بناء شبكة داعمة للابتكار داخل الجامعات"
-                data-en="Building a supportive network for innovation within universities"
-              >
-                بناء شبكة داعمة للابتكار داخل الجامعات
-              </span>
-              <ul class="stage-list">
-                <li
-                  data-ar="تدريب 30 عضو هيئة تدريس من الجامعات المصرية على:"
-                  data-en="Training 30 faculty members from Egyptian universities on:"
-                >
-                  تدريب 30 عضو هيئة تدريس من الجامعات المصرية على:
-                  <ul>
-                    <li
-                      data-ar="منهجيات تأسيس الشركات الناشئة."
-                      data-en="Startup establishment methodologies."
-                    >
-                      منهجيات تأسيس الشركات الناشئة.
-                    </li>
-                    <li
-                      data-ar="اختبار الحلول وتطوير النماذج الأولية."
-                      data-en="Testing solutions and developing prototypes."
-                    >
-                      اختبار الحلول وتطوير النماذج الأولية.
-                    </li>
-                    <li
-                      data-ar="توجيه الطلاب بأساليب عملية."
-                      data-en="Guiding students with practical methods."
-                    >
-                      توجيه الطلاب بأساليب عملية.
-                    </li>
-                  </ul>
-                </li>
-                <li
-                  data-ar="الهدف: إنشاء كوادر أكاديمية قادرة على دعم الطلاب في تحويل أبحاثهم إلى مشاريع ريادية."
-                  data-en="Goal: Creating academic cadres capable of supporting students in turning their research into entrepreneurial projects."
-                >
-                  الهدف: إنشاء كوادر أكاديمية قادرة على دعم الطلاب في تحويل
-                  أبحاثهم إلى مشاريع ريادية.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="stage stage2">
-          <div class="stage-body">
-            <div class="stage-image">
-              <img
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Participants working on documents"
-              />
-            </div>
-            <div class="stage-content">
-              <h3
-                data-ar="المرحلة الثانية: تحدي مليون فكرة"
-                data-en="Stage 2: Million Idea Challenge"
-              >
-                المرحلة الثانية: تحدي مليون فكرة
-              </h3>
-              <p
-                data-ar="بعد إعداد المدربين، ينطلق تحدي مليون فكرة لتمكين الطلاب من خلال: هاكاثون ريادة الأعمال لاختبار الأفكار وتطويرها. معسكر تدريبي مكثف حول نماذج الأعمال والتمويل والتسويق. توجيه مباشر من أعضاء هيئة التدريس لتصميم النماذج الأولية وربطها باحتياجات السوق."
-                data-en="After preparing the trainers, the Million Idea Challenge launches to empower students through: An entrepreneurship hackathon to test and develop ideas. An intensive training camp on business models, funding, and marketing. Direct guidance from faculty members to design prototypes and link them to market needs."
-              >
-                بعد إعداد المدربين، ينطلق تحدي مليون فكرة لتمكين الطلاب من خلال:
-                هاكاثون ريادة الأعمال لاختبار الأفكار وتطويرها. معسكر تدريبي
-                مكثف حول نماذج الأعمال والتمويل والتسويق. توجيه مباشر من أعضاء
-                هيئة التدريس لتصميم النماذج الأولية وربطها باحتياجات السوق.
-              </p>
-            </div>
-          </div>
+    <div class="section">
+      <!-- Stage 1 -->
+      <div class="stage stage-1">
+        <img src="./images/photo1.JPG" alt="Stage 1 Image" />
+        <div class="content">
+          <h2 data-ar="مراحل البرنامج" data-en="Program Stages">
+            مراحل البرنامج
+          </h2>
+          <h3
+            data-ar="المرحلة الأولى تدريب المدربين"
+            data-en="Stage 1: Training of Trainers"
+          >
+            المرحلة الأولى <br />تدريب المدربين
+          </h3>
+          <p
+            data-ar="بناء شبكة داعمة للابتكار داخل الجامعات"
+            data-en="Building a supportive network for innovation within universities"
+          >
+            بناء شبكة داعمة للابتكار داخل الجامعات
+          </p>
+          <ul>
+            <li
+              data-ar="تدريب 30 عضو هيئة تدريس من الجامعات المصرية على:"
+              data-en="Training 30 faculty members from Egyptian universities on:"
+            >
+              تدريب 30 عضو هيئة تدريس من الجامعات المصرية على:
+            </li>
+            <li
+              data-ar="منهجيات تأسيس الشركات الناشئة."
+              data-en="Methodologies for establishing startups."
+            >
+              منهجيات تأسيس الشركات الناشئة.
+            </li>
+            <li
+              data-ar="اختبار الحلول وتطوير النماذج الأولية."
+              data-en="Testing solutions and developing prototypes."
+            >
+              اختبار الحلول وتطوير النماذج الأولية.
+            </li>
+            <li
+              data-ar="توجيه الطلاب بأساليب عملية."
+              data-en="Guiding students with practical methods."
+            >
+              توجيه الطلاب بأساليب عملية.
+            </li>
+          </ul>
+          <p
+            class="goal"
+            data-ar="الهدف: إنشاء كوادر أكاديمية قادرة على دعم الطلاب في تحويل أفكارهم إلى مشاريع ريادية."
+            data-en="Goal: Creating academic cadres capable of supporting students in transforming their ideas into entrepreneurial projects."
+          >
+            الهدف: إنشاء كوادر أكاديمية قادرة على دعم الطلاب في تحويل أفكارهم
+            إلى مشاريع ريادية.
+          </p>
         </div>
       </div>
-    </section>
+
+      <!-- Stage 2 -->
+      <div class="stage stage-2 light">
+        <img src="./images/photo7.JPG" alt="Stage 2 Image" />
+        <div class="content">
+          <h3
+            data-ar="المرحلة الثانية تدريب المدربين"
+            data-en="Stage 2: Training of Trainers"
+          >
+            المرحلة الثانية<br />
+            تدريب المدربين
+          </h3>
+          <p
+            data-ar="بناء شبكة داعمة للابتكار داخل الجامعات"
+            data-en="Building a supportive network for innovation within universities"
+          >
+            بناء شبكة داعمة للابتكار داخل الجامعات
+          </p>
+          <ul>
+            <li
+              data-ar="تدريب 30 عضو هيئة تدريس من الجامعات المصرية على:"
+              data-en="Training 30 faculty members from Egyptian universities on:"
+            >
+              تدريب 30 عضو هيئة تدريس من الجامعات المصرية على:
+            </li>
+            <li
+              data-ar="منهجيات تأسيس الشركات الناشئة."
+              data-en="Methodologies for establishing startups."
+            >
+              منهجيات تأسيس الشركات الناشئة.
+            </li>
+            <li
+              data-ar="اختبار الحلول وتطوير النماذج الأولية."
+              data-en="Testing solutions and developing prototypes."
+            >
+              اختبار الحلول وتطوير النماذج الأولية.
+            </li>
+            <li
+              data-ar="توجيه الطلاب بأساليب عملية."
+              data-en="Guiding students with practical methods."
+            >
+              توجيه الطلاب بأساليب عملية.
+            </li>
+          </ul>
+          <p
+            class="goal"
+            data-ar="الهدف: إنشاء كوادر أكاديمية قادرة على دعم الطلاب في تحويل أفكارهم إلى مشاريع ريادية."
+            data-en="Goal: Creating academic cadres capable of supporting students in transforming their ideas into entrepreneurial projects."
+          >
+            الهدف: إنشاء كوادر أكاديمية قادرة على دعم الطلاب في تحويل أفكارهم
+            إلى مشاريع ريادية.
+          </p>
+        </div>
+      </div>
+    </div>
 
     <section class="registration">
       <h2
@@ -1679,6 +1682,7 @@
           </div>
           <div class="social-links">
             <div data-ar="إنستغرام" data-en="Instagram">IG</div>
+            <div incompatibility: nonbreaking space
             <div data-ar="تويتر/فيسبوك" data-en="Twitter/Facebook">TWFB</div>
           </div>
         </div>
@@ -1702,6 +1706,9 @@
         body.setAttribute("lang", newLang);
         body.setAttribute("dir", newDir);
 
+        const heroH1 = document.querySelector(".hero h1");
+        const subtitle = document.querySelector(".hero .subtitle");
+
         document.querySelectorAll("[data-ar][data-en]").forEach((element) => {
           element.innerHTML = element.getAttribute(`data-${newLang}`);
         });
@@ -1709,15 +1716,19 @@
         const langSwitch = document.querySelector(".language-switch");
         langSwitch.textContent = newLang === "ar" ? "English" : "العربية";
 
+        if (newLang === "en") {
+          heroH1.style.color = "var(--primary-yellow)";
+          subtitle.style.display = "none";
+        } else {
+          heroH1.style.color = "var(--white)";
+          subtitle.style.display = "block";
+        }
+
         const programGoals = document.querySelector(".program-goals");
         const imageContainer = document.querySelector(".image-container");
-        const imageContainerBefore = imageContainer.querySelector("::before");
         const contentContainer = document.querySelector(".content-container");
         const mainTitle = document.querySelector(".main-title");
         const goalListItems = document.querySelectorAll(".goal-list li");
-        const stages = document.querySelectorAll(".stage");
-        const stageContent = document.querySelectorAll(".stage-content");
-        const stageLists = document.querySelectorAll(".stage-list li");
 
         if (newLang === "en") {
           programGoals.style.flexDirection = "row";
@@ -1729,41 +1740,11 @@
           mainTitle.querySelector("::after").style.right = "auto";
           mainTitle.querySelector("::after").style.left = "0";
 
-          imageContainerBefore.style.left = "auto";
-          imageContainerBefore.style.right = "-5px";
-
           goalListItems.forEach((li) => {
             li.style.paddingLeft = "20px";
             li.style.paddingRight = "0";
-            li.querySelector("::before").style.right = "auto";
-            li.querySelector("::before").style.left = "0";
-          });
-
-          stageContent.forEach((content) => {
-            content.style.textAlign = "left";
-          });
-
-          stageLists.forEach((li) => {
-            li.style.paddingRight = "0";
-            li.style.paddingLeft = "20px";
-            if (li.querySelector("::before")) {
-              li.querySelector("::before").style.right = "auto";
-              li.querySelector("::before").style.left = "0";
-            }
-            const ul = li.querySelector("ul");
-            if (ul) {
-              ul.style.paddingRight = "0";
-              ul.style.paddingLeft = "20px";
-              ul.querySelectorAll("li").forEach((subLi) => {
-                subLi.style.paddingRight = "0";
-                subLi.style.paddingLeft = "20px";
-              });
-            }
-          });
-
-          stages.forEach((stage, index) => {
-            const stageImage = stage.querySelector(".stage-image");
-            stageImage.style.order = index === 0 ? "1" : "-1"; // Image on right for Stage 1, left for Stage 2 (LTR)
+            li.style.listStyleType = "disc";
+            li.style.listStylePosition = "outside";
           });
         } else {
           programGoals.style.flexDirection = "row-reverse";
@@ -1773,45 +1754,428 @@
           mainTitle.querySelector("::after").style.left = "auto";
           mainTitle.querySelector("::after").style.right = "0";
 
-          imageContainerBefore.style.right = "auto";
-          imageContainerBefore.style.left = "-5px";
-
           goalListItems.forEach((li) => {
             li.style.paddingRight = "20px";
             li.style.paddingLeft = "0";
+            li.style.listStyleType = "none";
             li.querySelector("::before").style.left = "auto";
             li.querySelector("::before").style.right = "0";
-          });
-
-          stageContent.forEach((content) => {
-            content.style.textAlign = "right";
-          });
-
-          stageLists.forEach((li) => {
-            li.style.paddingLeft = "0";
-            li.style.paddingRight = "20px";
-            if (li.querySelector("::before")) {
-              li.querySelector("::before").style.left = "auto";
-              li.querySelector("::before").style.right = "0";
-            }
-            const ul = li.querySelector("ul");
-            if (ul) {
-              ul.style.paddingLeft = "0";
-              ul.style.paddingRight = "20px";
-              ul.querySelectorAll("li").forEach((subLi) => {
-                subLi.style.paddingLeft = "0";
-                subLi.style.paddingRight = "20px";
-              });
-            }
-          });
-
-          stages.forEach((stage, index) => {
-            const stageImage = stage.querySelector(".stage-image");
-            stageImage.style.order = index === 0 ? "-1" : "1"; // Image on left for Stage 1, right for Stage 2 (RTL)
           });
         }
       }
     </script>
-    <!-- Removed redundant live reload scripts -->
+    <script>
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
   </body>
 </html>

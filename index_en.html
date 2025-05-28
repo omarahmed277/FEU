@@ -1,604 +1,316 @@
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Orange Corners - Entrepreneurship for a Better World</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Poppins:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Cairo:wght@200..1000&family=Jomhuria&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div class="background-image-container"></div>
-    <nav class="navbar">
-      <div class="logo">
-        <img
-          width="50"
-          height="50"
-          src="./images/Logo تحدي مليون فكرة ازرق.png"
-          alt="Orange Corners Logo"
-        />
-      </div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#timeline">Timeline</a></li>
-        <li><a href="#requirements">Requirements</a></li>
-        <li><a href="#partners">Partners</a></li>
-      </ul>
-      <button class="mobile-menu-btn">☰</button>
-    </nav>
-
-    <section class="hero">
-      <div class="hero-container">
-        <div class="hero-image-container">
-          <img
-            src="./images/image_fx (99).png"
-            alt="Female entrepreneur"
-            class="hero-image-woman"
-          />
-          <img
-            src="./images/image1.png"
-            alt="Young entrepreneurs working together"
-            class="hero-image"
-          />
-        </div>
-        <div class="hero-content">
-          <h1 class="hero-title">
-            I have an idea to solve
-            <span class="highlight">
-              <span class="changing-text">
-                <span>soil degradation</span>
-                <span>water scarcity</span>
-                <span>soil salinity</span>
-                <span>soil erosion</span>
-                <span>water pollution</span>
-                <span>pesticide damage</span>
-                <span>low productivity</span>
-                <span>rising temperatures</span>
-                <span>labor shortage</span>
-                <span>urban sprawl</span>
-                <span>poor storage</span>
-                <span>pesticide overuse</span>
-                <span>lack of support</span>
-                <span>crop damage</span>
-                <span>temperature fluctuations</span>
-                <span>pest outbreaks</span>
-                <span>water contamination</span>
-                <span>over-irrigation</span>
-                <span>desertification</span>
-                <span>agricultural emissions</span>
-              </span>
-            </span>
-          </h1>
-          <p class="hero-description">
-            The agricultural sector faces significant challenges. Be the start of the change everyone is waiting for. Every idea has the potential to make a real difference. Join the Million Ideas Challenge and gain mentorship, networking, and funding!
-          </p>
-          <a href="#" class="cta-button">Get Started</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-challenge" id="about">
-      <div class="about-container">
-        <div class="about-content">
-          <h2 class="about-title">About Million Ideas Challenge</h2>
-          <div class="about-subtitle">An Initiative for Youth Empowerment and Sustainability</div>
-          <p class="about-description">
-            The Million Ideas Challenge aims to support students with ideas capable of solving societal problems and transforming them into startups. 60 teams from Egyptian universities participate in a 3-day hackathon, receiving intensive training in design thinking, business model development, and financial planning. The best teams advance to a 3-day training camp to refine their ideas and build testable prototypes. Cash prizes of 50,000 EGP are awarded to the top three ideas.
-          </p>
-          <p class="about-description">
-            The program empowers students to make tangible progress toward proving the feasibility and profitability of their models. Faculty members are also trained to provide mentorship within universities. The program is funded by Orange Corners and implemented in collaboration with the American University in Cairo and the Embassy of the Kingdom of the Netherlands in Egypt.
-          </p>
-        </div>
-        <div class="about-image-container">
-          <img
-            src="./images/peaople.webp"
-            alt="Million Ideas Challenge"
-            class="about-image"
-          />
-        </div>
-      </div>
-    </section>
-
-    <section class="requirements-section" id="requirements">
-      <div class="background-image-requirements">
-        <img src="./images/peaoplebackground.jpg" alt="" />
-      </div>
-      <div class="requirements-container">
-        <div class="requirements-header">
-          <h2 class="requirements-title">Competition Requirements</h2>
-        </div>
-        <div class="requirements-content">
-          <div class="requirements-list">
-            <div class="requirement-item">
-              <img
-                src="https://img.icons8.com/ios-filled/50/1A73E8/student-male.png"
-                alt="Student Icon"
-              />
-              <p>You must be a student at an Egyptian university</p>
-            </div>
-            <div class="requirement-item">
-              <img
-                src="https://img.icons8.com/ios-filled/50/1A73E8/idea.png"
-                alt="Idea Icon"
-              />
-              <p>You must have an idea that solves a societal problem</p>
-            </div>
-            <div class="requirement-item">
-              <img
-                src="https://img.icons8.com/ios-filled/50/1A73E8/organization.png"
-                alt="Team Icon"
-              />
-              <p>You must have a team of two or more people working with you on the idea</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="timeline-challenge" id="timeline">
-      <div class="timeline-container">
-        <h2 class="about-title2">Challenge Journey</h2>
-        <div class="timeline">
-          <div class="timeline-line"></div>
-          <div class="milestones">
-            <div class="milestone milestone-bottom" style="--order: 1">
-              <div class="milestone-marker"></div>
-              <div class="milestone-content">
-                <div class="milestone-title">Phase One</div>
-                <div class="milestone-description">
-                  Training faculty members on entrepreneurship mentoring methodologies
-                </div>
-                <div class="milestone-date">22-31 May 2025</div>
-              </div>
-            </div>
-            <div class="mini-milestone" style="left: 33%; --order: 1">
-              <div class="mini-milestone-dot"></div>
-            </div>
-            <div class="milestone milestone-top" style="--order: 2">
-              <div class="milestone-marker"></div>
-              <div class="milestone-content">
-                <div class="milestone-title">Phase Two</div>
-                <div class="milestone-description">
-                  Hackathon in Assiut, Minya, and Fayoum, where participants will work on solutions for challenges in the green sector.
-                </div>
-                <div class="milestone-date">10-12 July 2025</div>
-              </div>
-            </div>
-            <div class="mini-milestone" style="left: 66%; --order: 2">
-              <div class="mini-milestone-dot"></div>
-            </div>
-            <div class="milestone milestone-bottom" style="--order: 3">
-              <div class="milestone-marker"></div>
-              <div class="milestone-content">
-                <div class="milestone-title">Final Phase</div>
-                <div class="milestone-description">
-                  Training camp in Minya, lasting 3 days, including a final pitch of ideas and announcement of winners.
-                </div>
-                <div class="milestone-date">24-26 July 2025</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="faq-section">
-      <div class="faq-container">
-        <div class="faq-header">
-          <h1>Frequently Asked Questions</h1>
-          <p>Find answers to the most common questions about the Million Ideas Challenge</p>
-        </div>
-
-        <div class="faq-group">
-          <h2>General Questions</h2>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>What is the Million Ideas Challenge?</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  It is a program offered by Athar Business Accelerator to support innovation and entrepreneurship in Egypt, aiming to find solutions to societal challenges.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>Where will the Million Ideas Challenge take place?</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  The program will be implemented in the governorates of Assiut, Minya, and Fayoum.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>How do I know if I can participate in the challenge?</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>You can participate if you are:</p>
-                <ul>
-                  <li>A student at Assiut, Minya, or Fayoum University</li>
-                  <li>Have an idea that solves a societal problem</li>
-                  <li>Have a team of two or more people working with you on the idea</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>I want to know the timeline of the program stages so I can make time for it</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  After the registration period ends, the hackathon begins in Assiut, Minya, and Fayoum from
-                  <span class="faq-highlight">July 10 – July 12</span>.
-                </p>
-                <p>
-                  Then, a 3-day training camp starts in Minya, including a final pitch of ideas and announcement of winners from
-                  <span class="faq-highlight">July 24 – July 26</span>.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-group">
-          <h2>Eligibility and Application</h2>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>I am a student and want to know if I can participate or not?</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>You can participate if you are:</p>
-                <ul>
-                  <li>Between 18 and 25 years old</li>
-                  <li>Currently enrolled in one of the participating universities (Assiut, Minya, or Fayoum)</li>
-                  <li>Available to participate in the program’s activities</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>How can I apply?</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  Applications are submitted through the program’s official website, with a letter of interest required for students.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>Do I need to be in a specific major to participate?</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  No, the program encourages forming teams from diverse majors to enhance diversity and innovate new solutions.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>Do I need prior experience in entrepreneurship?</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  No prior experience is needed. The most important thing is enthusiasm for problem-solving and innovation.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-group">
-          <h2>Program Activities</h2>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>What type of training will I receive as a participant?</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  You will receive training in design thinking, business model development, financial planning, and pitching your idea to others.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>I want to know the details of the hackathon.</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  The hackathon lasts three days in each governorate, during which teams work on solving real societal challenges, then present their ideas to a jury to select the best teams to qualify for the training camp.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>I want to know what will happen at the training camp.</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  Teams that qualify from the hackathon receive advanced entrepreneurship training, further develop their ideas, and then compete for cash prizes in the final pitch.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>What is the prize value for the winning teams?</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  The top three teams in the training camp will receive <span class="faq-highlight">50,000 EGP</span> each, plus fast-track access to Athar programs to support and turn their ideas into real projects.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>Are there any costs associated with participation?</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  No, participation in the program is completely free for both students and faculty members, with no fees required at any stage.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-group">
-          <h2>Program Impact</h2>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>How do I benefit as a student from the Million Ideas Challenge?</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  Students gain practical skills and funding opportunities to build their startups.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>How do I benefit as a faculty member from the program?</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  You get the opportunity to enhance your teaching methodologies, develop mentoring skills, and participate in a practical educational experience with students. The program also helps you integrate entrepreneurship concepts into your courses and build practical experience in supporting innovation within the university.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>Does the local community benefit from the program?</h3>
-              <div class="icon"></div>
-            POW>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  Yes, the program contributes to providing sustainable solutions to societal problems, supports youth empowerment, and enhances local economic growth in the participating governorates.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>How does the private sector contribute to the program?</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  The private sector collaborates with students and faculty members by addressing societal challenges and working together to innovate practical solutions that contribute to community development and sustainable growth.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>What determines the success of the program?</h3>
-              <div class="icon"></div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <p>
-                  The program’s success is determined through continuous monitoring and thorough evaluation, focusing on developing the skills of students and faculty members and achieving tangible results in addressing societal challenges.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="language-toggle">
-      <button id="ar-btn" onclick="window.location.href='index.html'">العربية</button>
-      <button id="en-btn" class="active">English</button>
-    </div>
-
-    <script>
-      // Mobile menu toggle... (JavaScript remains the same as the original, excluding language toggle logic specific to Arabic)
-      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
-      const navLinks = document.querySelector(".nav-links");
-
-      mobileMenuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        mobileMenuBtn.innerHTML = navLinks.classList.contains("active")
-          ? "✕"
-          : "☰";
-      });
-
-      window.addEventListener("scroll", () => {
-        const navbar = document.querySelector(".navbar");
-        if (window.scrollY > 50) {
-          navbar.classList.add("scrolled");
-        } else {
-          navbar.classList.remove("scrolled");
-        }
-      });
-
-      document.querySelectorAll(".nav-links a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("active");
-          mobileMenuBtn.innerHTML = "☰";
-        });
-      });
-
-      const englishWords = [
-        "soil degradation",
-        "water scarcity",
-        "soil salinity",
-        "soil erosion",
-        "water pollution",
-        "pesticide damage",
-        "low productivity",
-        "rising temperatures",
-        "labor shortage",
-        "urban sprawl",
-        "poor storage",
-        "pesticide overuse",
-        "lack of support",
-        "crop damage",
-        "temperature fluctuations",
-        "pest outbreaks",
-        "water contamination",
-        "over-irrigation",
-        "desertification",
-        "agricultural emissions",
-      ];
-
-      let currentWordIndex = 0;
-
-      function rotateWords() {
-        const englishHighlight = document.querySelector(
-          ".hero-title .changing-text"
-        );
-        const englishSpans = englishHighlight.querySelectorAll("span");
-
-        englishSpans.forEach((span) => (span.style.opacity = 0));
-
-        setTimeout(() => {
-          currentWordIndex = (currentWordIndex + 1) % englishWords.length;
-          englishSpans[currentWordIndex].style.opacity = 1;
-
-          englishSpans.forEach((span, index) => {
-            span.textContent = englishWords[index];
-          });
-        }, 500);
+    <title>مراحل البرنامج</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f4;
+        padding: 40px;
+        line-height: 1.8;
       }
 
-      setInterval(rotateWords, 2000);
+      .section {
+        max-width: 1000px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+      }
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const englishHighlight = document.querySelector(
-          ".hero-title .changing-text"
-        );
-        englishHighlight.querySelectorAll("span")[0].style.opacity = 1;
+      .stage {
+        /* width: 93%; */
+        margin: 0px 10px;
+        position: relative;
+        border-radius: 16px;
+        padding: 14px 30px;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+      }
 
-        document.querySelectorAll(".faq-question").forEach((question) => {
-          question.addEventListener("click", () => {
-            const faqItem = question.parentElement;
-            const isActive = faqItem.classList.contains("active");
+      .stage.light {
+        background-color: #fff8dc;
+      }
 
-            document.querySelectorAll(".faq-item").forEach((item) => {
-              item.classList.remove("active");
-            });
+      .stage .content {
+        width: 63%;
+        position: relative;
+        background-color: #ffe53f;
+        z-index: 0;
+        /* padding-top: 80px; */
+        padding-right: 35%;
+        margin-right: 5%;
+        border-radius: 20px;
+      }
 
-            if (!isActive) {
-              faqItem.classList.add("active");
+      .stage img {
+        position: absolute;
+        width: 300px;
+        height: auto;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      /* Position image for stage 1 (right top) */
+      .stage.stage-1 img {
+        width: 40%;
+        top: -25px;
+        right: -40px;
+      }
+
+      /* Position image for stage 2 (left top) */
+      .stage.stage-2 img {
+        top: -60px;
+        left: -40px;
+      }
+
+      h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      ul {
+        margin: 0 0 10px 0;
+        padding-right: 20px;
+      }
+
+      ul li {
+        margin-bottom: 6px;
+      }
+
+      .goal {
+        font-weight: bold;
+        margin-top: 12px;
+      }
+
+      @media (max-width: 768px) {
+        .stage img {
+          position: relative;
+          top: 0;
+          left: 0;
+          right: 0;
+          display: block;
+          margin: 0 auto 20px;
+        }
+
+        .stage .content {
+          padding-top: 0;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section">
+      <!-- Stage 1 - Image Top Right, Partially Outside -->
+      <div class="stage stage-1">
+        <img src="./images/peaople.webp" alt="Stage 1 Image" />
+        <div class="content">
+          <h2>مراحل البرنامج</h2>
+          <h3>المرحلة الأولى تدريب المدربين</h3>
+          <p>بناء شبكة داعمة للابتكار داخل الجامعات</p>
+          <ul>
+            <li>تدريب 30 عضو هيئة تدريس من الجامعات المصرية على:</li>
+            <li>منهجيات تأسيس الشركات الناشئة.</li>
+            <li>اختبار الحلول وتطوير النماذج الأولية.</li>
+            <li>توجيه الطلاب بأساليب عملية.</li>
+          </ul>
+          <p class="goal">
+            الهدف: إنشاء كوادر أكاديمية قادرة على دعم الطلاب في تحويل أفكارهم
+            إلى مشاريع ريادية.
+          </p>
+        </div>
+      </div>
+
+      <!-- Stage 2 - Image Top Left, Partially Outside -->
+      <div class="stage stage-2 light">
+        <img
+          src="./images/peaople.webp"
+          alt="Stage 2 Image"
+          style="width: 40%"
+        />
+        <div class="content" style="padding-right: 0px; background: none">
+          <h3>المرحلة الثانية تدريب المدربين</h3>
+          <p>بناء شبكة داعمة للابتكار داخل الجامعات</p>
+          <ul>
+            <li>تدريب 30 عضو هيئة تدريس من الجامعات المصرية على:</li>
+            <li>منهجيات تأسيس الشركات الناشئة.</li>
+            <li>اختبار الحلول وتطوير النماذج الأولية.</li>
+            <li>توجيه الطلاب بأساليب عملية.</li>
+          </ul>
+          <p class="goal">
+            الهدف: إنشاء كوادر أكاديمية قادرة على دعم الطلاب في تحويل أفكارهم
+            إلى مشاريع ريادية.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
             }
-          });
-        });
-      });
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
     </script>
   </body>
 </html>
